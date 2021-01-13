@@ -68,7 +68,7 @@ dataset = pd.read_csv("data.csv")
   2  Germany  30.0  54000.0
   ```
 ### Numpy representation of DF
-- `DataFrame.values`: Return a Numpy representation of the DataFrame.
+- `DataFrame.values`: Return a Numpy representation of the DataFrame (i.e: Only the values in the DataFrame will be returned, the axes labels will be removed.)
 - For ex: `X = dataset.iloc[:3, :-1].values`
 ```
 [['France' 44.0 72000.0]
