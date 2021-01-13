@@ -10,6 +10,7 @@ Data Science Handbook
   - [Import Dataset](#import-dataset)
   - [Select Data](#select-data)
     - [Using Index: iloc](#using-index-iloc)
+  - [Numpy representation of DF](#Numpy-representation-of-DF)
 - [Resources](#resources)
 
 
@@ -66,8 +67,14 @@ dataset = pd.read_csv("data.csv")
   1    Spain  27.0  48000.0
   2  Germany  30.0  54000.0
   ```
-
-
+### Numpy representation of DF
+- `DataFrame.values`: Return a Numpy representation of the DataFrame.
+- For ex: `X = dataset.iloc[:3, :-1].values`
+```
+[['France' 44.0 72000.0]
+ ['Spain' 27.0 48000.0]
+ ['Germany' 30.0 54000.0]]
+```
 # Resources:
 ### Podcast:
 https://www.superdatascience.com/podcast/sds-041-inspiring-journey-totally-different-background-data-science
