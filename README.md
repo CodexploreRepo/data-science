@@ -6,6 +6,7 @@ Data Science Handbook
 
 - [Table of contents](#table-of-contents)
 - [Introduction](#introduction)
+- [Data Preprocessing](#Data-Preprocessing)
 - [Resources](#resources)
 
 
@@ -13,6 +14,8 @@ Data Science Handbook
 
 
 [(Back to top)](#table-of-contents)
+
+# Data Preprocessing 
 
 
 # Resources:
