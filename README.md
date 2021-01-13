@@ -38,13 +38,34 @@ dataset = pd.read_csv("data.csv")
 ## Select Data
 ### Using Index iloc
 - `.iloc[]` allowed inputs are:
-  - An integer, e.g. `df.iloc[0]` > return a *Series* - row 0
+  #### Selecting Rows
+  - An integer, e.g. `dataset.iloc[0]` > return row 0 in Series
   ```
-  Country   Age   Salary Purchased
-  0  France  44.0  72000.0        No
+  Country      France
+  Age              44
+  Salary        72000
+  Purchased        No
   ```
-  - A list or array of integers, e.g. [4, 3, 0].
-  - A slice object with ints, e.g. 1:7.
+  - A list or array of integers, e.g.`dataset.iloc[[0]]` > return row 0 in DataFrame format
+  ```
+     Country   Age   Salary  Purchased
+  0  France    44.0  72000.0        No
+  ```
+  - A slice object with ints, e.g. `dataset.iloc[:3]` > return row 0 up to row 3 in DataFrame format
+  ```
+       Country   Age   Salary Purchased
+  0    France   44.0  72000.0        No
+  1    Spain    27.0  48000.0       Yes
+  2    Germany  30.0  54000.0        No
+  ```
+  #### Selecting Rows & Columns
+  - Select First 3 Rows & up to Last Columns (not included) `X = dataset.iloc[:3, :-1]`
+  ```
+       Country   Age   Salary
+  0   France  44.0  72000.0
+  1    Spain  27.0  48000.0
+  2  Germany  30.0  54000.0
+  ```
 
 
 # Resources:
