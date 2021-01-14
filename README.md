@@ -79,6 +79,23 @@ dataset = pd.read_csv("data.csv")
 [(Back to top)](#table-of-contents)
 
 ## Handle Missing Data
+### SimpleImputer
+-  sklearn.impute.`SimpleImputer(missing_values={should be set to np.nan} strategy={"mean",“median”, “most_frequent”, ..})`
+- imputer.`fit(X[:, 1:3]):	Fit the imputer on X.
+- imputer.`transform(X[:, 1:3])`: 	Impute all missing values in X.
+
+```Python
+from sklearn.impute import SimpleImputer
+
+#Create an instance of Class SimpleImputer: np.nan is the empty value in the dataset
+imputer = SimpleImputer(missing_values=np.nan, strategy='mean')
+
+#Replace missing value from numerical Col 1 'Age', Col 2 'Salary'
+imputer.fit(X[:, 1:3]) 
+
+#transform will replace & return the new updated columns
+X[:, 1:3] = imputer.transform(X[:, 1:3])
+```
 
 
 # Resources:
