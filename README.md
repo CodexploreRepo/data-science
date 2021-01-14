@@ -12,6 +12,10 @@ Data Science Handbook
     - [Using Index: iloc](#using-index-iloc)
   - [Numpy representation of DF](#Numpy-representation-of-DF)
   - [Handle Missing Data](#handle-missing-data)
+  - [Encode Categorical Data](#Encode-Categorical-Data)
+    - [Encode Independent Variables](#Encode-Independent-Variables)
+    - [Encode Dependent Variables](#Encode-Dependent-Variables)
+    
 - [Resources](#resources)
 
 
@@ -95,6 +99,48 @@ imputer.fit(X[:, 1:3])
 
 #transform will replace & return the new updated columns
 X[:, 1:3] = imputer.transform(X[:, 1:3])
+```
+
+## Encode Categorical Data
+### Encode Independent Variables
+- Since for the independent variable, we will convert into vector of 0 & 1
+- Using the `ColumnTransformer` class & `OneHotEncoder`
+```Python
+from sklearn.compose import ColumnTransformer
+from sklearn.preprocessing import OneHotEncoder
+```
+- `transformers`: specify what kind of transformation, and which cols
+- Tuple `('encoder' encoding transformation, instance of Class OneHotEncoder, [cols to transform])`
+- `remainder ="passthrough"` > to keep the cols which not be transformed. Otherwise, the remaining cols will not be included 
+```Python
+ct = ColumnTransformer(transformers=[('encoder', OneHotEncoder(), [0])] , remainder="passthrough" )
+```
+- Fit and Transform with input = X in the Instance `ct` of class `ColumnTransformer`
+```
+#fit and transform with input = X
+#np.array: need to convert output of fit_transform() from matrix to np.array
+X = np.array(ct.fit_transform(X))
+```
+- Before converting categorical column [0] `Country`
+```
+   Country   Age   Salary Purchased
+0   France  44.0  72000.0        No
+1    Spain  27.0  48000.0       Yes
+```
+- After
+```
+[[1.0 0.0 0.0 44.0 72000.0]
+ [0.0 0.0 1.0 27.0 48000.0]
+ [0.0 1.0 0.0 30.0 54000.0]
+```
+
+### Encode Dependent Variables
+- For the dependent variable, since it is the Label > we use `Label Encoder`
+```Python
+from sklearn.preprocessing import LabelEncoder
+le = LabelEncoder()
+#output of fit_transform of Label Encoder is already a Numpy Array
+y = le.fit_transform(y)
 ```
 
 
