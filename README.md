@@ -127,7 +127,7 @@ X = np.array(ct.fit_transform(X))
 0   France  44.0  72000.0        No
 1    Spain  27.0  48000.0       Yes
 ```
-- After
+- After converting, France = [1.0, 0, 0] vector
 ```
 [[1.0 0.0 0.0 44.0 72000.0]
  [0.0 0.0 1.0 27.0 48000.0]
@@ -141,6 +141,8 @@ from sklearn.preprocessing import LabelEncoder
 le = LabelEncoder()
 #output of fit_transform of Label Encoder is already a Numpy Array
 y = le.fit_transform(y)
+
+#y = [0 1 0 0 1 1 0 1 0 1]
 ```
 
 
