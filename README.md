@@ -81,7 +81,7 @@ dataset = pd.read_csv("data.csv")
 ## Handle Missing Data
 ### SimpleImputer
 -  sklearn.impute.`SimpleImputer(missing_values={should be set to np.nan} strategy={"mean",“median”, “most_frequent”, ..})`
-- imputer.`fit(X[:, 1:3]):	Fit the imputer on X.
+- imputer.`fit(X[:, 1:3])`:	Fit the imputer on X.
 - imputer.`transform(X[:, 1:3])`: 	Impute all missing values in X.
 
 ```Python
