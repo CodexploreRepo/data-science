@@ -11,6 +11,7 @@ Data Science Handbook
   - [Select Data](#select-data)
     - [Using Index: iloc](#using-index-iloc)
   - [Numpy representation of DF](#Numpy-representation-of-DF)
+  - [Handle Missing Data](#handle-missing-data)
 - [Resources](#resources)
 
 
@@ -75,6 +76,11 @@ dataset = pd.read_csv("data.csv")
  ['Spain' 27.0 48000.0]
  ['Germany' 30.0 54000.0]]
 ```
+[(Back to top)](#table-of-contents)
+
+## Handle Missing Data
+
+
 # Resources:
 ### Podcast:
 https://www.superdatascience.com/podcast/sds-041-inspiring-journey-totally-different-background-data-science
