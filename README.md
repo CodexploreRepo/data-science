@@ -40,7 +40,7 @@ dataset = pd.read_csv("data.csv")
 ### Using Index iloc
 - `.iloc[]` allowed inputs are:
   #### Selecting Rows
-  - An integer, e.g. `dataset.iloc[0]` > return row 0 in Series
+  - An integer, e.g. `dataset.iloc[0]` > return row 0 in `<class 'pandas.core.series.Series'>`
   ```
   Country      France
   Age              44
