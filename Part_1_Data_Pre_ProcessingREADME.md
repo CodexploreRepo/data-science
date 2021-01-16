@@ -169,10 +169,12 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, rando
 - `Standardisation`: This makes the dataset, center at 0 i.e mean at 0, and changes the standard deviation value to 1.
   - *Usage*: apply all the situations 
 - `Normalisation`: This makes the dataset in range [0, 1] 
-  - *Usage*: apply when the all the features in the data set have the normal distribution
-
+  - *Usage*: apply when the all the features in the data set have the **normal distribution**
 
 ![Screenshot 2021-01-16 at 10 59 20 AM](https://user-images.githubusercontent.com/64508435/104795502-e40d3780-57e9-11eb-91ce-bb68c43a715f.png)
+
+## Standardisation Feature Scaling:
+
 
 
 [(Back to top)](#table-of-contents)
