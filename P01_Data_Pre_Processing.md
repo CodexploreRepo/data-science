@@ -117,7 +117,7 @@ from sklearn.preprocessing import OneHotEncoder
 ct = ColumnTransformer(transformers=[('encoder', OneHotEncoder(), [0])] , remainder="passthrough" )
 ```
 - Fit and Transform with input = X in the Instance `ct` of class `ColumnTransformer`
-```
+```Python
 #fit and transform with input = X
 #np.array: need to convert output of fit_transform() from matrix to np.array
 X = np.array(ct.fit_transform(X))
@@ -150,7 +150,7 @@ y = le.fit_transform(y)
 -  Using the  `train_test_split` of SkLearn - Model Selection
 -  Recommend Split: `test_size = 0.2`
 -  `random_state = 1`: fixing the seed for random state so that we can have the same training & test sets anytime
-```
+```Python
 from sklearn.model_selection import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, random_state = 1)
 ```
@@ -179,16 +179,16 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, rando
 
 ## Standardisation Feature Scaling:
 - We will use `StandardScaler` from `sklearn.preprocessing`
-```
+```Python
 from sklearn.preprocessing import StandardScaler
 sc = StandardScaler()
 ```
 - For `X_train`: apply `StandardScaler` by using `fit_transform`
-```
+```Python
 X_train[:,3:] = sc.fit_transform(X_train[:,3:])
 ```
 - For `X_test`: apply `StandardScaler` only use `transform`, because we want to apply the SAME scale as `X_train`
-```
+```Python
 #only use Transform to use the SAME scaler as the Training Set
 X_test[:,3:] = sc.transform(X_test[:,3:])
 ```
