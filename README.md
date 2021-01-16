@@ -157,13 +157,23 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, rando
 
 # Feature Scaling
 - What ? Feature Scaling (FS): scale all the features in the same scale to prevent 1 feature dominates the others & then neglected by ML Model
-- **FS MUST be done AFTER splitting** Training & Test sets
+- Note #1: FS **no need to apply in all the times** in all ML Models
+- Note #2: **FS MUST be done AFTER splitting** Training & Test sets
 - Why ?
   - Test Set suppose to the brand-new set, which we are not supposed to work with the Training Set
   - FS is technique to get the mean & median of features in order to scale
   - If we apply FS before splitting Training & Test sets, it will include the mean & median of both Training Set and Test Set 
   - FS MUST be done AFTER Splitting => Otherwise, we will cause **Information Leakage**
-- How ?
+## How ?
+- There are 2 main Feature Scaling Technique: Standardisation & Normalisation
+- `Standardisation`: This makes the dataset, center at 0 i.e mean at 0, and changes the standard deviation value to 1.
+  - *Usage*: apply all the situations 
+- `Normalisation`: This makes the dataset in range [0, 1] 
+  - *Usage*: apply when the all the features in the data set have the normal distribution
+
+
+![Screenshot 2021-01-16 at 10 59 20 AM](https://user-images.githubusercontent.com/64508435/104795502-e40d3780-57e9-11eb-91ce-bb68c43a715f.png)
+
 
 [(Back to top)](#table-of-contents)
 
