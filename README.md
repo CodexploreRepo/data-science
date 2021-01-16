@@ -156,13 +156,14 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, rando
 [(Back to top)](#table-of-contents)
 
 # Feature Scaling
-- Feature Scaling (FS): scale all the features in the same scale to prevent 1 feature dominates the others & then neglected by ML Model
+- What ? Feature Scaling (FS): scale all the features in the same scale to prevent 1 feature dominates the others & then neglected by ML Model
 - **FS MUST be done AFTER splitting** Training & Test sets
 - Why ?
   - Test Set suppose to the brand-new set, which we are not supposed to work with the Training Set
   - FS is technique to get the mean & median of features in order to scale
   - If we apply FS before splitting Training & Test sets, it will include the mean & median of both Training Set and Test Set 
   - FS MUST be done AFTER Splitting => Otherwise, we will cause **Information Leakage**
+- How ?
 
 [(Back to top)](#table-of-contents)
 
