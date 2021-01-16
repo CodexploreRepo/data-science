@@ -3,18 +3,17 @@ Data Science Handbook
 
 # Data Science Handbook
 # Table of contents
-
 - [Table of contents](#table-of-contents)
 - [Introduction](#introduction)
-- [Data Preprocessing](#Data-Preprocessing)
+- [Data Preprocessing](#data-preprocessing)
   - [Import Dataset](#import-dataset)
   - [Select Data](#select-data)
     - [Using Index: iloc](#using-index-iloc)
-  - [Numpy representation of DF](#Numpy-representation-of-DF)
+  - [Numpy representation of DF](#numpy-representation-of-df)
   - [Handle Missing Data](#handle-missing-data)
-  - [Encode Categorical Data](#Encode-Categorical-Data)
-    - [Encode Independent Variables](#Encode-Independent-Variables)
-    - [Encode Dependent Variables](#Encode-Dependent-Variables)
+  - [Encode Categorical Data](#encode-categorical-data)
+    - [Encode Independent Variables](#encode-independent-variables)
+    - [Encode Dependent Variables](#encode-dependent-variables)
     
 - [Resources](#resources)
 
