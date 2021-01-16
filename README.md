@@ -1,7 +1,4 @@
 # Data Science Handbook
-Data Science Handbook
-
-# Data Science Handbook
 # Table of contents
 - [Table of contents](#table-of-contents)
 - [Introduction](#introduction)
@@ -149,10 +146,17 @@ y = le.fit_transform(y)
 ```
 
 # Splitting Training set and Test set
-
+-  Using the  `train_test_split` of SkLearn - Model Selection
+-  Recommend Split: `test_size = 0.2`
+-  `random_state = 1`: fixing the seed for random state so that we can have the same training & test sets anytime
+```
+from sklearn.model_selection import train_test_split
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, random_state = 1)
+```
+[(Back to top)](#table-of-contents)
 
 # Feature Scaling
-- Feature Scaling (FS): scale all the features in the same scale to prevent 1 feature dominate the others & neglected by ML Model
+- Feature Scaling (FS): scale all the features in the same scale to prevent 1 feature dominates the others & then neglected by ML Model
 - **FS MUST be done AFTER splitting** Training & Test sets
 - Why ?
   - Test Set suppose to the brand-new set, which we are not supposed to work with the Training Set
@@ -160,7 +164,7 @@ y = le.fit_transform(y)
   - If we apply FS before splitting Training & Test sets, it will include the mean & median of both Training Set and Test Set 
   - FS MUST be done AFTER Splitting => Otherwise, we will cause **Information Leakage**
 
-
+[(Back to top)](#table-of-contents)
 
 # Resources:
 ### Podcast:
