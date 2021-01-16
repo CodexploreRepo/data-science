@@ -159,7 +159,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, rando
 - What ? Feature Scaling (FS): scale all the features in the same scale to prevent 1 feature dominates the others & then neglected by ML Model
 - Note #1: FS **no need to apply in all the times** in all ML Models
 - Note #2: For dummy variables from Categorial Features Encoding, **no need to apply FS**
-<img width="467" alt="Screenshot 2021-01-16 at 11 35 13 AM" src="https://user-images.githubusercontent.com/64508435/104796229-5fbdb300-57ef-11eb-90e9-6f5260d5788a.png">
+  <img width="467" alt="Screenshot 2021-01-16 at 11 35 13 AM" src="https://user-images.githubusercontent.com/64508435/104796229-5fbdb300-57ef-11eb-90e9-6f5260d5788a.png">
 - Note #3: **FS MUST be done AFTER splitting** Training & Test sets
 
 - Why ?
