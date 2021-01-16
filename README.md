@@ -152,12 +152,13 @@ y = le.fit_transform(y)
 
 
 # Feature Scaling
-- Feature Scaling: scale all the features in the same scale to prevent 1 feature dominate the others & neglected by ML Model
-- MUST be done AFTER splitting Training & Test sets
+- Feature Scaling (FS): scale all the features in the same scale to prevent 1 feature dominate the others & neglected by ML Model
+- **FS MUST be done AFTER splitting** Training & Test sets
 - Why ?
   - Test Set suppose to the brand-new set, which we are not supposed to work with the Training Set
-  - Feature Scaling is technique to get the mean & median of features in order to scale
-  - If we apply FS before splitting Training & Test sets, it will include the mean & median of both Training Set and Test Set => FS MUST be done AFTER Splitting.
+  - FS is technique to get the mean & median of features in order to scale
+  - If we apply FS before splitting Training & Test sets, it will include the mean & median of both Training Set and Test Set 
+  - FS MUST be done AFTER Splitting => Otherwise, we will cause **Information Leakage**
 
 
 
