@@ -104,7 +104,10 @@ X[:, 1:3] = imputer.transform(X[:, 1:3])
 ## Encode Categorical Data
 ### Encode Independent Variables
 - Since for the independent variable, we will convert into vector of 0 & 1
-- Using the `ColumnTransformer` class & `OneHotEncoder`
+- Using the `ColumnTransformer` class & 
+- `OneHotEncoder`:  encoding technique for features are nominal(do not have any order)
+![image](https://user-images.githubusercontent.com/64508435/104794298-a86e6f80-57e1-11eb-8ffc-aee2178762d1.png)
+
 ```Python
 from sklearn.compose import ColumnTransformer
 from sklearn.preprocessing import OneHotEncoder
