@@ -178,7 +178,20 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, rando
 ![Screenshot 2021-01-16 at 10 59 20 AM](https://user-images.githubusercontent.com/64508435/104795502-e40d3780-57e9-11eb-91ce-bb68c43a715f.png)
 
 ## Standardisation Feature Scaling:
-
+- We will use `StandardScaler` from `sklearn.preprocessing`
+```
+from sklearn.preprocessing import StandardScaler
+sc = StandardScaler()
+```
+- For `X_train`: apply `StandardScaler` by using `fit_transform`
+```
+X_train[:,3:] = sc.fit_transform(X_train[:,3:])
+```
+- For `X_test`: apply `StandardScaler` only use `transform`, because we want to apply the SAME scale as `X_train`
+```
+#only use Transform to use the SAME scaler as the Training Set
+X_test[:,3:] = sc.transform(X_test[:,3:])
+```
 
 
 [(Back to top)](#table-of-contents)
