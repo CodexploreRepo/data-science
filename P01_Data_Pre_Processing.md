@@ -13,6 +13,7 @@
     - [Encode Dependent Variables](#encode-dependent-variables)
 - [Splitting Training set and Test set](#splitting-training-set-and-test-set)
 - [Feature Scaling](#feature-scaling)
+  - [Standardisation Feature Scaling](#standardisation-feature-scaling)
 - [Resources](#resources)
 
 
