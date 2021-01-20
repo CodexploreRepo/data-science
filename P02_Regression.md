@@ -1,22 +1,19 @@
-# Table of contents
+# Regression
 - [Table of contents](#table-of-contents)
-- [Introduction](#introduction)
-- [Data Preprocessing](#data-preprocessing)
-  - [Import Dataset](#import-dataset)
-  - [Select Data](#select-data)
-    - [Using Index: iloc](#using-index-iloc)
-  - [Numpy representation of DF](#numpy-representation-of-df)
-  - [Handle Missing Data](#handle-missing-data)
-  - [Encode Categorical Data](#encode-categorical-data)
-    - [Encode Independent Variables](#encode-independent-variables)
-    - [Encode Dependent Variables](#encode-dependent-variables)
-- [Splitting Training set and Test set](#splitting-training-set-and-test-set)
-- [Feature Scaling](#feature-scaling)
-  - [Standardisation Feature Scaling](#standardisation-feature-scaling)
-- [Resources](#resources)
+- [Simple Linear Regression](#simple-linear-regression)
 
 
-# Introduction 
+# Simple Linear Regression
+
+```
+y = bo + b1 * x1
+```
+- y: Dependent Variable (DV)
+- x: InDependent Variable (IV)
+- b: Coefficient
+
+![Screenshot 2021-01-20 at 10 16 26 PM](https://user-images.githubusercontent.com/64508435/105186896-24174600-5b6d-11eb-9eb8-8c7f5e82d268.png)
+
 
 
 [(Back to top)](#table-of-contents)
