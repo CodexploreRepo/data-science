@@ -10,7 +10,7 @@
   - [Getting Linear Regression Equation](#getting-linear-regression-equation)
   - [Evaluating the Algorithm](#evaluating-the-algorithm)
     - [R Square or Adjusted R Square](#r-square-or-adjusted-r-square)
-    - [Mean Square Error(MSE)/Root Mean Square Error(RMSE)](#mean-square-error-root-mean-square-error)
+    - [Mean Square Error(MSE)/Root Mean Square Error(RMSE)](#mean-square-error-and-root-mean-square-error)
 
 # Simple Linear Regression
 ## Outline Building a Model
@@ -121,6 +121,20 @@ print(result.rsquared, result.rsquared_adj)
 ```
 - around 79% of dependent variability can be explain by the model and adjusted R Square is roughly the same as R Square meaning the model is quite robust
 
-### Mean Square Error - Root Mean Square Error
-
+### Mean Square Error and Root Mean Square Error
+- While **R Square** is a **relative measure** of how well the model fits dependent variables
+- **Mean Square Error (MSE)** is an **absolute measure** of the goodness for the fit.
+- **Root Mean Square Error(RMSE)** is the square root of MSE. 
+  - It is used more commonly than MSE because firstly sometimes MSE value can be too big to compare easily.
+  - Secondly, MSE is calculated by the square of error, and thus square root brings it back to the same level of prediction error and make it easier for interpretation.
+<p align="center"><img src="https://user-images.githubusercontent.com/64508435/105425248-f113a600-5c83-11eb-8d86-ea14b2795d79.png" height="100" /></p>
 [(Back to top)](#table-of-contents)
+
+```Python
+from sklearn.metrics import mean_squared_error
+import math
+print(mean_squared_error(Y_test, Y_predicted))
+print(math.sqrt(mean_squared_error(Y_test, Y_predicted)))
+# MSE: 2017904593.23
+# RMSE: 44921.092965684235
+```
