@@ -10,7 +10,8 @@
   - [Getting Linear Regression Equation](#getting-linear-regression-equation)
   - [Evaluating the Algorithm](#evaluating-the-algorithm)
     - [R Square or Adjusted R Square](#r-square-or-adjusted-r-square)
-    - [Mean Square Error(MSE)/Root Mean Square Error(RMSE)](#mean-square-error-and-root-mean-square-error)
+    - [Mean Square Error (MSE)/Root Mean Square Error (RMSE)](#mean-square-error-and-root-mean-square-error)
+    - [Mean Absolute Error (MAE)](#mean-absolute-error)
 
 # Simple Linear Regression
 ## Outline Building a Model
@@ -86,10 +87,10 @@ Linear Regression Equation: `Salary = 25609 + 9332.94×YearsExperience`
 ## Evaluating the Algorithm
 - compare how well different algorithms perform on a particular dataset.
 - For regression algorithms, three evaluation metrics are commonly used:
-  1. R Square/Adjusted R Square
-  2. Mean Square Error(MSE)/Root Mean Square Error(RMSE)
-  3. Mean Absolute Error(MAE)
-
+  1. R Square/Adjusted R Square > Percentage of the output variability
+  2. Mean Square Error(MSE)/Root Mean Square Error(RMSE) > to compare performance between different regression models
+  3. Mean Absolute Error(MAE) > to compare performance between different regression models
+  
 ### R Square or Adjusted R Square
 #### R Square: Coefficient of determination
 - R Square measures how much of **variability** in predicted variable can be explained by the model.
@@ -100,7 +101,7 @@ Linear Regression Equation: `Salary = 25609 + 9332.94×YearsExperience`
   - but performs badly for testing data.
   - Solution: Adjusted R Square
   
-<p align="center"><img src="https://user-images.githubusercontent.com/64508435/105422836-62048f00-5c7f-11eb-99f6-d94b3ebf1784.png" height="100" /></p>
+<p align="center"><img src="https://user-images.githubusercontent.com/64508435/105422836-62048f00-5c7f-11eb-99f6-d94b3ebf1784.png" height="60" /></p>
 
 #### Adjusted R Square
 - is introduced Since R-square can be increased by adding more number of variable and may lead to the **over-fitting** of the model
@@ -127,8 +128,8 @@ print(result.rsquared, result.rsquared_adj)
 - **Root Mean Square Error(RMSE)** is the square root of MSE. 
   - It is used more commonly than MSE because firstly sometimes MSE value can be too big to compare easily.
   - Secondly, MSE is calculated by the square of error, and thus square root brings it back to the same level of prediction error and make it easier for interpretation.
-<p align="center"><img src="https://user-images.githubusercontent.com/64508435/105425248-f113a600-5c83-11eb-8d86-ea14b2795d79.png" height="100" /></p>
-[(Back to top)](#table-of-contents)
+
+<p align="center"><img src="https://user-images.githubusercontent.com/64508435/105425248-f113a600-5c83-11eb-8d86-ea14b2795d79.png" height="60" /></p>
 
 ```Python
 from sklearn.metrics import mean_squared_error
@@ -138,3 +139,15 @@ print(math.sqrt(mean_squared_error(Y_test, Y_predicted)))
 # MSE: 2017904593.23
 # RMSE: 44921.092965684235
 ```
+### Mean Absolute Error
+- Compare to MSE or RMSE, MAE is a more direct representation of sum of error terms.
+
+<p align="center"><img src="https://user-images.githubusercontent.com/64508435/105425768-f2919e00-5c84-11eb-83c4-4b53f903fbbc.png" height="60" /></p>
+
+```Python
+from sklearn.metrics import mean_absolute_error
+print(mean_absolute_error(Y_test, Y_predicted))
+#MAE: 26745.1109986
+```
+
+[(Back to top)](#table-of-contents)
