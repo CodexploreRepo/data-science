@@ -2,6 +2,8 @@
 - [Table of contents](#table-of-contents)
 - [Simple Linear Regression](#simple-linear-regression)
   - [Creating a Model](#creating-a-model)
+  - [Predicting a Test Result](#predicting-a-test-result)
+  - [Visualising the Test set results](#visualising-the-test-set-results)
 
 # Simple Linear Regression
 
@@ -25,7 +27,23 @@ regressor = LinearRegression()
 #To fit the X_train and y_train
 regressor.fit(X_train, y_train)
 ```
+## Predicting a Test Result
+```Python
+y_pred = regressor.predict(X_test)
+```
 
+## Visualising the Test set results
+```Python
+#Plot predicted value
+plt.scatter(X_test, y_test, color = 'red')
+#Plot the regression line
+plt.plot(X_train, regressor.predict(X_train), color = 'blue')
+plt.title('Salary vs Experience (Test Set)')
+plt.xlabel('Years of Experience')
+plt.ylabel('Salary')
+plt.show()
+```
+![download](https://user-images.githubusercontent.com/64508435/105365689-7c1b7e80-5c39-11eb-8e44-12866fb7eb3d.png)
 
 
 [(Back to top)](#table-of-contents)
