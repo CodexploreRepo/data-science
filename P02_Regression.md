@@ -32,13 +32,9 @@ regressor.fit(X_train, y_train)
 y_pred = regressor.predict(X_test)
 ```
 ### Predict a single value
-**Important note:**  "predict" method always expects a 2D array as the format of its inputs. And putting 12 into a double pair of square brackets makes the input exactly a 2D array. Simply put:
+**Important note:**  "predict" method always expects a 2D array as the format of its inputs. 
+- And putting 12 into a double pair of square brackets makes the input exactly a 2D array:`regressor.predict([[12]])`
 
-$12 \rightarrow \textrm{scalar}$
-
-$[12] \rightarrow \textrm{1D array}$
-
-$[[12]] \rightarrow \textrm{2D array}$
 ```Python
 print(f"Predicted Salary of Employee with 12 years of EXP: {regressor.predict([[12]])}" )
 
