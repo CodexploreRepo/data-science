@@ -1,4 +1,6 @@
 # Regression
+# Table of contents
+
 - [Table of contents](#table-of-contents)
 - [Simple Linear Regression](#simple-linear-regression)
   - [Outline: Building a Model](#outline-building-a-model)
@@ -25,7 +27,7 @@ y = bo + b1 * x1
 - x: InDependent Variable (IV)
 - b0: Intercept Coefficient
 - b1: Slope of Line Coefficient
-<img src="https://user-images.githubusercontent.com/64508435/105186896-24174600-5b6d-11eb-9eb8-8c7f5e82d268.png" height="200" />
+<p align="center"><img src="https://user-images.githubusercontent.com/64508435/105186896-24174600-5b6d-11eb-9eb8-8c7f5e82d268.png" height="200" /></p>
 
 
 ## Creating a Model
@@ -66,7 +68,7 @@ plt.ylabel('Salary')
 #Show the plot
 plt.show()
 ```
-![download](https://user-images.githubusercontent.com/64508435/105365689-7c1b7e80-5c39-11eb-8e44-12866fb7eb3d.png)
+<p align="center">![download](https://user-images.githubusercontent.com/64508435/105365689-7c1b7e80-5c39-11eb-8e44-12866fb7eb3d.png)</p>
 
 ## Getting Linear Regression Equation
 - General Formula: `y_pred = model.intercept_ + model.coef_ * x`
@@ -96,7 +98,9 @@ Linear Regression Equation: `Salary = 25609 + 9332.94×YearsExperience`
   - If your regression model has many independent variables, because the model is too complicated, it may fit very well to the training data 
   - but performs badly for testing data.
   - Solution: Adjusted R Square
-<img src="https://user-images.githubusercontent.com/64508435/105422836-62048f00-5c7f-11eb-99f6-d94b3ebf1784.png" height="100" />
+  
+<p align="center"><img src="https://user-images.githubusercontent.com/64508435/105422836-62048f00-5c7f-11eb-99f6-d94b3ebf1784.png" height="100" /></p>
+
 #### Adjusted R Square
 - is introduced Since R-square can be increased by adding more number of variable and may lead to the **over-fitting** of the model
 - Will penalise additional independent variables added to the model and adjust the metric to **prevent overfitting issue**.
