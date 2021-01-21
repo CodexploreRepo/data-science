@@ -98,7 +98,7 @@ Linear Regression Equation: `Salary = 25609 + 9332.94×YearsExperience`
   - Solution: Adjusted R Square
 <img src="https://user-images.githubusercontent.com/64508435/105422836-62048f00-5c7f-11eb-99f6-d94b3ebf1784.png" height="100" />
 #### Adjusted R Square
-- *Adjusted R Square* is introduced Since R-square can be increased by adding more number of variable and may lead to the **over-fitting** of the model
+- is introduced Since R-square can be increased by adding more number of variable and may lead to the **over-fitting** of the model
 - Will penalise additional independent variables added to the model and adjust the metric to **prevent overfitting issue**.
 
 #### Calculate R Square and Adjusted R Square using Python
