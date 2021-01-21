@@ -10,6 +10,7 @@
   - [Getting Linear Regression Equation](#getting-linear-regression-equation)
   - [Evaluating the Algorithm](#evaluating-the-algorithm)
     - [R Square or Adjusted R Square](#r-square-or-adjusted-r-square)
+    - [Mean Square Error(MSE)/Root Mean Square Error(RMSE)](#mean-square-error-root-mean-square-error)
 
 # Simple Linear Regression
 ## Outline Building a Model
@@ -68,7 +69,7 @@ plt.ylabel('Salary')
 #Show the plot
 plt.show()
 ```
-<p align="center">![download](https://user-images.githubusercontent.com/64508435/105365689-7c1b7e80-5c39-11eb-8e44-12866fb7eb3d.png)</p>
+![download](https://user-images.githubusercontent.com/64508435/105365689-7c1b7e80-5c39-11eb-8e44-12866fb7eb3d.png)
 
 ## Getting Linear Regression Equation
 - General Formula: `y_pred = model.intercept_ + model.coef_ * x`
@@ -119,5 +120,7 @@ print(result.rsquared, result.rsquared_adj)
 
 ```
 - around 79% of dependent variability can be explain by the model and adjusted R Square is roughly the same as R Square meaning the model is quite robust
+
+### Mean Square Error - Root Mean Square Error
 
 [(Back to top)](#table-of-contents)
