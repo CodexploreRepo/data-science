@@ -74,6 +74,6 @@ b0 : 25609.89799835482
 b1 : [9332.94473799]
 ```
 
-Linear Regression Equation: `Salary = 9332.94×YearsExperience + 25609`
+Linear Regression Equation: `Salary = 25609 + 9332.94×YearsExperience`
 
 [(Back to top)](#table-of-contents)
