@@ -66,6 +66,7 @@ plt.show()
 ![download](https://user-images.githubusercontent.com/64508435/105365689-7c1b7e80-5c39-11eb-8e44-12866fb7eb3d.png)
 
 ## Getting Linear Regression Equation
+- General Formula: `y_pred = model.intercept_ + model.coef_ * x`
 ```Python
 print(f"b0 : {regressor.intercept_}")
 print(f"b1 : {regressor.coef_}")
