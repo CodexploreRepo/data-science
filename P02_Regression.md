@@ -5,6 +5,7 @@
   - [Creating a Model](#creating-a-model)
   - [Predicting a Test Result](#predicting-a-test-result)
   - [Visualising the Test set results](#visualising-the-test-set-results)
+  - [Getting Linear Regression Equation](#getting-linear-regression-equation)
 
 # Simple Linear Regression
 ## Outline Building a Model
@@ -64,5 +65,15 @@ plt.show()
 ```
 ![download](https://user-images.githubusercontent.com/64508435/105365689-7c1b7e80-5c39-11eb-8e44-12866fb7eb3d.png)
 
+## Getting Linear Regression Equation
+```Python
+print(f"b0 : {regressor.intercept_}")
+print(f"b1 : {regressor.coef_}")
+
+b0 : 25609.89799835482
+b1 : [9332.94473799]
+```
+
+Linear Regression Equation: `Salary = 9332.94×YearsExperience + 25609`
 
 [(Back to top)](#table-of-contents)
