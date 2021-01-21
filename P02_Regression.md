@@ -21,7 +21,8 @@ y = bo + b1 * x1
 ```
 - y: Dependent Variable (DV)
 - x: InDependent Variable (IV)
-- b: Coefficient
+- b0: Intercept Coefficient
+- b1: Slope of Line Coefficient
 <img src="https://user-images.githubusercontent.com/64508435/105186896-24174600-5b6d-11eb-9eb8-8c7f5e82d268.png" height="200" />
 
 
