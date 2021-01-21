@@ -31,16 +31,30 @@ regressor.fit(X_train, y_train)
 ```Python
 y_pred = regressor.predict(X_test)
 ```
+### Predict a single value
+**Important note:**  "predict" method always expects a 2D array as the format of its inputs. And putting 12 into a double pair of square brackets makes the input exactly a 2D array. Simply put:
 
+$12 \rightarrow \textrm{scalar}$
+
+$[12] \rightarrow \textrm{1D array}$
+
+$[[12]] \rightarrow \textrm{2D array}$
+```Python
+print(f"Predicted Salary of Employee with 12 years of EXP: {regressor.predict([[12]])}" )
+
+#Output: Predicted Salary of Employee with 12 years of EXP: [137605.23485427]
+```
 ## Visualising the Test set results
 ```Python
-#Plot predicted value
+#Plot predicted values
 plt.scatter(X_test, y_test, color = 'red')
 #Plot the regression line
 plt.plot(X_train, regressor.predict(X_train), color = 'blue')
+#Label the Plot
 plt.title('Salary vs Experience (Test Set)')
 plt.xlabel('Years of Experience')
 plt.ylabel('Salary')
+#Show the plot
 plt.show()
 ```
 ![download](https://user-images.githubusercontent.com/64508435/105365689-7c1b7e80-5c39-11eb-8e44-12866fb7eb3d.png)
