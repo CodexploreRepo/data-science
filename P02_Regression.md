@@ -1,12 +1,20 @@
 # Regression
 - [Table of contents](#table-of-contents)
 - [Simple Linear Regression](#simple-linear-regression)
+  - [Outline: Building a Model](#outline-building-a-model)
   - [Creating a Model](#creating-a-model)
   - [Predicting a Test Result](#predicting-a-test-result)
   - [Visualising the Test set results](#visualising-the-test-set-results)
 
 # Simple Linear Regression
-
+## Outline Building a Model
+- Importing libraries and datasets
+- Splitting the dataset
+- Training the simple Linear Regression model on the Training set
+- Predicting and visualizing the test set results
+- Visualizing the training set results 
+- Making a single prediction 
+- Getting the final linear regression equation (with values of the coefficients) 
 ```
 y = bo + b1 * x1
 ```
@@ -33,7 +41,8 @@ y_pred = regressor.predict(X_test)
 ```
 ### Predict a single value
 **Important note:**  "predict" method always expects a 2D array as the format of its inputs. 
-- And putting 12 into a double pair of square brackets makes the input exactly a 2D array:`regressor.predict([[12]])`
+- And putting 12 into a double pair of square brackets makes the input exactly a 2D array:
+- `regressor.predict([[12]])`
 
 ```Python
 print(f"Predicted Salary of Employee with 12 years of EXP: {regressor.predict([[12]])}" )
