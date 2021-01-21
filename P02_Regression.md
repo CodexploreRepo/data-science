@@ -18,8 +18,10 @@ y = bo + b1 * x1
 - Using `sklearn.linear_model`,  `LinearRegression` model
 ```Python
 from sklearn.linear_model import LinearRegression
+
 #To Create Instance of Simple Linear Regression Model
 regressor = LinearRegression()
+
 #To fit the X_train and y_train
 regressor.fit(X_train, y_train)
 ```
