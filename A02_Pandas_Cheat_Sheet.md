@@ -41,7 +41,7 @@ df.item_price.dtype
 #'O'     (Python) objects
 ```
 
-- Note:
+- Please note: dtype will return below special character
 ```
 'b'       boolean
 'i'       (signed) integer
@@ -67,8 +67,24 @@ list(df.columns)
 df.col_name.count()
 # Take the mean of values in the column
 df["col_name"].mean()
-#
 ```
+##### value_counts() : Return a Series containing counts of unique values
+Ex 1: Calculate unique values in a columns
+```
+index = pd.Index([3, 1, 2, 3, 4, np.nan])
+index.value_counts()
+#Return:
+3.0    2
+2.0    1
+4.0    1
+1.0    1
+dtype: int64
+#How many unique values 
+index.value_counts().count()
+#4
+
+```
+
 #### Check index of DF
 ```Python
 df.index
@@ -92,6 +108,10 @@ Name: quantity, dtype: int64
 ```
 
 - Method #2: df.groupby(by=['order_id'])
+
+```Python
+order_revenue = df.groupby(by=["order_id"])["revenue"].sum()
+```
 [(Back to top)](#table-of-contents)
 
 
