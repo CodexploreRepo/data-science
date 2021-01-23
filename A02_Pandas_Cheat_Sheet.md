@@ -94,12 +94,15 @@ df.index
 
 # Grouping
 <img width="707" alt="Screenshot 2021-01-23 at 10 47 21 PM" src="https://user-images.githubusercontent.com/64508435/105590696-195aec00-5dcd-11eb-894d-3953d6ea8180.png">
+
 ## Basic Grouping
 - Grouping by "item_name" column & take the sum of "quantity" column
 - Method #1 : `df.groupby("item_name")`
+
 ```Python
 df.groupby("item_name")["quantity"].sum()
 ```
+
 ```Python
 item_name
 Chicken Bowl       761
