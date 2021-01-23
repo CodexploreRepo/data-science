@@ -3,7 +3,7 @@
 # Table of contents
 - [Table of contents](#table-of-contents)
 - [Getting and knowing](#getting-and-knowing)
-  - [Access rows or Columns of Data Frame](#access-rows-or-columns-of-data-frame)
+  - [Access Columns of Data Frame](#access-columns-of-data-frame)
 - [Grouping](#grouping)
   - [Basic Grouping](#basic-grouping)
 
@@ -54,21 +54,21 @@ df.item_price.dtype
 'V'       raw data (void
 ```
 
-## Access Rows or Columns of Data Frame
-### Columns
-#### Print the name of all the columns
+## Access Columns of Data Frame
+
+### Print the name of all the columns
 ```Python
 list(df.columns)
 #['order_id', 'quantity', 'item_name', 'choice_description','item_price', 'revenue']
 ```
-#### Access column
+### Access column
 ```Python
 # Counting how many values in the column
 df.col_name.count()
 # Take the mean of values in the column
 df["col_name"].mean()
 ```
-#### value_counts() : Return a Series containing counts of unique values
+### value_counts() : Return a Series containing counts of unique values
 ```
 index = pd.Index([3, 1, 2, 3, 4, np.nan])
 index.value_counts()
@@ -86,7 +86,7 @@ index.value_counts().count()
 #4
 ```
 
-#### Check index of DF
+### Check index of DF
 ```Python
 df.index
 #RangeIndex(start=0, stop=4622, step=1)
