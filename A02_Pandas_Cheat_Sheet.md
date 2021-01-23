@@ -68,8 +68,7 @@ df.col_name.count()
 # Take the mean of values in the column
 df["col_name"].mean()
 ```
-##### value_counts() : Return a Series containing counts of unique values
-Ex 1: Calculate unique values in a columns
+#### value_counts() : Return a Series containing counts of unique values
 ```
 index = pd.Index([3, 1, 2, 3, 4, np.nan])
 index.value_counts()
@@ -79,10 +78,12 @@ index.value_counts()
 4.0    1
 1.0    1
 dtype: int64
+```
+- Ex 1: Calculate unique values in a columns
+```
 #How many unique values 
 index.value_counts().count()
 #4
-
 ```
 
 #### Check index of DF
