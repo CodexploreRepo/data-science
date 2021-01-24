@@ -112,7 +112,7 @@ Chicken Burrito    591
 Name: quantity, dtype: int64
 ```
 
-- Method #2: df.groupby(by=['order_id'])
+- Method #2: `df.groupby(by=['order_id'])`
 
 ```Python
 order_revenue = df.groupby(by=["order_id"])["revenue"].sum()
