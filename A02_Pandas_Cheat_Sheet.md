@@ -65,7 +65,7 @@ df.item_price.dtype
 ```
 
 - Please note: dtype will return below special character
-```
+```Python
 'b'       boolean
 'i'       (signed) integer
 'u'       unsigned integer
@@ -103,19 +103,19 @@ chipo.loc[(chipo.quantity > 5), ['item_name', 'quantity', 'item_price']]
 - `.iloc[]` allowed inputs are:
   #### Selecting Rows
   - An integer, e.g. `dataset.iloc[0]` > return row 0 in `<class 'pandas.core.series.Series'>`
-  ```
+  ```Python
   Country      France
   Age              44
   Salary        72000
   Purchased        No
   ```
   - A list or array of integers, e.g.`dataset.iloc[[0]]` > return row 0 in DataFrame format
-  ```
+  ```Python
      Country   Age   Salary  Purchased
   0  France    44.0  72000.0        No
   ```
   - A slice object with ints, e.g. `dataset.iloc[:3]` > return row 0 up to row 3 in DataFrame format
-  ```
+  ```Python
        Country   Age   Salary Purchased
   0    France   44.0  72000.0        No
   1    Spain    27.0  48000.0       Yes
@@ -123,7 +123,7 @@ chipo.loc[(chipo.quantity > 5), ['item_name', 'quantity', 'item_price']]
   ```
   #### Selecting Rows & Columns
   - Select First 3 Rows & up to Last Columns (not included) `X = dataset.iloc[:3, :-1]`
-  ```
+  ```Python
        Country   Age   Salary
   0   France  44.0  72000.0
   1    Spain  27.0  48000.0
@@ -132,7 +132,7 @@ chipo.loc[(chipo.quantity > 5), ['item_name', 'quantity', 'item_price']]
 ### Numpy representation of DF
 - `DataFrame.values`: Return a Numpy representation of the DataFrame (i.e: Only the values in the DataFrame will be returned, the axes labels will be removed)
 - For ex: `X = dataset.iloc[:3, :-1].values`
-```
+```Python
 [['France' 44.0 72000.0]
  ['Spain' 27.0 48000.0]
  ['Germany' 30.0 54000.0]]
