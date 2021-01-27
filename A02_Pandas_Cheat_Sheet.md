@@ -4,6 +4,8 @@
 - [Table of contents](#table-of-contents)
 - [Loading Data](#loading-data)
 - [Getting and knowing](#getting-and-knowing)
+  - [loc vs iloc](#loc-vs-iloc)
+  - [Access Rows of Data Frame](#access-columns-of-data-frame)
   - [Access Columns of Data Frame](#access-columns-of-data-frame)
 - [Grouping](#grouping)
   - [Basic Grouping](#basic-grouping)
@@ -75,8 +77,40 @@ df.item_price.dtype
 'V'       raw data (void
 ```
 
-## Access Columns of Data Frame
+## loc vs iloc
+### loc
+- `loc`: is **label-based**, which means that we have to specify the "name of the rows and columns" that we need to filter out.
+#### Find all the rows based on 1 or more conditions in a column
+```Python
+# select all rows with a condition
+data.loc[data.age >= 15]
+# select all rows with multiple conditions
+data.loc[(data.age >= 12) & (data.gender == 'M')]
+```
+![image](https://user-images.githubusercontent.com/64508435/106067849-7abaec00-613a-11eb-8cbe-f9aa5e2c6202.png)
 
+#### Select only required columns with conditions
+```Python
+# Update the values of multiple columns on selected rows
+chipo.loc[(chipo.quantity == 7) & (chipo.item_name == 'Bottled Water'), ['item_name', 'item_price']] = ['Tra Xanh', 0]
+# Select only required columns with a condition
+chipo.loc[(chipo.quantity > 5), ['item_name', 'quantity', 'item_price']]
+```
+<img width="381" alt="Screenshot 2021-01-28 at 7 26 04 AM" src="https://user-images.githubusercontent.com/64508435/106067706-32033300-613a-11eb-98ce-114c4c0f9dd6.png">
+
+### iloc
+- `iloc`: is **index-based**, which means that we have to specify the "integer index-based" that we need to filter out.
+
+## Access Rows of Data Frame
+### Check index of DF
+```Python
+df.index
+#RangeIndex(start=0, stop=4622, step=1)
+```
+
+[(Back to top)](#table-of-contents)
+
+## Access Columns of Data Frame
 ### Print the name of all the columns
 ```Python
 list(df.columns)
@@ -92,8 +126,9 @@ df["col_name"].mean()
 ### value_counts() : Return a Series containing counts of unique values
 ```Python
 index = pd.Index([3, 1, 2, 3, 4, np.nan])
+#dropna=False will also consider NaN as a unique value 
 index.value_counts(dropna=False)
-#Return:
+#Return: 
 3.0    2
 2.0    1
 NaN    1
@@ -101,18 +136,15 @@ NaN    1
 1.0    1
 dtype: int64
 ```
-- Ex 1: Calculate unique values in a columns
+### Calculate total unique values in a columns
 ```Python
 #How many unique values 
-index.value_counts(dropna=False).count()
+index.value_counts().count()
+
+index.nunique()
 #5
 ```
 
-### Check index of DF
-```Python
-df.index
-#RangeIndex(start=0, stop=4622, step=1)
-```
 [(Back to top)](#table-of-contents)
 
 # Grouping
