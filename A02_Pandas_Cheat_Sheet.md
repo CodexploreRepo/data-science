@@ -2,10 +2,23 @@
 # Pandas Cheat Sheet
 # Table of contents
 - [Table of contents](#table-of-contents)
+- [Loading Data](#loading-data)
 - [Getting and knowing](#getting-and-knowing)
   - [Access Columns of Data Frame](#access-columns-of-data-frame)
 - [Grouping](#grouping)
   - [Basic Grouping](#basic-grouping)
+
+# Loading Data
+### Reading with Different Separator
+
+```Python
+users = pd.read_csv('u.user', sep='|')
+chipo = pd.read_csv(url, sep = "\t")
+```
+### Renaming Index
+```Python
+users = pd.read_csv('u.user', sep='|', index_col='user_id')
+```
 
 # Getting and knowing
 ### shape : Return (Row, Column)
@@ -34,6 +47,14 @@ Data columns (total 5 columns):
 dtypes: int64(2), object(3)
 memory usage: 180.7+ KB
 ````
+
+### describe() : Generate descriptive statistics.
+```Python
+chipo.describe() #Notice: by default, only the numeric columns are returned. 
+chipo.describe(include = "all") #Notice: By default, only the numeric columns are returned.
+```
+
+
 ### dtype : Return data type of specific column
 - `df.col_name.dtype` return the data type of that column
 ```Python
