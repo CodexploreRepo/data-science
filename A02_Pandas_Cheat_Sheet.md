@@ -100,6 +100,43 @@ chipo.loc[(chipo.quantity > 5), ['item_name', 'quantity', 'item_price']]
 
 ### iloc
 - `iloc`: is **index-based**, which means that we have to specify the "integer index-based" that we need to filter out.
+- `.iloc[]` allowed inputs are:
+  #### Selecting Rows
+  - An integer, e.g. `dataset.iloc[0]` > return row 0 in `<class 'pandas.core.series.Series'>`
+  ```
+  Country      France
+  Age              44
+  Salary        72000
+  Purchased        No
+  ```
+  - A list or array of integers, e.g.`dataset.iloc[[0]]` > return row 0 in DataFrame format
+  ```
+     Country   Age   Salary  Purchased
+  0  France    44.0  72000.0        No
+  ```
+  - A slice object with ints, e.g. `dataset.iloc[:3]` > return row 0 up to row 3 in DataFrame format
+  ```
+       Country   Age   Salary Purchased
+  0    France   44.0  72000.0        No
+  1    Spain    27.0  48000.0       Yes
+  2    Germany  30.0  54000.0        No
+  ```
+  #### Selecting Rows & Columns
+  - Select First 3 Rows & up to Last Columns (not included) `X = dataset.iloc[:3, :-1]`
+  ```
+       Country   Age   Salary
+  0   France  44.0  72000.0
+  1    Spain  27.0  48000.0
+  2  Germany  30.0  54000.0
+  ```
+### Numpy representation of DF
+- `DataFrame.values`: Return a Numpy representation of the DataFrame (i.e: Only the values in the DataFrame will be returned, the axes labels will be removed)
+- For ex: `X = dataset.iloc[:3, :-1].values`
+```
+[['France' 44.0 72000.0]
+ ['Spain' 27.0 48000.0]
+ ['Germany' 30.0 54000.0]]
+```
 
 ## Access Rows of Data Frame
 ### Check index of DF
