@@ -185,8 +185,19 @@ Before choosing Linear Regression, need to consider below assumptions
 ## Building a Model
 - 5 methods of Building Models
 ### Method 1: All-in
-
+- Throw in all variables in the dataset
+- Usage:
+  - Prior knowledge about this problem; OR
+  - You have to (Company Framework required)
+  - Prepare for Backward Elimination 
 ### Method 2 [Stepwise Regression]: Backward Elimination 
+- Step 1: Select a significance level (SL) to stay in the model (e.g: SL = 0.05)
+- Step 2: Fit the full model with all possible predictors
+- Step 3: Consider Predictor with Highest P-value
+  - If P > SL, go to Step 4, otherwise go to [FIN : Your Model Is Ready]
+- Step 4: Remove the predictor
+- Step 5: Re-Fit model without this variable
+
 
 ### Method 3 [Stepwise Regression]: Forward Selection
 
