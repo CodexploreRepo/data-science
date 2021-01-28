@@ -16,7 +16,7 @@
   - [Assumptions of Linear Regression](#assumptions-of-linear-regression)
   - [Dummy Variables](#dummy-variables)
   - [Understanding P-value](#understanding-p-value)
-  - [Building a odel](#building-a-model)
+  - [Building a Model](#building-a-model)
   
   
 # Simple Linear Regression
@@ -181,7 +181,18 @@ Before choosing Linear Regression, need to consider below assumptions
 
 ![Screenshot 2021-01-28 at 9 45 01 PM](https://user-images.githubusercontent.com/64508435/106148653-4421b780-61b4-11eb-91b4-4db1247a1a2a.png)
 
+[(Back to top)](#table-of-contents)
 ## Building a Model
+- 5 methods of Building Models
+### Method 1: All-in
 
+### Method 2 [Stepwise Regression]: Backward Elimination 
+
+### Method 3 [Stepwise Regression]: Forward Selection
+
+### Method 4 [Stepwise Regression]: Bidirectional Elemination
+
+
+### Method 5: Score Comparison
 
 [(Back to top)](#table-of-contents)
