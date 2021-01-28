@@ -164,5 +164,11 @@ Before choosing Linear Regression, need to consider below assumptions
 4. Independence of errors
 5. Lack of multicollinearity
 
+### Dummy Variables
+- Since `State` is categorical variable => we need to convert it into `dummy variable`
+- No need to include all dummy variable to our Regression Model => **Only omit one dummy variable**
+  - Why ? `dummy variable trap` 
+![Screenshot 2021-01-28 at 9 22 08 PM](https://user-images.githubusercontent.com/64508435/106144509-3e75a300-61af-11eb-8240-53bed739b2a1.png)
+
 
 [(Back to top)](#table-of-contents)
