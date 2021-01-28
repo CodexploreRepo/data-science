@@ -16,6 +16,7 @@
   - [Assumptions of Linear Regression](#assumptions-of-linear-regression)
   - [Dummy Variables](#dummy-variables)
   - [Understanding P-value](#understanding-p-value)
+  - [Building a odel](#building-a-model)
   
   
 # Simple Linear Regression
@@ -172,8 +173,15 @@ Before choosing Linear Regression, need to consider below assumptions
   - Why ? `dummy variable trap` 
 ![Screenshot 2021-01-28 at 9 22 08 PM](https://user-images.githubusercontent.com/64508435/106144509-3e75a300-61af-11eb-8240-53bed739b2a1.png)
 
-## Understand P value
+## Understanding P value
+- Ho : `Null Hypothesis (Universe)`
+- H1 : `Alternative Hypothesis (Universe)`
+- For example:
+  - Assume `Null Hypothesis` is true (or we are living in Null Universe)
 
+![Screenshot 2021-01-28 at 9 45 01 PM](https://user-images.githubusercontent.com/64508435/106148653-4421b780-61b4-11eb-91b4-4db1247a1a2a.png)
+
+## Building a Model
 
 
 [(Back to top)](#table-of-contents)
