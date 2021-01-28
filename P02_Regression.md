@@ -12,7 +12,10 @@
     - [R Square or Adjusted R Square](#r-square-or-adjusted-r-square)
     - [Mean Square Error (MSE)/Root Mean Square Error (RMSE)](#mean-square-error-and-root-mean-square-error)
     - [Mean Absolute Error (MAE)](#mean-absolute-error)
-
+- [Multiple Linear Regression](#multiple-linear-regression) 
+  - [Assumptions of Linear Regression](#assumptions-of-linear-regression)
+  
+  
 # Simple Linear Regression
 ## Outline Building a Model
 - Importing libraries and datasets
@@ -149,5 +152,17 @@ from sklearn.metrics import mean_absolute_error
 print(mean_absolute_error(Y_test, Y_predicted))
 #MAE: 26745.1109986
 ```
+
+[(Back to top)](#table-of-contents)
+
+# Multiple Linear Regression
+### Assumptions of Linear Regression:
+Before choosing Linear Regression, need to consider below assumptions
+1. Linearity
+2. Homoscedasticity
+3. Multivariate normality
+4. Independence of errors
+5. Lack of multicollinearity
+
 
 [(Back to top)](#table-of-contents)
