@@ -194,16 +194,20 @@ Before choosing Linear Regression, need to consider below assumptions
 - Step 1: Select a significance level (SL) to stay in the model (e.g: SL = 0.05)
 - Step 2: Fit the full model with all possible predictors
 - Step 3: Consider Predictor with Highest P-value
-  - If P > SL, go to Step 4, otherwise go to [**FIN** : Your Model Is Ready]
+  - If P > SL, go to Step 4, otherwise go to  [**FIN** : Your Model Is Ready]
 - Step 4: Remove the predictor
 - Step 5: Re-Fit model without this variable
 
 ### Method 3 [Stepwise Regression]: Forward Selection
 - Step 1: Select a significance level (SL) to enter in the model (e.g: SL = 0.05)
-- Step 2: Fit all simple regression models y ~ xn. Select the one with Lowest P-value
-- Step 3: Ke
+- Step 2: Fit all simple regression models (y ~ xn). Select the one with Lowest P-value for the independent variable.
+- Step 3: Keep this variable and fit all possible regression models with one extra predictor added to the one(s) you already have. 
+- Step 4: Consider the predicotr with Lowest P-value. If P < SL (i.e: model is good), go STEP 3 (to add 3rd variable into the model and so on with all variables we have left), otherwise go to  [**FIN** : Keep the previous model]
 ### Method 4 [Stepwise Regression]: Bidirectional Elemination
-
+- Step 1: Select a significant level to enter and to stay in the model: `e.g: SLENTER = 0.05, SLSTAY = 0.05`
+- Step 2: Perform the next step of Forward Selection (new variables must have: P < SLENTER to enter) 
+- Step 3: Perform ALL steps of Backward Elimination (old variables must have P < SLSTAY to stay) => Step 2.
+- Step 4: No variables can enter and no old variables can exit => [**FIN** : Your Model Is Ready]
 
 ### Method 5: Score Comparison
 
