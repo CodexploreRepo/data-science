@@ -190,7 +190,7 @@ Before choosing Linear Regression, need to consider below assumptions
   - Prior knowledge about this problem; OR
   - You have to (Company Framework required)
   - Prepare for Backward Elimination 
-### Method 2 [Stepwise Regression]: Backward Elimination 
+### Method 2 [Stepwise Regression]: Backward Elimination (Fastest)
 - Step 1: Select a significance level (SL) to stay in the model (e.g: SL = 0.05)
 - Step 2: Fit the full model with all possible predictors
 - Step 3: Consider Predictor with Highest P-value
@@ -210,5 +210,9 @@ Before choosing Linear Regression, need to consider below assumptions
 - Step 4: No variables can enter and no old variables can exit => [**FIN** : Your Model Is Ready]
 
 ### Method 5: Score Comparison
+- Step 1: Select a criterion of goodness of ift (e.g Akaike criterion)
+- Step 2: Construct all possible regression Models: `2^(N) - 1` total combinations, where N: total number of variables
+- Step 3: Select the one with best criterion => [**FIN** : Your Model Is Ready]
+
 
 [(Back to top)](#table-of-contents)
