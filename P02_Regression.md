@@ -214,5 +214,43 @@ Before choosing Linear Regression, need to consider below assumptions
 - Step 2: Construct all possible regression Models: `2^(N) - 1` total combinations, where N: total number of variables
 - Step 3: Select the one with best criterion => [**FIN** : Your Model Is Ready]
 
+### Code Implementation
+
+##### Step 1: Splitting the dataset into the Training set and Test set
+```Python
+#no need Feature Scaling (FS) for Multi-Regression Model: y = b0 + b1 * x1 + b2 * x2 + b3 * x3, 
+# since we have the coefficients (b0, b1, b2, b3) to compensate, so there is no need FS.
+from sklearn.model_selection import train_test_split
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, random_state = 0)
+```
+
+##### Step 2: Training the Multiple Linear Regression model on the Training set
+```Python
+#LinearRegression will take care "Dummy variable trap" & feature selection
+from sklearn.linear_model import LinearRegression
+regressor = LinearRegression()
+regressor.fit(X_train, y_train)
+```
+
+##### Step 3: Predicting the Test set results
+```Python
+y_pred = regressor.predict(X_test)
+```
+
+
+##### Step 4: Displaying Y_Pred vs Y_test
+- Since this is multiple linear regression, so can not visualize by drawing the graph 
+
+```Python
+#To display the y_pred vs y_test vectors side by side
+np.set_printoptions(precision=2) #To round up value to 2 decimal places
+
+#np.concatenate((tuple of rows/columns you want to concatenate), axis = 0 for rows and 1 for columns)
+#y_pred.reshape(len(y_pred),1) : to convert y_pred to column vector by using .reshape()
+
+print(np.concatenate((y_pred.reshape(len(y_pred),1), y_test.reshape(len(y_test),1)), 1))
+```
+
+
 
 [(Back to top)](#table-of-contents)
