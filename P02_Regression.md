@@ -215,7 +215,7 @@ Before choosing Linear Regression, need to consider below assumptions
 - Step 3: Select the one with best criterion => [**FIN** : Your Model Is Ready]
 
 ### Code Implementation
-
+- Note: Backward Elimination is irrelevant in Python, because the Scikit-Learn library automatically takes care of selecting the statistically significant features when training the model to make accurate predictions.
 ##### Step 1: Splitting the dataset into the Training set and Test set
 ```Python
 #no need Feature Scaling (FS) for Multi-Regression Model: y = b0 + b1 * x1 + b2 * x2 + b3 * x3, 
