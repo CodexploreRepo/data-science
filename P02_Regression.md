@@ -250,7 +250,16 @@ np.set_printoptions(precision=2) #To round up value to 2 decimal places
 
 print(np.concatenate((y_pred.reshape(len(y_pred),1), y_test.reshape(len(y_test),1)), 1))
 ```
+##### Step 5: Getting the final linear regression equation with the values of the coefficients
+```Python
+print(regressor.coef_)
+print(regressor.intercept_)
 
+[ 8.66e+01 -8.73e+02  7.86e+02  7.73e-01  3.29e-02  3.66e-02]
+42467.52924853204
+```
 
+Equation: 
+Profit = 86.6 x DummyState1 - 873 x DummyState2 + 786 x DummyState3 - 0.773 x R&D Spend + 0.0329 x Administration + 0.0366 x Marketing Spend + 42467.53
 
 [(Back to top)](#table-of-contents)
