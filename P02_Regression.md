@@ -221,6 +221,8 @@ Before choosing Linear Regression, need to consider below assumptions
 #no need Feature Scaling (FS) for Multi-Regression Model: y = b0 + b1 * x1 + b2 * x2 + b3 * x3, 
 # since we have the coefficients (b0, b1, b2, b3) to compensate, so there is no need FS.
 from sklearn.model_selection import train_test_split
+
+# NOT have to remove manually a dummy variable column because Scikit-Learn takes care of it.
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, random_state = 0)
 ```
 
