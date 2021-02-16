@@ -192,10 +192,41 @@ Before choosing Linear Regression, need to consider below assumptions
   - Prepare for Backward Elimination 
 ### Method 2 [Stepwise Regression]: Backward Elimination (Fastest)
 - Step 1: Select a significance level (SL) to stay in the model (e.g: SL = 0.05)
+```Python
+# Building the optimal model using Backward Elimination
+import statsmodels.api as sm
+
+# Avoiding the Dummy Variable Trap by excluding the first column of Dummy Variable
+# Note: in general you don't have to remove manually a dummy variable column because Scikit-Learn takes care of it.
+X = X[:, 1:]
+
+#Append full column of "1"s to First Column of X using np.append
+#Since y = b0*(1) + b1 * x1 + b2 * x2 + .. + bn * xn, b0 is constant and can be re-written as b0 * (1)
+#np.append(arr = the array will add to, values = column to be added, axis = row/column)
+# np.ones((row, column)).astype(int) => .astype(int) to convert array of 1 into integer type to avoid data type error
+X = np.append(arr = np.ones((50,1)).astype(int), values = X, axis = 1)
+
+#Initialize X_opt with Original X by including all the column from #0 to #5
+X_opt = np.array(X[:, [0, 1, 2, 3, 4, 5]], dtype=float) 
+#If you are using the google colab to write your code, 
+# the datatype of all the features is not set to float hence this step is important: X_opt = np.array(X[:, [0, 1, 2, 3, 4, 5]], dtype=float)
+```
 - Step 2: Fit the full model with all possible predictors
+```Python
+#OrdinaryLeastSquares
+regressor_OLS = sm.OLS(endog=y, exog=X_opt).fit()
+regressor_OLS.summary()
+```
 - Step 3: Consider Predictor with Highest P-value
   - If P > SL, go to Step 4, otherwise go to  [**FIN** : Your Model Is Ready]
 - Step 4: Remove the predictor
+```Python
+#Remove column = 2 from X_opt since Column 2 has Highest P value and > SL.
+X_opt = np.array(X[:, [0, 1, 3, 4, 5]], dtype=float) 
+#OrdinaryLeastSquares
+regressor_OLS = sm.OLS(endog=y, exog=X_opt).fit()
+regressor_OLS.summary()
+```
 - Step 5: Re-Fit model without this variable
 
 ### Method 3 [Stepwise Regression]: Forward Selection
