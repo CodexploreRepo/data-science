@@ -221,7 +221,7 @@ regressor_OLS.summary()
   - If P > SL, go to Step 4, otherwise go to  [**FIN** : Your Model Is Ready]
 - Step 4: Remove the predictor
 ```Python
-#Remove column = 2 from X_opt since Column 2 has Highest P value and > SL.
+#Remove column = 2 from X_opt since Column 2 has Highest P value (0.99) and > SL (0.05).
 X_opt = np.array(X[:, [0, 1, 3, 4, 5]], dtype=float) 
 #OrdinaryLeastSquares
 regressor_OLS = sm.OLS(endog=y, exog=X_opt).fit()
