@@ -2,6 +2,7 @@
 # Table of contents
 
 - [Table of contents](#table-of-contents)
+- [Introduction to Regressions](#introduction-to-regressions)
 - [Simple Linear Regression](#simple-linear-regression)
   - [Outline: Building a Model](#outline-building-a-model)
   - [Creating a Model](#creating-a-model)
@@ -17,8 +18,14 @@
   - [Dummy Variables](#dummy-variables)
   - [Understanding P-value](#understanding-p-value)
   - [Building a Model](#building-a-model)
-  
-  
+- [Polynomial Linear Regression](#polynomial-linear-regression) 
+
+
+# Introduction to Regressions
+- Simple Linear Regression    : `y = b0 + b1*x1`
+- Multiple Linear Regression  : `y = b0 + b1*x1 + b2*x2 + ... + bn*xn`
+- Polynomial Linear Regression: `y = b0 + b1*x1 + b2*x1^(2) + ... +  bn*x1^(n)`
+
 # Simple Linear Regression
 ## Outline Building a Model
 - Importing libraries and datasets
@@ -294,5 +301,13 @@ print(regressor.intercept_)
 
 Equation: 
 Profit = 86.6 x DummyState1 - 873 x DummyState2 + 786 x DummyState3 - 0.773 x R&D Spend + 0.0329 x Administration + 0.0366 x Marketing Spend + 42467.53
+
+[(Back to top)](#table-of-contents)
+
+
+# Polynomial Linear Regression
+- Polynomial Linear Regression: `y = b0 + b1*x1 + b2*x1^(2) + ... +  bn*x1^(n)`
+
+
 
 [(Back to top)](#table-of-contents)
