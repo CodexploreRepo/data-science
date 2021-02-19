@@ -7,6 +7,7 @@
 ## Appendix
 - [Job Description for Data Science](./A01_Job_Description.md)
 - [Pandas Cheat Sheet](./A02_Pandas_Cheat_Sheet.md)
+- [Numpy Cheat Sheet](./A03_Numpy_Cheat_Sheet.md)
 ## Resources:
 ### Podcast:
 https://www.superdatascience.com/podcast/sds-041-inspiring-journey-totally-different-background-data-science
