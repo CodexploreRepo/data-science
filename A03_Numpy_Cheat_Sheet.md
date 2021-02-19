@@ -14,6 +14,7 @@
 import sys
 x = 5
 sys.getsizeof(x) #return 28 - means variable x = 5 costs 28 bytes of memory
+
 #Numpy : allow you to specify more precisely number of bits (memory) you need for storing the data
 np.int8 #8-bit
 ```
