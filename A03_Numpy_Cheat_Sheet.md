@@ -21,3 +21,10 @@ np.int8 #8-bit
 - Numpy is **Array Processing**
   - Built-in DS in Python `List` NOT optimized for High-Level Processing as List in Python is Object and they will not store elements in separate position in Memory
   - In constrast, Numpy will store `Array Elements` in **Continuous Positions** in memory
+
+### Numpy is  more efficient for storing and manipulating data
+
+<img src="https://user-images.githubusercontent.com/64508435/108620727-1a814680-7469-11eb-8871-f8f2bd203a7d.png" height="250"/>
+
+- `Numpy array` : essentially contains a single pointer to one contiguous block of data
+- `Python list` : contains a pointer to a block of pointers, each of which in turn points to a full Python object
