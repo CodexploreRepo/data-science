@@ -307,6 +307,7 @@ Profit = 86.6 x DummyState1 - 873 x DummyState2 + 786 x DummyState3 - 0.773 x R&
 
 # Polynomial Linear Regression
 - Polynomial Linear Regression: `y = b0 + b1*x1 + b2*x1^(2) + ... +  bn*x1^(n)`
+- Used for dataset with non-linear relation, but polynomial linear relation like salary scale.
 
 
 
