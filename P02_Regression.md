@@ -309,6 +309,24 @@ Profit = 86.6 x DummyState1 - 873 x DummyState2 + 786 x DummyState3 - 0.773 x R&
 - Polynomial Linear Regression: `y = b0 + b1*x1 + b2*x1^(2) + ... +  bn*x1^(n)`
 - Used for dataset with non-linear relation, but polynomial linear relation like salary scale.
 
+- **Step 1**: Convert X to X, X^2, X^3,... X^n
+```Python
+from sklearn.preprocessing import PolynomialFeatures
+#y = b0 + b1*x1 + b2*x1^2 + b3*x1^3 + b4*x1^4
+poly_reg = PolynomialFeatures(degree = 4) # n = 4
+X_poly = poly_reg.fit_transform(X)
+```
+
+- **Step 2**: Train the model
+```Python
+lin_reg_2 = LinearRegression()
+lin_reg_2.fit(X_poly, y)
+```
+- **Step 3**: Predict
+```Python
+lin_reg_2.predict(poly_reg.fit_transform([[6.5]])) #as predict method requires 2D array as an input
+```
+
 
 
 [(Back to top)](#table-of-contents)
