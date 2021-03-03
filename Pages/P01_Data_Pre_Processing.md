@@ -17,11 +17,6 @@
 - [Resources](#resources)
 
 
-# Introduction 
-
-
-[(Back to top)](#table-of-contents)
-
 # Data Preprocessing 
 ## Import Dataset
 ```python
