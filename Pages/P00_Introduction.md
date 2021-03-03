@@ -2,15 +2,15 @@
 # Table of contents
 - [Table of contents](#table-of-contents)
 - [Terms](#terms)
-  - [What is AI ?](#what-is-ai)
-  - [What is Machine Learning ?](#what-is-machine-learning)
-  - [What is Deep Learning ?](#what-is-deep-learning)
-  - [What is Data Science ?](#what-is-data-science)
+  - [AI](#ai)
+  - [Machine Learning](#machine-learning)
+  - [Deep Learning](#deep-learning)
+  - [Data Science](#data-science)
 
 # Terms
-## What is AI
-## What is Machine Learning
-- A subset of AI: 
+## AI
+## Machine Learning
+- [A subset of AI](https://teachablemachine.withgoogle.com/): given Machine some inputs, and tell the Machine to learn that input, so that it can give us output when we give it the new input
 - The things hard to describe for computers to perform like 
   - How to ask Computers to classify Cat/Dog images, or Product Reviews
 
