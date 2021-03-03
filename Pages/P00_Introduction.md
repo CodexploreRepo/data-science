@@ -10,9 +10,11 @@
 
 # Why need to learn Machine Learning ?
 <img src="https://user-images.githubusercontent.com/64508435/109885685-e8b67e00-7cb9-11eb-9d62-40fe7f1ff66a.png" height="350px"/>
-- Spread Sheets (Excel, CSV): store data that business needs → Human can analyse data to make business decision
-- Relational DB (MySQL): a better way to organize things → Human can analyse data to make business decision
-- Big Data (NoSQL): FB, Amazon, Twitter accumulating more and more data like "User actions, user purchasing history", where you can store un-structure data → need Machine Learning instead of Human to make business decision
+
+- **Spread Sheets (Excel, CSV)**: store data that business needs → Human can analyse data to make business decision
+- **Relational DB (MySQL)**: a better way to organize things → Human can analyse data to make business decision
+- **Big Data (NoSQL)**: FB, Amazon, Twitter accumulating more and more data like "User actions, user purchasing history", where you can store un-structure data → need Machine Learning instead of Human to make business decision
+
 [(Back to top)](#table-of-contents)
 
 # Terms
