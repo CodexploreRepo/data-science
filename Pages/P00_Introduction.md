@@ -29,7 +29,7 @@
 
 ### Difference between ML and Normal Algorithms
 - Normal Algorithm: a set of instructions on how to accomplish a task: start with `given input + set of instructions` → output
-- ML Algorithm    : start with `given input + give output` → set of instructions between I/P and O/P
+- ML Algorithm    : start with `given input + given output` → set of instructions between I/P and O/P
 <img src="https://user-images.githubusercontent.com/64508435/110040442-cc7c1500-7d7d-11eb-87e6-cc4583b7aec4.png" height="400px" />
 
 ### Types of ML
