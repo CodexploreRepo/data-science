@@ -20,6 +20,8 @@
 # Terms
 ## AI
 ## Machine Learning
+![Screenshot 2021-03-04 at 11 00 11 PM](https://user-images.githubusercontent.com/64508435/109983163-8a32e380-7d3d-11eb-85fd-a2635e14826c.png)
+
 - [A subset of AI](https://teachablemachine.withgoogle.com/): given Machine some inputs, and tell the Machine to learn that input, so that it can give us output when we give it the new input
 - The things hard to describe for computers to perform like 
   - How to ask Computers to classify Cat/Dog images, or Product Reviews
