@@ -1,6 +1,6 @@
 # Data Science Handbook
 # Table of contents
-- [0. Introduction](./Pages/introduction.md)
+- [0. Introduction](./Pages/P00_Introduction.md)
 - [1. Data Preprocessing](./Pages/P01_Data_Pre_Processing.md)
 - [2. Regression](./Pages/P02_Regression.md)
 
