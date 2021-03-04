@@ -10,7 +10,8 @@
 - [Numpy Cheat Sheet](./Pages/A03_Numpy_Cheat_Sheet.md)
 ## Resources:
 ### Podcast:
-https://www.superdatascience.com/podcast/sds-041-inspiring-journey-totally-different-background-data-science
+- [1. Super Data Science](https://www.superdatascience.com/podcast/sds-041-inspiring-journey-totally-different-background-data-science)
+- [2. Visual ML ](https://vas3k.com/blog/machine_learning/)
 
 
 
