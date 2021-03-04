@@ -67,12 +67,15 @@
 - What defines success for us ? knowing what metrics you should be paying attention to gives you an idea of how to evaluate your machine learning project.
 ### Step 4: Features
 - What features does your data have and which can you use to build your model ? turning features → patterns
-- Three main types of features: categorical, continuous (or numerical) and derived.
+- **Three main types of features**: 
   - `Categorical` features — One or the other(s) 
     - For example, in our heart disease problem, the sex of the patient. Or for an online store, whether or not someone has made a purchase or not.
   - `Continuous (or numerical)` features: A numerical value such as average heart rate or the number of times logged in.
   - `Derived` features — Features you create from the data. Often referred to as feature engineering. 
     - `Feature engineering` is how a subject matter expert takes their knowledge and encodes it into the data. You might combine the number of times logged in with timestamps to make a feature called time since last login. Or turn dates from numbers into “is a weekday (yes)” and “is a weekday (no)”.
-
+### Step 5: Models
+- Figure out right models for your problems
+### Step 6: Experimentation
+- How to improve or what can do better ?
 
 [(Back to top)](#table-of-contents)
