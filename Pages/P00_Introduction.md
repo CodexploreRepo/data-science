@@ -28,8 +28,8 @@
   - How to ask Computers to classify Cat/Dog images, or Product Reviews
 
 ### Difference between ML and Normal Algorithms
-- Normal Algorithm: a set of instructions on how to accomplish a task: start with `given input + set of instructions` > output
-- ML Algorithm    : start with `given input + give output` > output = set of instructions between I/P and O/P
+- Normal Algorithm: a set of instructions on how to accomplish a task: start with `given input + set of instructions` → output
+- ML Algorithm    : start with `given input + give output` → set of instructions between I/P and O/P
 <img src="https://user-images.githubusercontent.com/64508435/110040442-cc7c1500-7d7d-11eb-87e6-cc4583b7aec4.png" height="400px" />
 
 ### Types of ML
@@ -44,6 +44,10 @@
 
 ## Deep Learning
 ## Data Science
+- `Data Analysis`: analyse data to gain understanding of your data
+- `Data Science` : running experiments on set of data to figure actionable insights within it
+  - Example: to build ML Models
+
 
 
 [(Back to top)](#table-of-contents)
