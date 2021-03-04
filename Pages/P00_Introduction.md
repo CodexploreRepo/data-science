@@ -7,6 +7,7 @@
   - [Machine Learning](#machine-learning)
   - [Deep Learning](#deep-learning)
   - [Data Science](#data-science)
+- [Machine Learning Framework](#machine-learning-framework)
 
 # Why need to learn Machine Learning ?
 <img src="https://user-images.githubusercontent.com/64508435/109885685-e8b67e00-7cb9-11eb-9d62-40fe7f1ff66a.png" height="350px"/>
@@ -32,7 +33,7 @@
 - ML Algorithm    : start with `given input + given output` → set of instructions between I/P and O/P
 <img src="https://user-images.githubusercontent.com/64508435/110040442-cc7c1500-7d7d-11eb-87e6-cc4583b7aec4.png" height="400px" />
 
-### Types of ML
+### Types of ML Problems
 
 <img src="https://user-images.githubusercontent.com/64508435/109983163-8a32e380-7d3d-11eb-85fd-a2635e14826c.png" height="400px"/>
 
@@ -48,6 +49,30 @@
 - `Data Science` : running experiments on set of data to figure actionable insights within it
   - Example: to build ML Models
 
+[(Back to top)](#table-of-contents)
+
+# Machine Learning Framework
+![Screenshot 2021-03-05 at 7 00 17 AM](https://user-images.githubusercontent.com/64508435/110042238-7361b080-7d80-11eb-825d-f8fc4d4c2cf2.png)
+
+- Readings: [ (1) ](https://www.mrdbourke.com/a-6-step-field-guide-for-building-machine-learning-projects/), [ (2) ](https://whimsical.com/6-step-field-guide-to-machine-learning-projects-flowcharts-9g65jgoRYTxMXxDosndYTB)
+### Step 1: Problem Definition - Rephrase business problem as a machine learning problem
+- What problem are we trying to solve ?
+  - Supervised
+  - Un-supervised
+  - Classification
+  - Regression
+### Step 2: Data
+- What kind of Data we have ? 
+### Step 3: Evaluation
+- What defines success for us ? knowing what metrics you should be paying attention to gives you an idea of how to evaluate your machine learning project.
+### Step 4: Features
+- What features does your data have and which can you use to build your model ? turning features → patterns
+- Three main types of features: categorical, continuous (or numerical) and derived.
+  - `Categorical` features — One or the other(s) 
+    - For example, in our heart disease problem, the sex of the patient. Or for an online store, whether or not someone has made a purchase or not.
+  - `Continuous (or numerical)` features: A numerical value such as average heart rate or the number of times logged in.
+  - `Derived` features — Features you create from the data. Often referred to as feature engineering. 
+    - `Feature engineering` is how a subject matter expert takes their knowledge and encodes it into the data. You might combine the number of times logged in with timestamps to make a feature called time since last login. Or turn dates from numbers into “is a weekday (yes)” and “is a weekday (no)”.
 
 
 [(Back to top)](#table-of-contents)
