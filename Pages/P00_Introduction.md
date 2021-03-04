@@ -20,12 +20,16 @@
 # Terms
 ## AI
 ## Machine Learning
-
-<img src="https://user-images.githubusercontent.com/64508435/109983163-8a32e380-7d3d-11eb-85fd-a2635e14826c.png" height="40px"/>
+<img src="https://user-images.githubusercontent.com/64508435/109983163-8a32e380-7d3d-11eb-85fd-a2635e14826c.png" height="400px"/>
 
 - [A subset of AI](https://teachablemachine.withgoogle.com/): given Machine some inputs, and tell the Machine to learn that input, so that it can give us output when we give it the new input
 - The things hard to describe for computers to perform like 
   - How to ask Computers to classify Cat/Dog images, or Product Reviews
+- **Supervised**: Data with Label
+- **Unsupervised**: Data without Label like CSV without Column Names
+  - *Clustering*: Machine decicdes clusters/groups
+  - *Association Rule Learning*: Associate different things to predict what customers might buy in the future
+- **Reinforcement**: teach Machine to try and error (with reward and penalty)
 
 ## Deep Learning
 ## Data Science
