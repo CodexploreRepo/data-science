@@ -8,6 +8,8 @@
   - [Deep Learning](#deep-learning)
   - [Data Science](#data-science)
 - [Machine Learning Framework](#machine-learning-framework)
+  - [Main Types of ML Problems](#main-types-of-ml-problems) 
+  - [Evaluation](#evaluation) 
 
 # Why need to learn Machine Learning ?
 <img src="https://user-images.githubusercontent.com/64508435/109885685-e8b67e00-7cb9-11eb-9d62-40fe7f1ff66a.png" height="350px"/>
@@ -77,5 +79,24 @@
 - Figure out right models for your problems
 ### Step 6: Experimentation
 - How to improve or what can do better ?
+
+## Main Types of ML Problems
+![Screenshot 2021-03-09 at 8 23 37 AM](https://user-images.githubusercontent.com/64508435/110399393-c1dcbb00-80b0-11eb-8c0d-4b21f02fc3e4.png)
+### Supervised Learning:
+- (Input & Output) Data + Label → Classifications, Regressions
+### Un-Supervised Learning:
+- (Only Input) Data → Clustering
+### Transfer Learning:
+- (My problem similar to others) Leverage from Other ML Models
+### Reinforcement Learning:
+- Purnishing & Rewarding the ML Learning model by updating the scores of ML 
+
+## Evaluation
+
+| Classification     |  Regression   | Recommendation  |
+| :-----------------:|:-------------:| :------------- :|
+| Accuracy           | Mean Absolute Error (MAE)          |  Precision at K |
+| Precision          | Mean Squared Error (MSE)           |    |
+| Recall             | Root Mean Squared Error (RMSE)     |    |
 
 [(Back to top)](#table-of-contents)
