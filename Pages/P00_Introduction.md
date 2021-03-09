@@ -93,8 +93,8 @@
 
 ## Evaluation
 
-| Classification     |  Regression   | Recommendation  |
-| :-----------------:|:-------------:| :------------- :|
+| Classification     |  Regression                        | Recommendation  |
+| -------------------| ---------------------------------- | ----------------|
 | Accuracy           | Mean Absolute Error (MAE)          |  Precision at K |
 | Precision          | Mean Squared Error (MSE)           |    |
 | Recall             | Root Mean Squared Error (RMSE)     |    |
