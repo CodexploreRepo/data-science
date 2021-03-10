@@ -12,7 +12,9 @@
   - [Evaluation](#evaluation)
   - [Features](#features) 
   - [Modelling](#modelling)
-    - [Splitting Data](#splitting-data) 
+    - [Splitting Data](#splitting-data)
+    - [Modelling](#modelling)
+    - [Tuning](#tuning)
 
 # Why need to learn Machine Learning ?
 <img src="https://user-images.githubusercontent.com/64508435/109885685-e8b67e00-7cb9-11eb-9d62-40fe7f1ff66a.png" height="350px"/>
@@ -115,6 +117,16 @@
 ## Modelling
 ### Splitting Data
 
-<img src="https://user-images.githubusercontent.com/64508435/110710767-6984f500-8239-11eb-87ea-783f86809cfa.png" height="200px" />
+<img src="https://user-images.githubusercontent.com/64508435/110711094-eadc8780-8239-11eb-91e4-04657d7ed079.png" height="200px" />
 
 - 3 sets: Trainning, Validation & Test Sets
+
+### Modelling
+- Chosen models work for your problem  → train the model 
+- Goal: Minimise time between experiments 
+  - Start small  and add up complexity (use small parts of your training sets to start with)
+  - Choosing the less complicated models to start first
+<img src="https://user-images.githubusercontent.com/64508435/110711505-a30a3000-823a-11eb-9dfd-eb5283da7720.png" height="200px" />
+
+### Tuning 
+- Happens on Validation or Training Sets
