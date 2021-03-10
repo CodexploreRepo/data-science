@@ -9,7 +9,8 @@
   - [Data Science](#data-science)
 - [Machine Learning Framework](#machine-learning-framework)
   - [Main Types of ML Problems](#main-types-of-ml-problems) 
-  - [Evaluation](#evaluation) 
+  - [Evaluation](#evaluation)
+  - [Features](#features) 
 
 # Why need to learn Machine Learning ?
 <img src="https://user-images.githubusercontent.com/64508435/109885685-e8b67e00-7cb9-11eb-9d62-40fe7f1ff66a.png" height="350px"/>
@@ -98,5 +99,13 @@
 | Accuracy           | Mean Absolute Error (MAE)          |  Precision at K |
 | Precision          | Mean Squared Error (MSE)           |    |
 | Recall             | Root Mean Squared Error (RMSE)     |    |
+
+[(Back to top)](#table-of-contents)
+
+## Features 
+- Numerical Features
+- Categorical Features
+![Screenshot 2021-03-11 at 7 09 39 AM](https://user-images.githubusercontent.com/64508435/110710402-c03dff00-8238-11eb-96c6-592fd9be4076.png)
+
 
 [(Back to top)](#table-of-contents)
