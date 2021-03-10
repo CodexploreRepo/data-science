@@ -11,6 +11,8 @@
   - [Main Types of ML Problems](#main-types-of-ml-problems) 
   - [Evaluation](#evaluation)
   - [Features](#features) 
+  - [Modelling](#modelling)
+    - [Splitting Data](#splitting-data) 
 
 # Why need to learn Machine Learning ?
 <img src="https://user-images.githubusercontent.com/64508435/109885685-e8b67e00-7cb9-11eb-9d62-40fe7f1ff66a.png" height="350px"/>
@@ -105,7 +107,14 @@
 ## Features 
 - Numerical Features
 - Categorical Features
-![Screenshot 2021-03-11 at 7 09 39 AM](https://user-images.githubusercontent.com/64508435/110710402-c03dff00-8238-11eb-96c6-592fd9be4076.png)
 
+<img src="https://user-images.githubusercontent.com/64508435/110710402-c03dff00-8238-11eb-96c6-592fd9be4076.png" height="350px" />
 
 [(Back to top)](#table-of-contents)
+
+## Modelling
+### Splitting Data
+
+<img src="https://user-images.githubusercontent.com/64508435/110710767-6984f500-8239-11eb-87ea-783f86809cfa.png" height="200px" />
+
+- 3 sets: Trainning, Validation & Test Sets
