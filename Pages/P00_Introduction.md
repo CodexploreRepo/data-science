@@ -120,7 +120,7 @@
 
 <img src="https://user-images.githubusercontent.com/64508435/110711094-eadc8780-8239-11eb-91e4-04657d7ed079.png" height="200px" />
 
-- 3 sets: Trainning, Validation & Test Sets
+- 3 sets: Trainning, Validation (model hyperparameter tuning and experimentation evaluation) & Test Sets (model testing and comparison)
 
 ### Modelling
 - Chosen models work for your problem  → train the model 
@@ -135,6 +135,12 @@
 ### Comparison
 - Measure Model Performance via Test Set
 - Advoid `Overfitting` & `Underfitting`
+#### Overfitting
+- Great performance on the training data but poor performance on test data means your model doesn’t generalize well
+- Solution: Try simpler model or making sure your the test data is of the same style your model is training on
+### Underfitting
+- Poor performance on training data means the model hasn’t learned properly and is underfitting
+- Solution: Try a different model, improve the existing one through hyperparameter or collect more data.
 
 <img src="https://user-images.githubusercontent.com/64508435/110889708-a4feec80-8329-11eb-8399-a02ae4274002.png" height="200px" />
 
