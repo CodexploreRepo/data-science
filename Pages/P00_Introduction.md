@@ -15,6 +15,7 @@
     - [Splitting Data](#splitting-data)
     - [Modelling](#modelling)
     - [Tuning](#tuning)
+    - [Comparison](#comparison)
 
 # Why need to learn Machine Learning ?
 <img src="https://user-images.githubusercontent.com/64508435/109885685-e8b67e00-7cb9-11eb-9d62-40fe7f1ff66a.png" height="350px"/>
@@ -130,3 +131,10 @@
 
 ### Tuning 
 - Happens on Validation or Training Sets
+
+### Comparison
+- Measure Model Performance via Test Set
+- Advoid `Overfitting` & `Underfitting`
+
+<img src="https://user-images.githubusercontent.com/64508435/110889708-a4feec80-8329-11eb-8399-a02ae4274002.png" height="200px" />
+
