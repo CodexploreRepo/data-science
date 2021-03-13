@@ -1,5 +1,5 @@
 
-| Usage              |  Command                           | Remark  |
+| Usage              |  Command                           | Description     |
 | -------------------| ---------------------------------- | ----------------|
 | Create             |`conda create --prefix ./env pandas numpy matplotlib scikit-learn jupyter`| Create Conda env  & install packages |
 | Activate           | `conda activate ./env`             |  Activate Conda virtual env |
@@ -15,3 +15,9 @@
     - `conda env export --prefix {Path to env folder} > environment.yml`
   - Step 2: New PC, create  an environment called `env_from_file` from `environment.yml`:
     -   `conda env create --file environment.yml --name env_from_file`
+
+## Jupyter Notebook
+| Usage              |  Command                           | Description     |
+| -------------------| ---------------------------------- | ----------------|
+| Run Cell           |`Shift + Enter`| Create Conda env  & install packages |
+| Switch to Markdown | Exit Edit Mode `ESC` > press `m` | |
