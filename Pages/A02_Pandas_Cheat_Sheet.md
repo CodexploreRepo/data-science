@@ -10,16 +10,22 @@
 - [Grouping](#grouping)
   - [Basic Grouping](#basic-grouping)
 
-# Import Export Data
-### Reading with Different Separator
 
+# Import Export Data
+### Import with Different Separator
 ```Python
-users = pd.read_csv('u.user', sep='|')
+users = pd.read_csv('user.csv', sep='|')
 chipo = pd.read_csv(url, sep = "\t")
 ```
-### Renaming Index
+![Screenshot 2021-03-14 at 10 44 36 AM](https://user-images.githubusercontent.com/64508435/111055586-56c92500-84b2-11eb-91fd-e58e6efdbf3c.png)
+
+#### Renaming Index
 ```Python
 users = pd.read_csv('u.user', sep='|', index_col='user_id')
+```
+### Export 
+```Python
+users.to_csv("exported-users.csv")
 ```
 
 # Getting and knowing
