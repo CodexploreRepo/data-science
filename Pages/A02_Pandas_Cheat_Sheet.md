@@ -2,7 +2,7 @@
 # Pandas Cheat Sheet
 # Table of contents
 - [Table of contents](#table-of-contents)
-- [Import & Export Data](#import-&-export-data)
+- [Import & Export Data](#import-export-data)
 - [Getting and knowing](#getting-and-knowing)
   - [loc vs iloc](#loc-vs-iloc)
   - [Access Rows of Data Frame](#access-columns-of-data-frame)
@@ -10,7 +10,7 @@
 - [Grouping](#grouping)
   - [Basic Grouping](#basic-grouping)
 
-# Import & Export Data
+# Import Export Data
 ### Reading with Different Separator
 
 ```Python
