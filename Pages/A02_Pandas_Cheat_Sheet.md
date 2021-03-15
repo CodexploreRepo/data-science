@@ -7,6 +7,7 @@
   - [loc vs iloc](#loc-vs-iloc)
   - [Access Rows of Data Frame](#access-columns-of-data-frame)
   - [Access Columns of Data Frame](#access-columns-of-data-frame)
+- [Manipulating Data](#manipulating-data)
 - [Grouping](#grouping)
   - [Basic Grouping](#basic-grouping)
 
@@ -189,7 +190,20 @@ index.nunique()
 ```
 
 [(Back to top)](#table-of-contents)
+# Manipulating Data
+## Missing Values
+### Filling Missing Values with fillna()
+- To fill `nan` value with a v
+```Python
+car_sales_missing["Odometer"].fillna(car_sales_missing["Odometer"].mean(), inplace = True)
+```
+### Dropping Missing Values with dropna()
+- To drop columns containing Missing Values
+```Python
+car_sales_missing.dropna(inplace=True)
+```
 
+[(Back to top)](#table-of-contents)
 # Grouping
 <img width="707" alt="Screenshot 2021-01-23 at 10 47 21 PM" src="https://user-images.githubusercontent.com/64508435/105590696-195aec00-5dcd-11eb-894d-3953d6ea8180.png">
 
