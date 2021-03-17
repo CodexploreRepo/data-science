@@ -18,7 +18,7 @@
 users = pd.read_csv('user.csv', sep='|')
 chipo = pd.read_csv(url, sep = "\t")
 ```
-<img width="993" alt="pandas-anatomy-of-a-dataframe" src="https://user-images.githubusercontent.com/64508435/111490410-f833cd80-8775-11eb-8527-daf08dc8e91a.png">
+<img height="500" alt="pandas-anatomy-of-a-dataframe" src="https://user-images.githubusercontent.com/64508435/111490410-f833cd80-8775-11eb-8527-daf08dc8e91a.png">
 
 #### Renaming Index
 ```Python
