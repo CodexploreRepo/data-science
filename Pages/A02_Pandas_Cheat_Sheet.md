@@ -18,7 +18,7 @@
 users = pd.read_csv('user.csv', sep='|')
 chipo = pd.read_csv(url, sep = "\t")
 ```
-![Screenshot 2021-03-14 at 10 44 36 AM](https://user-images.githubusercontent.com/64508435/111055586-56c92500-84b2-11eb-91fd-e58e6efdbf3c.png)
+<img width="993" alt="pandas-anatomy-of-a-dataframe" src="https://user-images.githubusercontent.com/64508435/111490410-f833cd80-8775-11eb-8527-daf08dc8e91a.png">
 
 #### Renaming Index
 ```Python
@@ -202,7 +202,11 @@ car_sales_missing["Odometer"].fillna(car_sales_missing["Odometer"].mean(), inpla
 ```Python
 car_sales_missing.dropna(inplace=True)
 ```
+## Drop a column
 
+```Python
+car_sales.drop("Passed road safety", axis = 1) # axis = 1 if you want to drop a column
+```
 [(Back to top)](#table-of-contents)
 # Grouping
 <img width="707" alt="Screenshot 2021-01-23 at 10 47 21 PM" src="https://user-images.githubusercontent.com/64508435/105590696-195aec00-5dcd-11eb-894d-3953d6ea8180.png">
