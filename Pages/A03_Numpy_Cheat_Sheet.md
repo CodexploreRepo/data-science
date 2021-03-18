@@ -2,6 +2,7 @@
 # Table of contents
 - [Table of contents](#table-of-contents)
 - [Introduction to Numpy](#introduction-to-numpy)
+- [Numpy Data Types and Attributes](numpy-data-types-and-attributes)
 
 # Introduction to Numpy
 ### Why is Numpy important?
@@ -28,3 +29,7 @@ np.int8 #8-bit
 
 - `Numpy array` : essentially contains a single pointer to one contiguous block of data
 - `Python list` : contains a pointer to a block of pointers, each of which in turn points to a full Python object
+
+# Numpy Data Types and Attributes
+- Main Numpy Data Type is `ndarray`
+- Attributes: `shape, ndim, size, dtype`
