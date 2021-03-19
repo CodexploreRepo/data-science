@@ -9,6 +9,7 @@
 - [Pandas Cheat Sheet](./Pages/A02_Pandas_Cheat_Sheet.md)
 - [Numpy Cheat Sheet](./Pages/A03_Numpy_Cheat_Sheet.md)
 - [Conda CLI Cheat Sheet](./Pages/A04_Conda_CLI.md)
+- [Statistics](./Pages/A05_Statistics.md)
 ## Resources:
 ### Podcast:
 - [1. Super Data Science](https://www.superdatascience.com/podcast/sds-041-inspiring-journey-totally-different-background-data-science)
