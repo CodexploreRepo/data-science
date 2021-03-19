@@ -39,4 +39,4 @@ np.var(a2)
 - **Standard Deviation we have a "standard" way of knowing what is normal**, and what is extra large or extra small
 
 ![image](https://user-images.githubusercontent.com/64508435/111799454-fd278700-8905-11eb-98c1-f9866d34f27b.png)
-
+- Credit:  [Math is Fun](https://www.mathsisfun.com/data/standard-deviation.html)
