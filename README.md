@@ -8,6 +8,7 @@
 - [Job Description for Data Science](./Pages/A01_Job_Description.md)
 - [Pandas Cheat Sheet](./Pages/A02_Pandas_Cheat_Sheet.md)
 - [Numpy Cheat Sheet](./Pages/A03_Numpy_Cheat_Sheet.md)
+- [Matplotlib Cheat Sheet](./Pages/A05_Matplotlib.md)
 - [Conda CLI Cheat Sheet](./Pages/A04_Conda_CLI.md)
 - [Statistics](./Pages/A05_Statistics.md)
 ## Resources:
