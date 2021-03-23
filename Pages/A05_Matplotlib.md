@@ -14,13 +14,14 @@
 - In general, try to use the `object-oriented interface` (more flexible) over the `pyplot` interface (i.e: `plt.plot()`
 
 ```Python
-
 x = [1,2,3,4]
 y = [11,22,33,44]
-
+```
+```Python
 # Pyplot API
 plt.plot(x,y)
-
+```
+```Python
 # [Recommended] Object-oriented interface 
 fig, ax = plt.subplots() #create figure + set of subplots, by default, nrow =1, ncol=1
 ax.plot(x,y) #add some data
