@@ -7,6 +7,7 @@
 
 # Introduction to Matplotlib
 <img width="998" alt="matplotlib-anatomy-of-a-plot" src="https://user-images.githubusercontent.com/64508435/112073781-b5c42380-8baf-11eb-87db-f4241ea7232a.png">
+
 - `Figure` can contains multiple Subplot
 - `Axes 0` and `Axes 1` stacked together
 ## Pyplot API vs Object-oriented API
