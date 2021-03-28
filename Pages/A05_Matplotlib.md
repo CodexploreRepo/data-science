@@ -7,7 +7,7 @@
   - [Matplotlib Two Interfaces: MATLAB-style & Object-Oriented Interfaces](#matplotlib-two-interfaces)
   - [Matplotlib Workflow](#matplotlib-workflow) 
 - [Subplots](#subplots)
-- [Scatter,Bar & Histogram Plot](#scatter-bar-and-histogram-plot)
+- [Scatter, Bar & Histogram Plot](#scatter-bar-and-histogram-plot)
 
 # Introduction to Matplotlib
 - Matplotlib is a multi-platform data visualization library built on NumPy arrays, and designed to work with the broader SciPy stack
@@ -107,7 +107,7 @@ ax4.hist(np.random.randn(1000));
 
 [(Back to top)](#table-of-contents)
 
-# Scatter Bar Plot and Histo
+# Scatter Bar and Histogram Plot
 ## Scatter
 ```Python
 #<--- Method 1: Pytlot --->: 
