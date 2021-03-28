@@ -3,17 +3,37 @@
 # Table of contents
 - [Table of contents](#table-of-contents)
 - [Introduction to Matplotlib](#introduction-to-matplotlib)
-  - [Matplotlib Workflow](#matplotlib-workflow)  
+  - [Plotting from an IPython notebook](#plotting-from-an-ipython-notebook)
+  - [Matplotlib Workflow](#matplotlib-workflow) 
 - [Subplots](#subplots)
 - [Scatter & Bar Plot](#scatter-and-bar-plot)
 
 # Introduction to Matplotlib
+- Matplotlib is a multi-platform data visualization library built on NumPy arrays, and designed to work with the broader SciPy stack
+- Newer tools like `ggplot` and `ggvis` in the R language, along with web visualization toolkits based on `D3js` and `HTML5 canvas`, often make Matplotlib feel clunky and old-fashioned
+- Hence, nowadays, cleaner, more modern APIs, for example, `Seaborn`, `ggpy`, `HoloViews`, `Altai`, has been developed to drive Matplotlib
+```Python
+import matplotlib.pyplot as plt
+```
+- The `plt` interface is what we will use most often
+#### Setting Styles
+```Python
+# See the different styles avail
+plt.style.available
+# Set Style
+plt.style.use('classic')
+```
+## Plotting from an IPython notebook
+- `%matplotlib notebook` will lead to interactive plots embedded within the notebook
+- `%matplotlib inline`   will lead to static images of your plot embedded in the notebook
+
 <img width="800" alt="matplotlib-anatomy-of-a-plot" src="https://user-images.githubusercontent.com/64508435/112073781-b5c42380-8baf-11eb-87db-f4241ea7232a.png">
 
 - `Figure` can contains multiple Subplot
 - `Axes 0` and `Axes 1` are `AxesSubplot` stacked together
+
 ## Pyplot API vs Object-Oriented API
-- In general, try to use the `object-oriented interface` (more flexible) over the `pyplot` interface (i.e: `plt.plot()`
+- In general, try to use the `object-oriented interface` (more flexible) over the `pyplot` interface (i.e: `plt.plot()`)
 
 ```Python
 x = [1,2,3,4]
