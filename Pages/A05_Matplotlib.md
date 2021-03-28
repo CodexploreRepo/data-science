@@ -7,7 +7,7 @@
   - [Matplotlib Two Interfaces: MATLAB-style & Object-Oriented Interfaces](#matplotlib-two-interfaces)
   - [Matplotlib Workflow](#matplotlib-workflow) 
 - [Subplots](#subplots)
-- [Scatter & Bar Plot](#scatter-and-bar-plot)
+- [Scatter,Bar & Histogram Plot](#scatter-bar-and-histogram-plot)
 
 # Introduction to Matplotlib
 - Matplotlib is a multi-platform data visualization library built on NumPy arrays, and designed to work with the broader SciPy stack
@@ -87,6 +87,9 @@ ax.set(title="Sample Simple Plot",
 # 5. Save & Show
 fig.savefig("../images/simple-plot.png")
 ```
+
+[(Back to top)](#table-of-contents)
+
 # Subplots
 - Option #1: to plot multiple subplots in same figure
 ```Python
@@ -102,4 +105,57 @@ ax4.hist(np.random.randn(1000));
 ```
 <img width="608" alt="Screenshot 2021-03-23 at 8 52 20 AM" src="https://user-images.githubusercontent.com/64508435/112076325-35a0bc80-8bb5-11eb-980d-3e4cd8a48f10.png">
 
-# Scatter and Bar Plot
+[(Back to top)](#table-of-contents)
+
+# Scatter Bar Plot and Histo
+## Scatter
+```Python
+#<--- Method 1: Pytlot --->: 
+df.plot(kind = 'scatter',
+             x = 'age',
+             y = 'chol',
+             c = 'target', #c = color the dot based on over_50['target'] columns
+             figsize=(10,6));
+```
+```Python
+#<--- Method 2: OO --->: 
+## OO Method from Scratch
+fig, ax = plt.subplots(figsize=(10,6))
+
+## Plot the data
+scatter = ax.scatter(x=over_50["age"],
+                     y=over_50["chol"],
+                     c=over_50["target"]);
+# Customize the plot
+ax.set(title="Heart Disease and Cholesterol Levels",
+       xlabel="Age",
+       ylabel="Cholesterol");
+# Add a legend
+ax.legend(*scatter.legend_elements(), title="target"); # * to unpack all the values of Title="target"
+
+#Add a horizontal line
+ax.axhline(over_50["chol"].mean(), linestyle = "--");
+```
+
+<img src="https://user-images.githubusercontent.com/64508435/112741395-15f40480-8fb8-11eb-991f-d326cf9399b2.png"/>
+
+## Bar 
+* Vertical 
+* Horizontal
+```Python
+#<--- Method 1: Pytlot --->: 
+df.plot.bar();
+```
+```Python
+#<--- Method 2: OO --->: 
+fig, ax = plt.subplots()
+ax.bar(x, y)
+ax.set(title="Dan's Nut Butter Store", ylabel="Price ($)");
+```
+## Histogram
+```Python
+# Create Histogram of Age to see the distribution of age
+
+heart_disease["age"].plot.hist(bins=10);
+```
+[(Back to top)](#table-of-contents)
