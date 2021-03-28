@@ -4,6 +4,7 @@
 - [Table of contents](#table-of-contents)
 - [Introduction to Matplotlib](#introduction-to-matplotlib)
   - [Plotting from an IPython notebook](#plotting-from-an-ipython-notebook)
+  - [Matplotlib Two Interfaces: MATLAB-style & Object-Oriented Interfaces](#matplotlib-two-interfaces)
   - [Matplotlib Workflow](#matplotlib-workflow) 
 - [Subplots](#subplots)
 - [Scatter & Bar Plot](#scatter-and-bar-plot)
@@ -21,34 +22,46 @@ import matplotlib.pyplot as plt
 # See the different styles avail
 plt.style.available
 # Set Style
-plt.style.use('classic')
+plt.style.use('seaborn-whitegrid')
 ```
 ## Plotting from an IPython notebook
-- `%matplotlib notebook` will lead to interactive plots embedded within the notebook
-- `%matplotlib inline`   will lead to static images of your plot embedded in the notebook
+- `%matplotlib notebook` will lead to **interactive** plots embedded within the notebook
+- `%matplotlib inline`   will lead to **static images** of your plot embedded in the notebook
 
 <img width="800" alt="matplotlib-anatomy-of-a-plot" src="https://user-images.githubusercontent.com/64508435/112073781-b5c42380-8baf-11eb-87db-f4241ea7232a.png">
 
 - `Figure` can contains multiple Subplot
 - `Axes 0` and `Axes 1` are `AxesSubplot` stacked together
-
-## Pyplot API vs Object-Oriented API
+## Matplotlib Two Interfaces
+### Pyplot API vs Object-Oriented API
+* Quickly  &#8594; use Pyplot Method
+* Advanced &#8594; use Object-Oriented Method
 - In general, try to use the `object-oriented interface` (more flexible) over the `pyplot` interface (i.e: `plt.plot()`)
 
 ```Python
 x = [1,2,3,4]
 y = [11,22,33,44]
 ```
+- **MATLAB-style or PyPlot API**: Matplotlib was originally written as a Python alternative for MATLAB users, and much of its syntax reflects that fact
 ```Python
 # Pyplot API
 plt.plot(x,y)
+
+plt.title("A Sine Curve") #in OO, use the ax.set() method to set all these properties at once
+plt.xlabel("x")
+plt.ylabel("sin(x)")
+plt.xlim([1,3])
+plt.ylim([20,])
 ```
+- **Object-oriented**: plotting functions are methods of explicit `Figure` and `Axes` objects.
 ```Python
 # [Recommended] Object-oriented interface 
 fig, ax = plt.subplots() #create figure + set of subplots, by default, nrow =1, ncol=1
 ax.plot(x,y) #add some data
 plt.show()
 ```
+
+
 ## Matplotlib Workflow
 ```Python
 # 0. Import and get matplotlib ready
@@ -68,7 +81,8 @@ ax.plot(x, y)
 # 4. Customize plot
 ax.set(title="Sample Simple Plot", 
        xlabel="x-axis", 
-       ylabel="y-axis")
+       ylabel="y-axis", 
+       xlim=(0, 10), ylim=(-2, 2))
 
 # 5. Save & Show
 fig.savefig("../images/simple-plot.png")
