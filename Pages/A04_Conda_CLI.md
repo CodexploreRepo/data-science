@@ -2,10 +2,12 @@
 | Usage              |  Command                           | Description     |
 | -------------------| ---------------------------------- | ----------------|
 | Create             |`conda create --prefix ./env pandas numpy matplotlib scikit-learn jupyter`| Create Conda env  & install packages |
+| List Env           | `conda env list`                   |  Listdown env currently activated  |
 | Activate           | `conda activate ./env`             |  Activate Conda virtual env |
 | Install package    | `conda install jupyter`            | |
-| List               | `conda env list`                   |  Listdown env currently activated  |
-| Open Jupyter Notebook | `jupyter notebook`||
+| Update package     | `conda update scikit-learn=0.22`   | Can specify the version also |
+| List Installed Package | `conda list`||
+| Open Jupyter Notebook  | `jupyter notebook`||
 
 
 ## Sharing Conda Environment
