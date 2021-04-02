@@ -13,7 +13,7 @@
 
 # Scikit Learn Workflow
 ## Get data ready
-Three main thins we have to do:
+4 main things we have to do:
 1. Split the data into features and labels (Usually `X` and `y`)
 2. Imputing: Filling or disregarding missing values
 3. Feature Encoding: Converting non-numerical values to numerical values
