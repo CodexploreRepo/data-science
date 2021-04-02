@@ -70,9 +70,8 @@ transformed_X = transformer.fit_transform(X)
   -  **Normalization** (also called `min-max scaling`): This rescales all the numerical values to between 0 and 1 &#8594; `MinMaxScaler` from Scikit-Learn.
   - **Standardization**: This subtracts the mean value from all of the features (so the resulting features have 0 mean). It then scales the features to unit variance (by dividing the feature by the standard deviation). &#8594;  `StandardScalar` class from Scikit-Learn.
 - Note: 
-- Feature scaling usually isn't required for your target variable
-- Feature scaling usually isn't required for encoded feature variable
-- Feature scaling is usually not required with tree-based models (e.g. Random Forest) since they can handle varying features
+  - Feature scaling usually isn't required for your target variable + encoded feature variables
+  - Feature scaling is usually not required with tree-based models (e.g. Random Forest) since they can handle varying features
 
 ##### Readings
 * [Feature Scaling- Why it is required?](https://medium.com/@rahul77349/feature-scaling-why-it-is-required-8a93df1af310)
