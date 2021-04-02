@@ -7,6 +7,7 @@
 | Install package    | `conda install jupyter`            | |
 | Update package     | `conda update scikit-learn=0.22`   | Can specify the version also |
 | List Installed Package | `conda list`||
+| Un-installed Package   | `conda uninstall python scikit-learn`| To uninstall packages to re-install with the Latest version|
 | Open Jupyter Notebook  | `jupyter notebook`||
 
 
