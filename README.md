@@ -16,7 +16,8 @@
 - [Statistics](./Pages/A05_Statistics.md)
 
 ## Resources:
-
+- [AI Road Map](https://i.am.ai/roadmap/#note)
+- [Deep Learning Monitor: Latest Deep Learning Research Papers](https://deeplearn.org/)
 ### Podcast:
 - [1. Super Data Science](https://www.superdatascience.com/podcast/sds-041-inspiring-journey-totally-different-background-data-science)
 - [2. Visual ML ](https://vas3k.com/blog/machine_learning/)
