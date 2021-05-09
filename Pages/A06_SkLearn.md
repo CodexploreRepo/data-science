@@ -4,6 +4,7 @@
 - [Scikit-Learn Introduction](#scikit-learn-introduction)
 - [Scikit-Learn Workflow](#scikit-learn-workflow)
   - [1. Get data ready](#get-data-ready)
+  - [2. Choose the right estimator](#choose-the-right-estimator)
 
 # Scikit Learn Introduction
 - Scikit Learn (SkLearn): Python Machine Learning Library, built on Numpy & Matplotlib
@@ -130,5 +131,13 @@ transformed_X_train.toarray()
 * [Feature Scaling- Why it is required?](https://medium.com/@rahul77349/feature-scaling-why-it-is-required-8a93df1af310)
 * [Feature Scaling with scikit-learn](https://benalexkeen.com/feature-scaling-with-scikit-learn/)
 * [Feature Scaling for Machine Learning: Understanding the Difference Between Normalization vs. Standardization](https://www.analyticsvidhya.com/blog/2020/04/feature-scaling-machine-learning-normalization-standardization/)
+
+[(Back to top)](#table-of-contents)
+
+## Choose the right estimator
+- Scikit-learn uses estimator as another term for machine learning model or algorithm
+- Hardest part of solving a machine learning problem can be finding the right estimator for the job
+- Map: https://scikit-learn.org/stable/tutorial/machine_learning_map/index.html
+
 
 [(Back to top)](#table-of-contents)
