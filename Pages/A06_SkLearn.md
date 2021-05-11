@@ -138,8 +138,8 @@ transformed_X_train.toarray()
 - Scikit-learn uses estimator as another term for machine learning model or algorithm
 - Hardest part of solving a machine learning problem can be finding the right estimator for the job 
 - Map: https://scikit-learn.org/stable/tutorial/machine_learning_map/index.html
-1. Structured data (tables), used ensemble methods 
-2. Unstructured data (image, audio, text, video), use deep learning or transfer learning 
+1. Structured data (tables) → ensemble methods (combine the predictions of several base estimators built with a given learning algorithm in order to improve generalizability / robustness over a single estimator)
+2. Unstructured data (image, audio, text, video) → deep learning or transfer learning 
 
 
 [(Back to top)](#table-of-contents)
