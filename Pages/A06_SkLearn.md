@@ -6,6 +6,7 @@
   - [1. Get data ready](#get-data-ready)
   - [2. Choose the right estimator](#choose-the-right-estimator)
   - [3. Make predictions using ML model](#make-predictions-using-ml-model)
+  - [4. Evaluate a Machine Learning Model](#evaluate-a-machine-learning-model)
 
 # Scikit Learn Introduction
 - Scikit Learn (SkLearn): Python Machine Learning Library, built on Numpy & Matplotlib
@@ -136,8 +137,8 @@ transformed_X_train.toarray()
 [(Back to top)](#table-of-contents)
 
 ## Choose the right estimator
-- Scikit-learn uses estimator as another term for machine learning model or algorithm
-- Hardest part of solving a machine learning problem can be finding the right estimator for the job 
+- Scikit-learn uses **estimator** as another term for machine learning model or algorithm
+- Based on the .score() + ML Map to choose right estimator
 - Map: https://scikit-learn.org/stable/tutorial/machine_learning_map/index.html
 1. **Structured data (tables)** → ensemble methods (combine the predictions of several base estimators built with a given learning algorithm in order to improve generalizability / robustness over a single estimator)
 2. **Unstructured data (image, audio, text, video)** → deep learning or transfer learning 
@@ -181,8 +182,7 @@ clf.score(X_test, y_test) #Return the mean accuracy on the given test data and l
 
 
 ## Make predictions using ML model
-### 3.2.1 Predict for Classification Models
-
+### 3.1 Predict for Classification Models
 #### 2 ways to make predictions:
 1. Using `predict()`
 ```Python
@@ -206,5 +206,22 @@ array([[0.89, 0.11],
 ```
 - This output `[0.89, 0.11]` means the model is predicting label 0 (index 0) with a probability score of 0.89.
 - Because the score is over 0.5, when using predict(), a label of 0 is assigned.
+
+### 3.2 Predict for Regression Models
+- `predict()` can also be used for regression models
+
+[(Back to top)](#table-of-contents)
+
+## Evaluate a Machine Learning Model
+* Tips: Google 'scikit learn evaluate a model'
+* 3 ways to evaluate Scikit Learn Models
+1. Estimator `score` method
+2. The `scoring` parameter
+3. Problem-specific metric function
+
+### 4.1 Evaluate a model with `Score` Method
+- Regression Model: `model.score(X_test, y_test) #score() = Return R^2 of the regression`
+- Classifier Model: `clf.score(X_test, y_test)   #score() = Return the mean accuracy on the given test data and labels.`
+
 
 [(Back to top)](#table-of-contents)
