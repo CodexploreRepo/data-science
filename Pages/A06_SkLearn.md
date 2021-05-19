@@ -138,8 +138,42 @@ transformed_X_train.toarray()
 - Scikit-learn uses estimator as another term for machine learning model or algorithm
 - Hardest part of solving a machine learning problem can be finding the right estimator for the job 
 - Map: https://scikit-learn.org/stable/tutorial/machine_learning_map/index.html
-1. Structured data (tables) → ensemble methods (combine the predictions of several base estimators built with a given learning algorithm in order to improve generalizability / robustness over a single estimator)
-2. Unstructured data (image, audio, text, video) → deep learning or transfer learning 
+1. **Structured data (tables)** → ensemble methods (combine the predictions of several base estimators built with a given learning algorithm in order to improve generalizability / robustness over a single estimator)
+2. **Unstructured data (image, audio, text, video)** → deep learning or transfer learning 
 
+### Choose the right estimator for Regression Problem:
+```Python
+# Let's try the Ridge Regression Model
+from sklearn.linear_model import Ridge
+
+#Setup random seed
+np.random.seed(42) #to make sure result is reproducible
+
+#instantiate Ridge Model
+model = Ridge()
+model.fit(X_train, y_train)
+
+# Check the score of the Ridge model on test data
+model.score(X_test, y_test) #Return R^2 of the regression
+```
+
+### Choose the right estimator for Classification Problem:
+
+```Python
+# Import the LinearSVC estimator class
+from sklearn.ensemble import RandomForestClassifier 
+
+# Setup random seed
+np.random.seed(42)
+
+# Instantiate Random Forest Classifier
+clf = RandomForestClassifier(n_estimators=100)
+
+#Fit the model to the data (training the machine learning model)
+clf.fit(X_train, y_train)
+
+# Evaluate Random Forest Classifier (use the parterns the model has learnt)
+clf.score(X_test, y_test) #Return the mean accuracy on the given test data and labels.
+```
 
 [(Back to top)](#table-of-contents)
