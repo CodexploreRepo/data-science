@@ -5,6 +5,7 @@
 - [Scikit-Learn Workflow](#scikit-learn-workflow)
   - [1. Get data ready](#get-data-ready)
   - [2. Choose the right estimator](#choose-the-right-estimator)
+  - [3. Make predictions using ML model](#make-predictions-using-ml-model)
 
 # Scikit Learn Introduction
 - Scikit Learn (SkLearn): Python Machine Learning Library, built on Numpy & Matplotlib
@@ -14,7 +15,7 @@
 
 # Scikit Learn Workflow
 ## Get data ready
-4 main things we have to do:
+### 4 main things we have to do:
 1. Split the data into features and labels (Usually `X` and `y`)
 2. Imputing: Filling or disregarding missing values
 3. Feature Encoding: Converting non-numerical values to numerical values
@@ -175,5 +176,35 @@ clf.fit(X_train, y_train)
 # Evaluate Random Forest Classifier (use the parterns the model has learnt)
 clf.score(X_test, y_test) #Return the mean accuracy on the given test data and labels.
 ```
+
+[(Back to top)](#table-of-contents)
+
+
+## Make predictions using ML model
+### 3.2.1 Predict for Classification Models
+
+#### 2 ways to make predictions:
+1. Using `predict()`
+```Python
+# Use a trained model to make predictions
+y_preds = clf.predict(X_test)
+```
+**Predict a single value**: "predict" method always expects a 2D array as the format of its inputs. And putting 12 into a double pair of square brackets makes the input exactly a 2D array:
+```Python
+clf.predict([[12]])
+```
+2. Using `predict_proba()`
+- `predict_proba()` returns the probabilities of a classification label.
+```Python
+clf.predict_proba(X_test) #[x% prob class = 0, y% prob class = 1]
+
+array([[0.89, 0.11],
+       [0.49, 0.51],
+       [0.43, 0.57],
+       [0.84, 0.16],
+       [0.18, 0.82]])
+```
+- This output `[0.89, 0.11]` means the model is predicting label 0 (index 0) with a probability score of 0.89.
+- Because the score is over 0.5, when using predict(), a label of 0 is assigned.
 
 [(Back to top)](#table-of-contents)
