@@ -240,9 +240,11 @@ array([0.90322581, 0.80645161, 0.87096774, 0.9       , 0.86666667,
 # Using score()
 clf.score(X_test, y_test)
 ```
-![image](https://user-images.githubusercontent.com/64508435/118992921-a6970180-b9b7-11eb-9592-2207dfad8e09.png)
 * Figure 1.0: using score(X_test, y_test), a model is trained using the training data or 80% of samples, this means 20% of samples aren't used for the model to learn anything
 * Figure 2.0: using 5-fold cross-validation, instead of training only on 1 training split and evaluating on 1 testing split, 5-fold cross-validation does it 5 times. On a different split each time, returning a score for each
+
+![image](https://user-images.githubusercontent.com/64508435/118992921-a6970180-b9b7-11eb-9592-2207dfad8e09.png)
+
 * Note#1: if you were asked to report the accuracy of your model, even though it's lower, you'd prefer the cross-validated metric over the non-cross-validated metric.
 * Note#2:`cross_val_score(clf, X, y, cv=5, scoring=None) # default scoring`: by default, scoring set to `None`, i.e: `cross_val_score()` will use  the same metric as score()
   - For Ex: clf which is an instance of RandomForestClassifier uses mean accuracy as the default score() metric, so `cross_val_score()` will use mean accuracy also
