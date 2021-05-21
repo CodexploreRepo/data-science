@@ -245,10 +245,104 @@ clf.score(X_test, y_test)
 
 ![image](https://user-images.githubusercontent.com/64508435/118992921-a6970180-b9b7-11eb-9592-2207dfad8e09.png)
 
-* Note#1: if you were asked to report the accuracy of your model, even though it's lower, you'd prefer the cross-validated metric over the non-cross-validated metric.
-* Note#2:`cross_val_score(clf, X, y, cv=5, scoring=None) # default scoring`: by default, scoring set to `None`, i.e: `cross_val_score()` will use  the same metric as score()
+* **Note#1**: if you were asked to report the accuracy of your model, even though it's lower, you'd prefer the cross-validated metric over the non-cross-validated metric.
+* **Note#2**:`cross_val_score(clf, X, y, cv=5, scoring=None) # default scoring`: by default, scoring set to `None`, i.e: `cross_val_score()` will use  the same metric as score()
   - For Ex: clf which is an instance of RandomForestClassifier uses mean accuracy as the default score() metric, so `cross_val_score()` will use mean accuracy also
   - You can change the **evaluation score** of `cross_val_score()` uses by changing the `scoring` parameter.
+
+### 4.3 Evaluating with Problem-Specific Metric Function
+#### Classification
+Four of the main evaluation metrics/methods you'll come across for classification models are:
+1. Accuracy: default metric for the score() function within each of Scikit-Learn's classifier models
+2. Area under ROC curve
+3. Confusion matrix
+4. Classification report
+
+**1. Accuracy**
+```Python
+print(f"Heart Disease Classifier Cross-Validated Accuracy: {np.mean(cross_val_score)*100:.2f}%")
+
+Heart Disease Classifier Cross-Validated Accuracy: 82.48%
+```
+**2. Area under the receiver operating characteristic curve (AUC/ROC)**
+* Area Under Curve (AUC)
+* Receiver Operating Characteristic (ROC) Curve
+
+ROC curves are a comparison of a model's true positive rate (TPR) vs a model's false positive (FPR).
+* True Positive = Model predicts 1 when truth is 1
+* False Positive = Model predicts 1 when truth is 0
+* True Negative = Model predicts 0 when truth is 0
+* False Negative = Model predicts 0 when truth is 1
+
+Scikit-Learn lets you calculate the information required for a ROC curve using the `roc_curve` function
+```Python
+from sklearn.metrics import roc_curve
+
+# Make predictions with probabilities
+y_probs = clf.predict_proba(X_test)
+
+# Keep the probabilites of the positive class only
+y_probs = y_probs[:, 1]
+
+# Calculate fpr, tpr and thresholds using roc_curve from Scikit-learn
+fpr, tpr, thresholds = roc_curve(y_test, y_probs)
+```
+
+Since Scikit-Learn doesn't have a built-in function to plot a ROC curve, quite often, you'll find a function (or write your own) like the one below
+
+```Python
+# Create a function for plotting ROC curves
+import matplotlib.pyplot as plt
+
+def plot_roc_curve(fpr, tpr):
+    """
+    Plots a ROC curve given the false positive rate (fpr)
+    and true positive rate (tpr) of a model.
+    """
+    #Plot roc curve
+    plt.plot(fpr, tpr, color="orange", label="ROC") # x = fpr, y = tpr
+    #Plot line with no predictive power (baseline)
+    plt.plot([0,1], [0,1], color="darkblue", linestyle="--", label="Guessing") # x = [0,1], y=[0,1]
+    
+    #Customize the plot 
+    plt.xlabel("False positive rate (fpr)")
+    plt.ylabel("True positive rate (tpr)")
+    plt.title("Receiver Operating Characteristics (ROC) Curve")
+    plt.legend()
+    plt.show()
+
+plot_roc_curve(fpr, tpr)
+```
+![image](https://user-images.githubusercontent.com/64508435/119077694-5f485980-ba27-11eb-8f99-3ff7bf6334f7.png)
+
+* Key take-away: our model is doing far better than guessing.
+* The maximum ROC AUC score you can achieve is 1.0 and generally, the closer to 1.0, the better the model.
+* `AUC (Area Under Curve)` = A metric you can use to quantify the ROC curve in a single number. Scikit-Learn implements a function to caculate this called roc_auc_score().
+
+```Python
+from sklearn.metrics import roc_auc_score
+
+roc_auc_score(y_test, y_probs)
+
+0.93049
+```
+* The most ideal position for a ROC curve to run along the top left corner of the plot.
+* This would mean the model predicts only true positives and no false positives. And would result in a ROC AUC score of 1.0.
+* You can see this by creating a ROC curve using only the y_test labels.
+
+```Python
+# Plot perfect ROC curve
+fpr, tpr, thresholds = roc_curve(y_test, y_test)
+plot_roc_curve(fpr, tpr)
+```
+![image](https://user-images.githubusercontent.com/64508435/119078568-0a0d4780-ba29-11eb-9dfb-ffc000548a98.png)
+
+This means that the top left corner of the plot is the “ideal” point - a false positive rate of zero, and a true positive rate of one. 
+
+##### Readings
+- [Classification: ROC Curve and AUC](https://developers.google.com/machine-learning/crash-course/classification/roc-and-auc)
+
+
 
 
 [(Back to top)](#table-of-contents)
