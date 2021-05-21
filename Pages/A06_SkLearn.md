@@ -274,6 +274,9 @@ ROC curves are a comparison of a model's true positive rate (TPR) vs a model's f
 * True Negative = Model predicts 0 when truth is 0
 * False Negative = Model predicts 0 when truth is 1
 
+<img width="752" alt="Screenshot 2021-05-21 at 21 23 30" src="https://user-images.githubusercontent.com/64508435/119144016-d955fe00-ba7a-11eb-9332-8739f09ed03c.png">
+
+
 Scikit-Learn lets you calculate the information required for a ROC curve using the `roc_curve` function
 ```Python
 from sklearn.metrics import roc_curve
@@ -302,6 +305,8 @@ def plot_roc_curve(fpr, tpr):
     #Plot roc curve
     plt.plot(fpr, tpr, color="orange", label="ROC") # x = fpr, y = tpr
     #Plot line with no predictive power (baseline)
+    
+    #This line means that prob of classified correctly the positives = prob of classified NOT correctly as positives
     plt.plot([0,1], [0,1], color="darkblue", linestyle="--", label="Guessing") # x = [0,1], y=[0,1]
     
     #Customize the plot 
@@ -316,6 +321,9 @@ plot_roc_curve(fpr, tpr)
 ![image](https://user-images.githubusercontent.com/64508435/119077694-5f485980-ba27-11eb-8f99-3ff7bf6334f7.png)
 
 * Key take-away: our model is doing far better than guessing.
+* Curve plots TPR vs. FPR at different classification thresholds. Lowering the classification threshold classifies more items as positive, thus increasing both False Positives and True Positives.
+<img width="338" alt="Screenshot 2021-05-21 at 21 21 38" src="https://user-images.githubusercontent.com/64508435/119143744-8d0abe00-ba7a-11eb-9641-b7ea058e3a2f.png">
+
 * The maximum ROC AUC score you can achieve is 1.0 and generally, the closer to 1.0, the better the model.
 * `AUC (Area Under Curve)` = A metric you can use to quantify the ROC curve in a single number. Scikit-Learn implements a function to caculate this called roc_auc_score().
 
@@ -340,6 +348,7 @@ plot_roc_curve(fpr, tpr)
 This means that the top left corner of the plot is the “ideal” point - a false positive rate of zero, and a true positive rate of one. 
 
 ##### Readings
+- [ROC and AUC, Clearly Explained!](https://www.youtube.com/watch?v=4jRBRDbJemM)
 - [Classification: ROC Curve and AUC](https://developers.google.com/machine-learning/crash-course/classification/roc-and-auc)
 
 
