@@ -258,13 +258,13 @@ Four of the main evaluation metrics/methods you'll come across for classificatio
 3. Confusion matrix
 4. Classification report
 
-**1. Accuracy**
+**4.3.1. Accuracy**
 ```Python
 print(f"Heart Disease Classifier Cross-Validated Accuracy: {np.mean(cross_val_score)*100:.2f}%")
 
 Heart Disease Classifier Cross-Validated Accuracy: 82.48%
 ```
-**2. Area under the receiver operating characteristic curve (AUC/ROC)**
+**4.3.2. Area under the receiver operating characteristic curve (AUC/ROC)**
 * Area Under Curve (AUC)
 * Receiver Operating Characteristic (ROC) Curve
 
@@ -351,7 +351,113 @@ This means that the top left corner of the plot is the “ideal” point - a fal
 - [ROC and AUC, Clearly Explained!](https://www.youtube.com/watch?v=4jRBRDbJemM)
 - [Classification: ROC Curve and AUC](https://developers.google.com/machine-learning/crash-course/classification/roc-and-auc)
 
+**4.3.3. Confusion Matrix**
+- A confusion matrix is a quick way to compare the labels a model predicts and the actual labels it was supposed to predict.
 
+```Python
+from sklearn.metrics import confusion_matrix
+confusion_matrix(y_test, y_preds)
+```
+- Another way is to use with `pd.crosstab()`.
+```Python
+pd.crosstab(y_test, 
+            y_preds, 
+            rownames=["Actual Label"], 
+            colnames=["Predicted Label"])
+```
+- An even more visual way is with Seaborn's `heatmap()` plot.
+```Python
+# Plot a confusion matrix with Seaborn
+import seaborn as sns
+
+# Set the font scale
+sns.set(font_scale=1.5)
+
+# Create a confusion matrix
+conf_mat = confusion_matrix(y_test, y_preds)
+
+# Create a function to plot confusion matrix
+def plot_conf_mat(conf_mat):
+    """
+    Plots a confusion matrix using Seaborn's heatmap().
+    """
+    fig, ax = plt.subplots(figsize=(3, 3))
+    ax = sns.heatmap(conf_mat,
+                     annot=True, # Annotate the boxes 
+                     cbar=False)
+    plt.xlabel('Predicted label')
+    plt.ylabel('True label');
+
+plot_conf_mat(conf_mat)
+```
+![Confusion_Matrix](https://user-images.githubusercontent.com/64508435/119519178-ccebe100-bdab-11eb-9358-6af69351e113.png)
+
+- Scikit-Learn has an implementation of plotting a confusion matrix in plot_confusion_matrix()
+```Python
+from sklearn.metrics import plot_confusion_matrix
+
+plot_confusion_matrix(clf, X, y)
+```
+![Unknown](https://user-images.githubusercontent.com/64508435/119519754-4552a200-bdac-11eb-8dde-c17097719a75.png)
+
+**4.3.4. Classification Report**
+
+* **Precision**: proportion of positive identifications (model predicted class 1) are actually correct → No false postives, Precision = 1.0
+* **Recall**: proportion of actual positives are correctly classified → No false negatives, Recall = 1.0
+* **F1 Score**: a combination of precision and recall → Perfect model F1 score = 1.0
+* **Support**: the number of samples each metric was calculated on. (for Ex below: class 0 has 29 samples, class 1 has 32 samples)
+* **Accuracy**: The accuracy of the model in decimal form. Perfect accuracy = 1
+
+</br>
+
+* **Marco Avg**: the average precision, recall and F1 score of each class (0 & 1) => Drawback: does not reflect class imbalance (i.e: maybe 0 samples maybe more outweight 1 samples)
+* **Weighted Avg**: same as Marco Avg, except: each metric is calculated w.r.t how many samples there are in each class. This metric will favour majority class (i.e: the class which has more samples)
+
+
+```Python
+from sklearn.metrics import classification_report
+
+print(classification_report(y_test, y_preds))
+
+                precision    recall  f1-score   support
+
+           0       0.79      0.79      0.79        29
+           1       0.81      0.81      0.81        32
+
+    accuracy                           0.80        61
+   macro avg       0.80      0.80      0.80        61
+weighted avg       0.80      0.80      0.80        61
+```
+#### Example of Imbalanced Classes
+For example, let's say there were 10,000 people. And 1 of them had a disease. You're asked to build a model to predict who has it.
+
+You build the model and find your model to be 99.99% accurate. Which sounds great! ...until you realise, all its doing is predicting no one has the disease, in other words all 10,000 predictions are false.
+
+In this case, you'd want to turn to metrics such as precision, recall and F1 score.
+
+```Python
+#Where precision and recall become valuable
+
+disease_true = np.zeros(10000)
+disease_true[0] =1 #Only 1 positive case
+
+disease_preds = np.zeros(10000)#Model predicts every case as 0
+
+pd.DataFrame(classification_report(disease_true, disease_preds, output_dict=True))
+```
+<img width="422" alt="Screenshot 2021-05-25 at 23 08 22" src="https://user-images.githubusercontent.com/64508435/119521887-1fc69800-bdae-11eb-88d4-fb1c21da2560.png">
+
+* Precision: 99% for class 0, but 0% for class 1
+
+Ask yourself, although the model achieves 99.99% accuracy, is it useful?
+
+
+To summarize:
+
+* **Accuracy** is a good measure to start with if all classes are balanced (e.g. same amount of samples which are labelled with 0 or 1)
+* **Precision and recall** become more important when classes are imbalanced.
+* If false positive predictions are worse than false negatives, aim for higher precision.
+* If false negative predictions are worse than false positives, aim for higher recall.
 
 
 [(Back to top)](#table-of-contents)
