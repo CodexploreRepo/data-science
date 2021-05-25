@@ -218,6 +218,8 @@ array([[0.89, 0.11],
 1. Estimator `score` method
 2. The `scoring` parameter
 3. Problem-specific metric function
+   - [Classification Model Evaluation Metrics](#classification-model-evaluation-metrics)
+   - [Regression Model Evaluation Metrics](#regression-model-evaluation-metrics)    
 
 ### 4.1 Evaluate a model with `Score` Method
 * Note: Calling `score()` on a model instance will return a metric assosciated with the type of model you're using. The metric depends on which model you're using.
@@ -251,7 +253,7 @@ clf.score(X_test, y_test)
   - You can change the **evaluation score** of `cross_val_score()` uses by changing the `scoring` parameter.
 
 ### 4.3 Evaluating with Problem-Specific Metric Function
-#### Classification
+#### Classification Model Evaluation Metrics
 Four of the main evaluation metrics/methods you'll come across for classification models are:
 1. Accuracy: default metric for the score() function within each of Scikit-Learn's classifier models
 2. Area under ROC curve
@@ -428,7 +430,7 @@ print(classification_report(y_test, y_preds))
    macro avg       0.80      0.80      0.80        61
 weighted avg       0.80      0.80      0.80        61
 ```
-#### Example of Imbalanced Classes
+##### Example of Imbalanced Classes
 For example, let's say there were 10,000 people. And 1 of them had a disease. You're asked to build a model to predict who has it.
 
 You build the model and find your model to be 99.99% accurate. Which sounds great! ...until you realise, all its doing is predicting no one has the disease, in other words all 10,000 predictions are false.
@@ -459,5 +461,6 @@ To summarize:
 * If false positive predictions are worse than false negatives, aim for higher precision.
 * If false negative predictions are worse than false positives, aim for higher recall.
 
+#### Regression Model Evaluation Metrics
 
 [(Back to top)](#table-of-contents)
