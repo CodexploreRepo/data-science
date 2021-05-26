@@ -493,4 +493,15 @@ from sklearn.metrics import mean_absolute_error
 mae = mean_absolute_error(y_test, y_preds)
 2.1226372549019623
 ```
+Our model achieves an MAE of 2.123. This means, on average our models predictions are 2.123 units away from the actual value.
+
+```Python
+df = pd.DataFrame(data={"actual values": y_test,
+                        "predicted values" : y_preds})
+df["differences"] = df["predicted values"] - df["actual values"]
+df.head(5)
+```
+
+<img width="310" alt="Screenshot 2021-05-26 at 11 03 03" src="https://user-images.githubusercontent.com/64508435/119596537-f4759480-be11-11eb-9a2b-9694b8e85921.png">
+
 [(Back to top)](#table-of-contents)
