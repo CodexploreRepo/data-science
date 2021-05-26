@@ -215,9 +215,10 @@ array([[0.89, 0.11],
 ## Evaluate a Machine Learning Model
 * Tips: Google 'scikit learn evaluate a model'
 * 3 ways to evaluate Scikit Learn Models
-4.1. Estimator `score` method
-4.2. The `scoring` parameter
-4.3. Problem-specific metric function
+
+1. Estimator `score` method
+2. The `scoring` parameter
+3. Problem-specific metric function
    - [Classification Model Evaluation Metrics](#classification-model-evaluation-metrics)
    - [Regression Model Evaluation Metrics](#regression-model-evaluation-metrics)    
 
