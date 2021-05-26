@@ -493,7 +493,7 @@ from sklearn.metrics import mean_absolute_error
 mae = mean_absolute_error(y_test, y_preds)
 2.1226372549019623
 ```
-Our model achieves an MAE of 2.123. This means, on average our models predictions are 2.123 units away from the actual value.
+- Our model achieves an MAE of 2.123. This means, on average our models predictions are 2.123 units away from the actual value.
 
 ```Python
 df = pd.DataFrame(data={"actual values": y_test,
@@ -501,7 +501,29 @@ df = pd.DataFrame(data={"actual values": y_test,
 df["differences"] = df["predicted values"] - df["actual values"]
 df.head(5)
 ```
-
 <img width="310" alt="Screenshot 2021-05-26 at 11 03 03" src="https://user-images.githubusercontent.com/64508435/119596537-f4759480-be11-11eb-9a2b-9694b8e85921.png">
 
+- Visualize the results 
+
+```Python
+fig, ax = plt.subplots()
+x = np.arange(0, len(df), 1)
+ax.scatter(x, df["actual values"], c='b', label="Acutual Values")
+ax.scatter(x, df["predictions"], c='r', label="Predictions")
+ax.legend(loc=(1, 0.5));
+```
+
+![image](https://user-images.githubusercontent.com/64508435/119598194-158bb480-be15-11eb-9d94-eb08ff7a8b37.png)
+
+**4.3.3. Mean Squared Error (MAE)**
+- MSE will always be higher than MAE because is squares the errors rather than only taking the absolute difference into account.
+```Python
+from sklearn.metrics import mean_squared_error
+
+mse = mean_squared_error(y_test, y_preds) #9.867437068627442
+
+#Calculate MSE by hand
+squared = np.square(df["differences"])
+squared.mean() #9.867437068627439
+```
 [(Back to top)](#table-of-contents)
