@@ -62,12 +62,11 @@ plt.show()
 ```
 - Note: `Matplotlib Gotchas`
 While most `plt` functions translate directly to `ax` methods (such as plt.plot() → ax.plot(), plt.legend() → ax.legend(), etc.), this is not the case for all commands. In particular, functions to set limits, labels, and titles are slightly modified. For transitioning between MATLAB-style functions and object-oriented methods, make the following changes:
-
-`plt.xlabel()` → `ax.set_xlabel()`
-`plt.ylabel()` → `ax.set_ylabel()`
-`plt.xlim()` → `ax.set_xlim()`
-`plt.ylim()` → `ax.set_ylim()`
-`plt.title()` → `ax.set_title()`
+  - `plt.xlabel()` → `ax.set_xlabel()`
+  - `plt.ylabel()` → `ax.set_ylabel()`
+  - `plt.xlim()` → `ax.set_xlim()`
+  - `plt.ylim()` → `ax.set_ylim()`
+  - `plt.title()` → `ax.set_title()`
 In the object-oriented interface to plotting, rather than calling these functions individually, it is often more convenient to use the ax.set() 
 
 ```Python
