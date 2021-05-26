@@ -253,7 +253,7 @@ clf.score(X_test, y_test)
   - You can change the **evaluation score** of `cross_val_score()` uses by changing the `scoring` parameter.
 
 ### 4.3 Evaluating with Problem-Specific Metric Function
-#### Classification Model Evaluation Metrics
+## Classification Model Evaluation Metrics
 Four of the main evaluation metrics/methods you'll come across for classification models are:
 1. Accuracy: default metric for the score() function within each of Scikit-Learn's classifier models
 2. Area under ROC curve
@@ -461,6 +461,36 @@ To summarize:
 * If false positive predictions are worse than false negatives, aim for higher precision.
 * If false negative predictions are worse than false positives, aim for higher recall.
 
-#### Regression Model Evaluation Metrics
+## Regression Model Evaluation Metrics
 
+Regression Model evaluation metrics: https://scikit-learn.org/stable/modules/model_evaluation.html#regression-metrics
+
+1. R^2 (r-squared) or coefficient of determination. → Maximize
+2. Mean Absolute Error (MAE) → Minimize
+3. Mean Squared Error (MSE)  → Minimize
+
+**4.3.1. R^2 (r-squared) or coefficient of determination.**
+- What R-squared does: Compares your model predictions to the mean of the targets. 
+- Values can range from negative infinity (a very poor model) to 1. 
+- For example, if all your model does is predicting the mean of the targets, it's R^2 value would be 0. And if your model perfectly predicts a range of numbers it 's R^2 value would be 1.
+
+```Python
+y_preds = model.predict(X_test)
+r2_score(y_test, y_preds) #Can indicate how well the model is predicting, but can't give how far the prediction is => MAE
+
+0.8654448653350507
+```
+
+**4.3.2. Mean Absolute Error (MAE)**
+
+* MAE is the average of the absolute diff btw predictions and actual values.
+* MAE gives a better indication of how far off each of your model's predictions are on average.
+
+
+```Python
+from sklearn.metrics import mean_absolute_error
+
+mae = mean_absolute_error(y_test, y_preds)
+2.1226372549019623
+```
 [(Back to top)](#table-of-contents)
