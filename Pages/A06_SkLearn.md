@@ -252,6 +252,39 @@ clf.score(X_test, y_test)
 * **Note#2**:`cross_val_score(clf, X, y, cv=5, scoring=None) # default scoring`: by default, scoring set to `None`, i.e: `cross_val_score()` will use  the same metric as score()
   - For Ex: clf which is an instance of RandomForestClassifier uses mean accuracy as the default score() metric, so `cross_val_score()` will use mean accuracy also
   - You can change the **evaluation score** of `cross_val_score()` uses by changing the `scoring` parameter.
+- Cross-Val score for **Classification Model**
+
+```Python
+cv_acc = cross_val_score(clf, X,y, scoring="accuracy")
+print(f'The cross-validated accuracy is: {np.mean(cv_acc)*100:.2f}%')
+#The cross-validated accuracy is: 82.48%
+
+cv_precision = cross_val_score(clf, X,y, scoring="precision")
+print(f'The cross-validated precision is: {np.mean(cv_precision)*100:.2f}%')
+#The cross-validated precision is: 80.86%
+
+cv_recall = cross_val_score(clf, X,y, scoring="recall")
+print(f'The cross-validated recall is: {np.mean(cv_recall)*100:.2f}%')
+#The cross-validated recall is: 84.24%
+
+cv_f1 = cross_val_score(clf, X,y, scoring="f1")
+print(f'The cross-validated f1 is: {np.mean(cv_f1)*100:.2f}%')
+#The cross-validated f1 is: 84.15%
+```
+- Cross-Val score for **Regression Model**
+
+```Python
+cv_r2 = cross_val_score(model, X, y, cv=5, scoring=None) #default score function= R^2
+np.mean(cv_r2) #0.6243870737930857
+
+# Mean Absolute Error
+cv_mae = cross_val_score(model, X,y, cv=5, scoring="neg_mean_absolute_error")
+np.mean(cv_mae) #-3.003222869345758
+
+# Mean Squared Error
+cv_mse = cross_val_score(model, X,y, cv=5, scoring="neg_mean_squared_error")
+np.mean(cv_mse) #-21.12863512415064
+```
 
 ### 4.3 Evaluating with Problem-Specific Metric Function
 ## Classification Model Evaluation Metrics
