@@ -449,7 +449,6 @@ plot_confusion_matrix(clf, X, y)
 * **Marco Avg**: the average precision, recall and F1 score of each class (0 & 1) => Drawback: does not reflect class imbalance (i.e: maybe 0 samples maybe more outweight 1 samples)
 * **Weighted Avg**: same as Marco Avg, except: each metric is calculated w.r.t how many samples there are in each class. This metric will favour majority class (i.e: the class which has more samples)
 
-
 ```Python
 from sklearn.metrics import classification_report
 
@@ -464,6 +463,25 @@ print(classification_report(y_test, y_preds))
    macro avg       0.80      0.80      0.80        61
 weighted avg       0.80      0.80      0.80        61
 ```
+- Alternately, you can use `sklearn.metrics`
+```Python
+from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
+
+# Evaluate the classifier
+print("Classifier metrics on the test set")
+print(f"Accuracy: {accuracy_score(y_test, y_preds)*100:.2f}%")
+print(f"Precision: {precision_score(y_test, y_preds)}")
+print(f"Recall: {recall_score(y_test, y_preds)}")
+print(f"F1: {f1_score(y_test, y_preds)}")
+
+#Classifier metrics on the test set
+#Accuracy: 85.25%
+#Precision: 0.8484848484848485
+#Recall: 0.875
+#F1: 0.8615384615384615
+```
+
+
 ##### Example of Imbalanced Classes
 For example, let's say there were 10,000 people. And 1 of them had a disease. You're asked to build a model to predict who has it.
 
@@ -509,6 +527,7 @@ Regression Model evaluation metrics: https://scikit-learn.org/stable/modules/mod
 - For example, if all your model does is predicting the mean of the targets, it's R^2 value would be 0. And if your model perfectly predicts a range of numbers it 's R^2 value would be 1.
 
 ```Python
+from sklearn.metrics import r2_score
 y_preds = model.predict(X_test)
 r2_score(y_test, y_preds) #Can indicate how well the model is predicting, but can't give how far the prediction is => MAE
 
