@@ -17,6 +17,7 @@
 
 ## Resources:
 - [AI Road Map](https://i.am.ai/roadmap/#note)
+- [Reading List](./Pages/A00_Reading_List.md)
 - [Deep Learning Monitor: Latest Deep Learning Research Papers](https://deeplearn.org/)
 ### Podcast:
 - [1. Super Data Science](https://www.superdatascience.com/podcast/sds-041-inspiring-journey-totally-different-background-data-science)

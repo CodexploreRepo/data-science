@@ -45,7 +45,7 @@ y = [11,22,33,44]
 - **MATLAB-style or PyPlot API**: Matplotlib was originally written as a Python alternative for MATLAB users, and much of its syntax reflects that fact
 ```Python
 # Pyplot API
-plt.plot(x,y)
+plt.plot(x,y, color='blue')
 
 plt.title("A Sine Curve") #in OO, use the ax.set() method to set all these properties at once
 plt.xlabel("x")
@@ -60,7 +60,21 @@ fig, ax = plt.subplots() #create figure + set of subplots, by default, nrow =1, 
 ax.plot(x,y) #add some data
 plt.show()
 ```
+##### Matplotlib Gotchas
 
+While most `plt` functions translate directly to `ax` methods (such as plt.plot() → ax.plot(), plt.legend() → ax.legend(), etc.), this is not the case for all commands. In particular, functions to set limits, labels, and titles are slightly modified. For transitioning between MATLAB-style functions and object-oriented methods, make the following changes:
+  - `plt.xlabel()` → `ax.set_xlabel()`
+  - `plt.ylabel()` → `ax.set_ylabel()`
+  - `plt.xlim()` → `ax.set_xlim()`
+  - `plt.ylim()` → `ax.set_ylim()`
+  - `plt.title()` → `ax.set_title()`
+In the object-oriented interface to plotting, rather than calling these functions individually, it is often more convenient to use the ax.set() 
+
+```Python
+ax.set(xlim=(0, 10), ylim=(-2, 2),
+       xlabel='x', ylabel='sin(x)',
+       title='A Simple Plot');
+```
 
 ## Matplotlib Workflow
 ```Python
