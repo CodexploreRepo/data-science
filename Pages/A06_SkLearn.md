@@ -183,8 +183,7 @@ clf.score(X_test, y_test) #Return the mean accuracy on the given test data and l
 
 ## Make predictions using ML model
 ### 3.1 Predict for Classification Models
-#### 2 ways to make predictions:
-##### 1. Using `predict()`
+#### 1. Using `predict()`
 ```Python
 # Use a trained model to make predictions
 y_preds = clf.predict(X_test)
@@ -193,7 +192,7 @@ y_preds = clf.predict(X_test)
 ```Python
 clf.predict([[12]])
 ```
-##### 2. Using `predict_proba()`
+#### 2. Using `predict_proba()`
 - `predict_proba()` returns the probabilities of a classification label.
 ```Python
 clf.predict_proba(X_test) #[x% prob class = 0, y% prob class = 1]
