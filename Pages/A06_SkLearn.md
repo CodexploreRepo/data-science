@@ -294,13 +294,13 @@ Four of the main evaluation metrics/methods you'll come across for classificatio
 3. Confusion matrix
 4. Classification report
 
-**4.3.1. Accuracy**
+### 4.3.1. Accuracy 
 ```Python
 print(f"Heart Disease Classifier Cross-Validated Accuracy: {np.mean(cross_val_score)*100:.2f}%")
 
 Heart Disease Classifier Cross-Validated Accuracy: 82.48%
 ```
-**4.3.2. Area under the receiver operating characteristic curve (AUC/ROC)**
+### 4.3.2. Area under the receiver operating characteristic curve (AUC/ROC)
 * Area Under Curve (AUC)
 * Receiver Operating Characteristic (ROC) Curve
 
@@ -387,7 +387,7 @@ This means that the top left corner of the plot is the “ideal” point - a fal
 - [ROC and AUC, Clearly Explained!](https://www.youtube.com/watch?v=4jRBRDbJemM)
 - [Classification: ROC Curve and AUC](https://developers.google.com/machine-learning/crash-course/classification/roc-and-auc)
 
-**4.3.3. Confusion Matrix**
+### 4.3.3. Confusion Matrix
 - A confusion matrix is a quick way to compare the labels a model predicts and the actual labels it was supposed to predict.
 
 ```Python
@@ -436,7 +436,7 @@ plot_confusion_matrix(clf, X, y)
 ```
 ![Unknown](https://user-images.githubusercontent.com/64508435/119519754-4552a200-bdac-11eb-8dde-c17097719a75.png)
 
-**4.3.4. Classification Report**
+### 4.3.4. Classification Report
 
 * **Precision**: proportion of positive identifications (model predicted class 1) are actually correct → No false postives, Precision = 1.0
 * **Recall**: proportion of actual positives are correctly classified → No false negatives, Recall = 1.0
@@ -521,7 +521,7 @@ Regression Model evaluation metrics: https://scikit-learn.org/stable/modules/mod
 2. Mean Absolute Error (MAE) → Minimize
 3. Mean Squared Error (MSE)  → Minimize
 
-**4.3.1. R^2 (r-squared) or coefficient of determination.**
+### 4.3.1. R^2 (r-squared) or coefficient of determination
 - What R-squared does: Compares your model predictions to the mean of the targets. 
 - Values can range from negative infinity (a very poor model) to 1. 
 - For example, if all your model does is predicting the mean of the targets, it's R^2 value would be 0. And if your model perfectly predicts a range of numbers it 's R^2 value would be 1.
@@ -534,7 +534,7 @@ r2_score(y_test, y_preds) #Can indicate how well the model is predicting, but ca
 0.8654448653350507
 ```
 
-**4.3.2. Mean Absolute Error (MAE)**
+### 4.3.2. Mean Absolute Error (MAE)
 
 * MAE is the average of the absolute diff btw predictions and actual values.
 * MAE gives a better indication of how far off each of your model's predictions are on average.
@@ -568,7 +568,7 @@ ax.legend(loc=(1, 0.5));
 
 ![image](https://user-images.githubusercontent.com/64508435/119598194-158bb480-be15-11eb-9d94-eb08ff7a8b37.png)
 
-**4.3.3. Mean Squared Error (MAE)**
+### 4.3.3. Mean Squared Error (MAE)
 - MSE will always be higher than MAE because is squares the errors rather than only taking the absolute difference into account.
 ```Python
 from sklearn.metrics import mean_squared_error
