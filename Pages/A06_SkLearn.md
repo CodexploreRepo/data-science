@@ -7,6 +7,7 @@
   - [2. Choose the right estimator](#choose-the-right-estimator)
   - [3. Make predictions using ML model](#make-predictions-using-ml-model)
   - [4. Evaluate a Machine Learning Model](#evaluate-a-machine-learning-model)
+  - [5. Enhance Model](#enhance-model)
 
 # Scikit Learn Introduction
 - Scikit Learn (SkLearn): Python Machine Learning Library, built on Numpy & Matplotlib
@@ -583,4 +584,8 @@ mse = mean_squared_error(y_test, y_preds) #9.867437068627442
 squared = np.square(df["differences"])
 squared.mean() #9.867437068627439
 ```
+[(Back to top)](#table-of-contents)
+
+## Enhance Model
+
 [(Back to top)](#table-of-contents)
