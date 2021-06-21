@@ -8,7 +8,7 @@
   - [3. Make predictions using ML model](#make-predictions-using-ml-model)
   - [4. Evaluate a ML model](#evaluate-a-machine-learning-model)
   - [5. Enhance ML odel](#enhance-model)
-  - [6. Sklearn Pipeline](#sklearn-ipeline)
+  - [6. Sklearn Pipeline](#sklearn-pipeline)
   - [7. Save and Load ML model](#save-and-load-model)
 # Scikit Learn Introduction
 - Scikit Learn (SkLearn): Python Machine Learning Library, built on Numpy & Matplotlib
