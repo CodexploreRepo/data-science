@@ -610,12 +610,12 @@ From a **model** perspective:
 2. Randomly with RandomSearchCV
 3. Exhaustively with GridSearchCV
 
-- Take `clf = RandomForestClassifier()` as an example. We're going to try and adjust below Hyperparameters of the classifer:
-* `max_depth`
-* `max_features`
-* `min_samples_leaf`
-* `min_samples_split`
-* `n_estimators`
+* Take `clf = RandomForestClassifier()` as an example. We're going to try and adjust below Hyperparameters of the classifer:
+  * `max_depth`
+  * `max_features`
+  * `min_samples_leaf`
+  * `min_samples_split`
+  * `n_estimators`
 
 - Create a function to evaluate `y_true` vs `y_preds`:
 ```Python
@@ -651,7 +651,6 @@ y_preds = clf.predict(X_test)
 # Evaludate the classifier on the validation set
 
 baseline_metrics = evaluate_preds(y_test, y_preds)
-
 Acc: 83.61%
 Precision: 0.84
 Recall: 0.84
