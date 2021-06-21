@@ -611,9 +611,9 @@ From a **model** perspective:
 3. Exhaustively with GridSearchCV
 
 * Take `clf = RandomForestClassifier()` as an example. We're going to try and adjust below Hyperparameters of the classifer:
-  * `max_depth`
-  * `max_features`
-  * `min_samples_leaf`
+  * `max_depth`:  (the maximum depth of the tree)
+  * `max_features`: (the number of features to consider when looking for the best split)
+  * `min_samples_leaf`: (the minimum number of samples required to be at a leaf node)
   * `min_samples_split`
   * `n_estimators`
 
@@ -657,7 +657,7 @@ Recall: 0.84
 F1 score: 0.84
 ```
 
-### 5.2 Fine-tune Hyperparameters by hand
+### 5.2 Hyperparameter Tuning by hand
 - Fine-tune the model with `n_estimators=100, max_depth=10`
 ```Python
 clf = RandomForestClassifier(n_estimators=100, max_depth=10)#More work taken if adjust by hand like this)
@@ -674,6 +674,65 @@ Precision: 0.85
 Recall: 0.88
 F1 score: 0.86
 ```
+### 5.3 Hyperparameter Tuning with RandomizedSearchCV
+-Scikit-Learn's `RandomizedSearchCV` allows us to randomly search across different hyperparameters to see which work best. 
+- It also stores details about the ones which work best!
+  - First, we create a grid (dictionary) of hyperparameters we'd like to search over.
 
+```Python
+# Hyperparameter grid RandomizedSearchCV will search over
+grid = {"n_estimators": [10,100, 200, 500, 1000, 1200],
+        "max_depth": [None, 5,10,20,30],
+        "max_features": ["auto", "sqrt"],
+        "min_samples_split": [2,4,6],
+        "min_samples_leaf": [1,2,4]}
+```
+- Since we're going over so many different models, we'll set `n_jobs` to `-1` of `RandomForestClassifier(n_jobs=-1)` so Scikit-Learn takes advantage of all the cores (processors) on our computers.
+
+```Python
+from sklearn.model_selection import RandomizedSearchCV
+
+#Instantiate RandomForestClassifier
+clf = RandomForestClassifier(n_jobs=-1) #The number of jobs to run in parallel
+#since we're going over so many different models, we'll set n_jobs to -1 of RandomForestClassifier so Scikit-Learn takes advantage of all the cores (processors) on our computers.
+
+# Setup RandomizedSearchCV
+rs_clf = RandomizedSearchCV(estimator=clf,
+                            param_distributions=grid,
+                            n_iter=10, #number of models to try
+                            cv=5,
+                            verbose=2,
+                            random_state=42, # set random_state to 42 for reproducibility
+                            refit=True) # set refit=True (default) to refit the best model on the full dataset )
+
+# Fit the RandomizedSearchCV version of clf
+rs_clf.fit(X_train, y_train);
+
+#Fitting 5 folds for each of 10 candidates, totalling 50 fits
+```
+
+* `n_iter = 10` in `RandomizedSearchCV` => randomly select 10 combo of Hyperparameter to create 10 models based on the selected hyperparameter
+* `cv = 5` => for each combo of Hyperparameters, the data will be splitted 5 times with cv
+* Total = 50 models
+
+```Python
+rs_clf.best_params_
+
+{'n_estimators': 100,
+ 'min_samples_split': 2,
+ 'min_samples_leaf': 4,
+ 'max_features': 'auto',
+ 'max_depth': 30}
+```
+- `.best_params_` to return the best hyperparameter combo
+- we can make prediction with the best hyperparameter combo
+```Python
+rs_y_preds = rs_clf.predict(X_test) #predict() in this case will use the best_params_
+rs_metrics = evaluate_preds(y_test, rs_y_preds)
+Acc: 85.25%
+Precision: 0.85
+Recall: 0.88
+F1 score: 0.86
+```
 
 [(Back to top)](#table-of-contents)
