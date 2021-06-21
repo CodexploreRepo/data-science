@@ -610,8 +610,7 @@ From a **model** perspective:
 2. Randomly with RandomSearchCV
 3. Exhaustively with GridSearchCV
 
-### 5.2 Fine-tune Hyperparameters by hand
-- Take `lf = RandomForestClassifier()` as an example. We're going to try and adjust:
+- Take `clf = RandomForestClassifier()` as an example. We're going to try and adjust below Hyperparameters of the classifer:
 * `max_depth`
 * `max_features`
 * `min_samples_leaf`
@@ -640,6 +639,41 @@ def evaluate_preds(y_true, y_preds):
     print(f"F1 score: {f1:.2f}")
 
     return metric_dict
+```
+- Baseline model:
+```Python
+clf = RandomForestClassifier()
+clf.fit(X_train, y_train)
+
+# Make Baseline Predictions
+y_preds = clf.predict(X_test)
+
+# Evaludate the classifier on the validation set
+
+baseline_metrics = evaluate_preds(y_test, y_preds)
+
+Acc: 83.61%
+Precision: 0.84
+Recall: 0.84
+F1 score: 0.84
+```
+
+### 5.2 Fine-tune Hyperparameters by hand
+- Fine-tune the model with `n_estimators=100, max_depth=10`
+```Python
+clf = RandomForestClassifier(n_estimators=100, max_depth=10)#More work taken if adjust by hand like this)
+clf.fit(X_train, y_train)
+
+# Make Baseline Predictions
+y_preds = clf.predict(X_test)
+
+# Evaludate the classifier on the validation set
+
+baseline_metrics = evaluate_preds(y_test, y_preds)
+Acc: 85.25%
+Precision: 0.85
+Recall: 0.88
+F1 score: 0.86
 ```
 
 
