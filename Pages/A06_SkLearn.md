@@ -587,5 +587,28 @@ squared.mean() #9.867437068627439
 [(Back to top)](#table-of-contents)
 
 ## Enhance Model
+### Terms and Methods
+
+* First predictions = **baseline predictions**
+* First model = **baseline model**
+
+From a **data** perspective:
+* Could we collect more data ? (Generally, the more data, the better)
+* Could we improve our data ? 
+
+From a **model** perspective:
+* Is there a better model we could use ?
+* Could we improve the current model ?
+
+#### Hyperparameter vs Parameters
+* **Parameters** = model find these patterns in data
+* **Hyperparameters** = settings on a model you can adjust to (potentially) improve its ability to find the patterns
+
+
+#### Three Methods to adjust hyperparameters:
+1. By Hand
+2. Randomly with RandomSearchCV
+3. Exhaustively with GridSearchCV
+
 
 [(Back to top)](#table-of-contents)
