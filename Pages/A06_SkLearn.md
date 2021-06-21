@@ -12,6 +12,11 @@
 - Scikit Learn (SkLearn): Python Machine Learning Library, built on Numpy & Matplotlib
 - Machine Learning = Computer is writting it own function (or ML Models/Algorithms) based on I/P & O/P data.
 
+![image](https://user-images.githubusercontent.com/64508435/122766902-a353a600-d2d4-11eb-8644-0db8b3fde41e.png)
+
+##### Readings
+- [A 6 Step Field Guide for Building Machine Learning Projects](https://www.mrdbourke.com/a-6-step-field-guide-for-building-machine-learning-projects/)
+
 [(Back to top)](#table-of-contents)
 
 # Scikit Learn Workflow
