@@ -605,7 +605,7 @@ From a **model** perspective:
 * **Hyperparameters** = settings on a model you can adjust to (potentially) improve its ability to find the patterns
 
 
-#### 5.1.2. Three Methods to adjust hyperparameters:
+#### 5.1.2. Three Methods to adjust Hyperparameters:
 1. By Hand
 2. Randomly with RandomSearchCV
 3. Exhaustively with GridSearchCV
@@ -675,7 +675,7 @@ Recall: 0.88
 F1 score: 0.86
 ```
 ### 5.3 Hyperparameter Tuning with RandomizedSearchCV
--Scikit-Learn's `RandomizedSearchCV` allows us to randomly search across different hyperparameters to see which work best. 
+- Scikit-Learn's `RandomizedSearchCV` allows us to randomly search across different hyperparameters to see which work best. 
 - It also stores details about the ones which work best!
   - First, we create a grid (dictionary) of hyperparameters we'd like to search over.
 
