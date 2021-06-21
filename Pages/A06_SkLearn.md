@@ -815,6 +815,109 @@ compare_metrics.plot.bar(figsize=(10,8));
   * A numeric transformer to fill the numeric column missing values with the mean of the rest of the column.
 - All of these will be done with the `Pipeline()` class.
 
+```Python
+# Pipeline module import
+from sklearn.pipeline import Pipeline
+
+# Getting data ready
+from sklearn.impute import SimpleImputer
+from sklearn.preprocessing import OneHotEncoder
+from sklearn.compose import ColumnTransformer
+
+
+# Define different features and transformer Pipeline
+categorical_features = ["Make", "Colour"]
+categorical_transformer = Pipeline(steps=[
+    ("imputer", SimpleImputer(strategy="constant", fill_value="missing")),
+    ("onehot", OneHotEncoder(handle_unknown="ignore")) #transform 
+])
+
+door_feature = ["Doors"]
+door_transformer = Pipeline(steps=[
+    # Create door transformer (fills all door missing values with 4)
+    ("imputer", SimpleImputer(strategy="constant", fill_value=4)) 
+])
+
+numeric_feature = ["Odometer (KM)"]
+numeric_transformer = Pipeline(steps=[
+    ("imputer", SimpleImputer(strategy="mean"))
+])
+
+# Setup Preprocessing steps (fill missing values, then convert to numbers)
+preprocessor = ColumnTransformer(
+    transformers=[
+        ("categorical", categorical_transformer, categorical_features),
+        ("door", door_transformer, door_feature),
+        ("numeric", numeric_transformer, numeric_feature)
+    ]
+)
+
+# Creating a preprocessing and modelling Pipeline
+model = Pipeline(steps=[
+    ("preprocessor", preprocessor),# this will fill our missing data and make sure it's all numbers
+    ("model", RandomForestClassifier()) # this will model our data
+
+])
+```
+- `Pipeline()`'s main input is steps which is a list (`[(step_name, action_to_take)]`) of the step name, plus the action you'd like it to perform.
+
+```Python
+model.fit(X_train, y_train)
+```
+### Pipeline behind the scenes
+- When filling **numerical data**, it's important **not** to use values from the test set to fill values in the training set. Since we're trying to predict on the test set, this would be like taking information from the future to fill in the past.
+- Let's have an example.
+- In our case, the `Odometer (KM)` column is missing values. We could fill every value in the column (before splitting it into train and test) with the `mean()`. But this would result in using information from the test set to fill the training set (because we fill the whole column before the split).
+- Instead, we split the data into train and test sets first (still with missing values). Then calculate the `mean()` of the `Odometer (KM)` column on the training set and use it to fill the **training set** missing values *as well as* the **test set** missing values. 
+- Now you might be asking, how does this happen?
+- Well, behind the scenes, `Pipeline()` calls a couple of methods:
+1. `fit_transform()` - in our case, this computes the `mean()` of the `Odometer (KM)` column and then transforms the rest of the column on the **training data**. It also stores the `mean()` in memory.
+2. `transform()` - uses the saved `mean()` of the `Odometer (KM)` column and transforms the **test** values.
+
+The magic trick is:
+* `fit_transform()` is only ever used when calling `fit()` on your `Pipeline()` (in our case, when we used `model.fit(X_train, y_train)`.
+* `transform()` is only ever used when calling `score()` or `predict()` on your `Pipeline()` (in our case, `model.score(X_test, y_test)`.
+
+<img width="1240" alt="sklearn-whats-happening-with-pipeline" src="https://user-images.githubusercontent.com/64508435/122838556-dde72e00-d328-11eb-95ee-33b43a47b44a.png">
+
+- This means, when our missing **numerical values** get calculated and filled (using `fit_transform()`), they only happen on the training data (as long as you only pass `X_train` and `y_train` to `model.fit()`).
+- And since they get saved in memory, when we call `model.score(X_test, y_test)` and subsequently `transform()`, the test data gets preprocessed with information from the training set (using the past to try and predict the future, not the other way round).
+
+#### What about categorical values?
+- Since they usually don't depend on each other, categorical values are okay to be filled across sets and examples.
+- Okay, knowing all this, let's cross-validate our model pipeline using [cross_val_score()](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.cross_val_score.html).
+- Since our `model` is an instance of `Pipeline()`, the same steps as we discussed above happen here with the `cross_val_score()`.
+
+### `Pipeline()` for `GridSearchCV` or `RandomizedSearchCV`
+- It's also possible to use `GridSearchCV` or `RandomizedSearchCV` with our `Pipeline`.
+- The main difference is when creating a hyperparameter grid, you **have to add a prefix to each hyperparameter**.
+- The prefix is the name of the Pipeline step you'd like to alter, followed by two `underscores`.
+  - For example, to adjust `n_estimators` of "model" in the Pipeline, you'd use: `"model__n_estimators"`.   
+- `--`: means up to one level from preprocessor -> numeric_transformer > imputer: adjust strategy
+
+```Python
+# Use GridSearchCV with our regression Pipeline
+from sklearn.model_selection import GridSearchCV
+#Grid of Hyper-parameters will be use in GridSearchCV
+pipe_grid = {
+    # -- : means up to one level
+    #from preprocessor -> numeric_transformer > imputer: adjust strategy
+    "preprocessor__numeric__imputer__strategy": ["mean", "median"],
+    "model__n_estimators": [100,1000],
+    "model__max_depth": [None, 5],
+    "model__max_features": ["auto"],
+    "model__min_samples_split": [2,4]
+}
+
+gs_model = GridSearchCV(model, pipe_grid, cv=5, verbose=2)
+gs_model.fit(X_train, y_train)
+```
+
+### Readings:
+- **Reading:** [Scikit-Learn Pipeline() documentation](https://scikit-learn.org/stable/modules/generated/sklearn.pipeline.Pipeline.html).
+- **Reading:** [Imputing missing values before building an estimator](https://scikit-learn.org/stable/auto_examples/impute/plot_missing_values.html) (compares different methods of imputing values).
+- **Practice:** Try [tuning model hyperparameters with a `Pipeline()` and `GridSearchCV()`](https://scikit-learn.org/stable/modules/grid_search.html#composite-estimators-and-parameter-spaces).
+
 [(Back to top)](#table-of-contents)
 
 ## Save and Load Model
