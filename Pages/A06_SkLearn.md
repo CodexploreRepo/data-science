@@ -6,9 +6,10 @@
   - [1. Get data ready](#get-data-ready)
   - [2. Choose the right estimator](#choose-the-right-estimator)
   - [3. Make predictions using ML model](#make-predictions-using-ml-model)
-  - [4. Evaluate a Machine Learning Model](#evaluate-a-machine-learning-model)
+  - [4. Evaluate a ML model](#evaluate-a-machine-learning-model)
   - [5. Enhance Model](#enhance-model)
-
+  - [6. Sklearn Pipeline](#sklearn-Pipeline)
+  - [7. Save and Load ML model](save-and-load-ml-model)
 # Scikit Learn Introduction
 - Scikit Learn (SkLearn): Python Machine Learning Library, built on Numpy & Matplotlib
 - Machine Learning = Computer is writting it own function (or ML Models/Algorithms) based on I/P & O/P data.
@@ -792,5 +793,13 @@ compare_metrics = pd.DataFrame({"baseline": baseline_metrics,
 compare_metrics.plot.bar(figsize=(10,8));
 ```
 ![Unknown](https://user-images.githubusercontent.com/64508435/122788601-136c2700-d2e9-11eb-89ef-0558f9d1ffb4.png)
+
+[(Back to top)](#table-of-contents)
+
+## Pipeline
+
+[(Back to top)](#table-of-contents)
+
+## Save and Load ML model
 
 [(Back to top)](#table-of-contents)
