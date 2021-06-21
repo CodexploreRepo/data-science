@@ -149,7 +149,7 @@ transformed_X_train.toarray()
 1. **Structured data (tables)** → ensemble methods (combine the predictions of several base estimators built with a given learning algorithm in order to improve generalizability / robustness over a single estimator)
 2. **Unstructured data (image, audio, text, video)** → deep learning or transfer learning 
 
-### Choose the right estimator for Regression Problem:
+### 2.1 Choose the right estimator for Regression Problem:
 ```Python
 # Let's try the Ridge Regression Model
 from sklearn.linear_model import Ridge
@@ -165,7 +165,7 @@ model.fit(X_train, y_train)
 model.score(X_test, y_test) #Return R^2 of the regression
 ```
 
-### Choose the right estimator for Classification Problem:
+### 2.2 Choose the right estimator for Classification Problem:
 
 ```Python
 # Import the LinearSVC estimator class
