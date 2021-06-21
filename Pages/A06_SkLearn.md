@@ -7,9 +7,9 @@
   - [2. Choose the right estimator](#choose-the-right-estimator)
   - [3. Make predictions using ML model](#make-predictions-using-ml-model)
   - [4. Evaluate a ML model](#evaluate-a-machine-learning-model)
-  - [5. Enhance Model](#enhance-model)
-  - [6. Sklearn Pipeline](#sklearn-Pipeline)
-  - [7. Save and Load ML model](save-and-load-ml-model)
+  - [5. Enhance ML odel](#enhance-model)
+  - [6. Sklearn Pipeline](#sklearn-ipeline)
+  - [7. Save and Load ML model](#save-and-load-model)
 # Scikit Learn Introduction
 - Scikit Learn (SkLearn): Python Machine Learning Library, built on Numpy & Matplotlib
 - Machine Learning = Computer is writting it own function (or ML Models/Algorithms) based on I/P & O/P data.
@@ -796,10 +796,35 @@ compare_metrics.plot.bar(figsize=(10,8));
 
 [(Back to top)](#table-of-contents)
 
-## Pipeline
+## Sklearn Pipeline 
 
 [(Back to top)](#table-of-contents)
 
-## Save and Load ML model
+## Save and Load Model
 
+Two ways to save and load machine learning models:
+1. With Python's `pickle` module
+2. With the `joblib` module
+
+### Pickle
+```Python
+import pickle
+
+#Save an existing model to file
+pickle.dump(gs_clf, open('gs_random_forest_model_1.pkl', "wb"))
+
+# Load a saved model
+loaded_pickle_model = pickle.load(open("gs_random_forest_model_1.pkl", "rb"))
+```
+### Joblib
+
+```Python
+from joblib import dump, load
+
+# Save model to file
+dump(gs_clf, filename="gs_random_forest_model_1.joblib")
+
+# Import a save joblib model
+loaded_job_model = load(filename="gs_random_forest_model_1.joblib")
+```
 [(Back to top)](#table-of-contents)
