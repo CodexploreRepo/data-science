@@ -803,21 +803,21 @@ compare_metrics.plot.bar(figsize=(10,8));
 - A `Pipeline()` in Scikit-Learn is a class which allows us to put multiple steps, such as filling data and then modelling it, together sequentially.
 
 - More specifically, we'll go through the following steps:
-1. Define categorical, door and numeric features.
-2. Build transformer `Pipeline()`'s for imputing missing data and encoding data.
-3. Combine our transformer `Pipeline()`'s with [`ColumnTransformer()`](https://scikit-learn.org/stable/modules/generated/sklearn.compose.ColumnTransformer.html).
-4. Build a `Pipeline()` to preprocess and model our data with the `ColumnTransformer()` and [`RandomForestRegressor()`](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html).
-5. Split the data into train and test using `train_test_split()`.
-6. Fit the preprocessing and modelling `Pipeline()` on the training data.
-7. Score the preprocessing and modelling `Pipeline()` on the test data.
+  - 1. Define categorical, door and numeric features.
+  - 2. Build transformer `Pipeline()`'s for imputing missing data and encoding data.
+  - 3. Combine our transformer `Pipeline()`'s with [`ColumnTransformer()`](https://scikit-learn.org/stable/modules/generated/sklearn.compose.ColumnTransformer.html).
+  - 4. Build a `Pipeline()` to preprocess and model our data with the `ColumnTransformer()` and [`RandomForestRegressor()`](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html).
+  - 5. Split the data into train and test using `train_test_split()`.
+  - 6. Fit the preprocessing and modelling `Pipeline()` on the training data.
+  - 7. Score the preprocessing and modelling `Pipeline()` on the test data.
 
 
 - Let's start with steps 1. and 2.
 
 - We'll build the following:
-* A categorical transformer to fill our categorical values with the value `'missing'` and then one encode them.
-* A door transformer to fill the door column missing values with the value `4`.
-* A numeric transformer to fill the numeric column missing values with the mean of the rest of the column.
+  * A categorical transformer to fill our categorical values with the value `'missing'` and then one encode them.
+  * A door transformer to fill the door column missing values with the value `4`.
+  * A numeric transformer to fill the numeric column missing values with the mean of the rest of the column.
 
 - All of these will be done with the `Pipeline()` class.
 
