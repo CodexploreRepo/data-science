@@ -16,13 +16,13 @@
 
 # Scikit Learn Workflow
 ## Get data ready
-### 4 main things we have to do:
+4 main things we have to do:
 1.1. Split the data into features and labels (Usually `X` and `y`)
 1.2. Imputing: Filling or disregarding missing values
 1.3. Feature Encoding: Converting non-numerical values to numerical values
 1.4. Feature Scaling: making sure all of your numerical data is on the same scale
 
-#### 1.1. Split Data into X and y
+### 1.1. Split Data into X and y
 - Before split, Drop all rows with Missing Values in y.
 ```Python
 # Drop the rows with missing in the "Price" column
@@ -46,7 +46,7 @@ from sklearn.model_selection import train_test_split
 
 X_train, X_test, y_train, y_test = train_test_split(X,y, test_size=0.2)
 ```
-#### 1.2. Imputing
+### 1.2. Imputing
 - Fill missing values with Scikit-Learn `SimpleImputer()` transforms data by filling missing values with a given strategy 
 ```Python
 from sklearn.impute import SimpleImputer #Help fill the missing values
@@ -84,7 +84,7 @@ car_sales_filled_test = pd.DataFrame(filled_X_test,
                                       columns=["Make", "Colour", "Odometer (KM)"])
 ```
 
-#### 1.3. Feature Encoding: Converting categorical features into numerical values
+### 1.3. Feature Encoding: Converting categorical features into numerical values
 - Note: **Needs to inspect numerical features to check their data are categorical or not** &#8594; need to convert into categorical also.
 - For example: "Door" feature, although, is numerical in type, but actually categorical feature since only  3 options: (4,5,3)
 ```Python
@@ -117,7 +117,7 @@ transformed_X_test = transformer.transform(car_sales_filled_test)
 
 transformed_X_train.toarray()
 ```
-#### 1.4. Feature Scaling
+### 1.4. Feature Scaling
 - For example: predict the sale price of cars 
   - The number of kilometres on their odometers varies from 6,000 to 345,000 
   - The median previous repair cost varies from 100 to 1,700. 
