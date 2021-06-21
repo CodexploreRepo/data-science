@@ -734,5 +734,63 @@ Precision: 0.85
 Recall: 0.88
 F1 score: 0.86
 ```
+### 5.4 Hyper-parametter Tuning with GridSearchCV
+- The main difference between `RandomizedSearchCV` and `GridSearchCV` is 
+  - `RandomizedSearchCV` searches across a grid of hyperparameters randomly (stopping after n_iter combinations).
+  - `GridSearchCV` searches across a grid of hyperparamters exhaustively
+- Based on `.best_params_` from `RandomizedSearchCV`, we will reduce the search space from`grid` of hyper-parameters for `GridSearchCV`.
+```Python
+# Another hyperparameter grid similar to rs_clf.best_params_
+grid_2 = {'n_estimators': [1200, 1500, 2000],
+          'max_depth': [None, 5, 10],
+          'max_features': ['auto', 'sqrt'],
+          'min_samples_split': [4, 6],
+          'min_samples_leaf': [1, 2]}
+```
+- `n_estimators` has 3, `max_depth` has 3, `max_features` has 2,`min_samples_leaf` has 2, `min_samples_split` has 2.
+- That's 3x3x2x2x2 = 72 models in total. 
+
+```Python
+from sklearn.model_selection import GridSearchCV
+
+# Setup GridSearchCV
+gs_clf = GridSearchCV(estimator=clf,
+                      param_grid=grid_2,
+                      cv=5,
+                      verbose=2)
+
+# Fit the RandomizedSearchCV version of clf
+gs_clf.fit(X_train, y_train);
+```
+- Fitting 5 folds (`cv=5`) for each of 72 candidates, totalling 360 models.
+```Python
+rs_clf.best_params_
+
+{'max_depth': 30,
+ 'max_features': 'sqrt',
+ 'min_samples_leaf': 4,
+ 'min_samples_split': 2,
+ 'n_estimators': 50}
+```
+
+- we can make prediction with the best hyperparameter combo
+```Python
+rs_y_preds = rs_clf.predict(X_test) #predict() in this case will use the best_params_
+rs_metrics = evaluate_preds(y_test, rs_y_preds)
+Acc: 86.89%
+Precision: 0.88
+Recall: 0.88
+F1 score: 0.88
+```
+- Let's compare our different model metrics
+```Python
+compare_metrics = pd.DataFrame({"baseline": baseline_metrics,
+                                "clf_2": clf_2_metrics,
+                                "random search": rs_metrics,
+                                "grid search": gs_metrics
+                                })
+compare_metrics.plot.bar(figsize=(10,8));
+```
+![Unknown](https://user-images.githubusercontent.com/64508435/122788601-136c2700-d2e9-11eb-89ef-0558f9d1ffb4.png)
 
 [(Back to top)](#table-of-contents)
