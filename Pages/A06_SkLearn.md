@@ -16,11 +16,11 @@
 
 # Scikit Learn Workflow
 ## Get data ready
-4 main things we have to do:
-1.1. Split the data into features and labels (Usually `X` and `y`)
-1.2. Imputing: Filling or disregarding missing values
-1.3. Feature Encoding: Converting non-numerical values to numerical values
-1.4. Feature Scaling: making sure all of your numerical data is on the same scale
+**4 main things we have to do:**
+- 1.1. Split the data into features and labels (Usually `X` and `y`)
+- 1.2. Imputing: Filling or disregarding missing values
+- 1.3. Feature Encoding: Converting non-numerical values to numerical values
+- 1.4. Feature Scaling: making sure all of your numerical data is on the same scale
 
 ### 1.1. Split Data into X and y
 - Before split, Drop all rows with Missing Values in y.
