@@ -587,7 +587,7 @@ squared.mean() #9.867437068627439
 [(Back to top)](#table-of-contents)
 
 ## Enhance Model
-### Terms and Methods
+### 5.1 Terms and Methods
 
 * First predictions = **baseline predictions**
 * First model = **baseline model**
@@ -600,15 +600,47 @@ From a **model** perspective:
 * Is there a better model we could use ?
 * Could we improve the current model ?
 
-#### Hyperparameter vs Parameters
+#### 5.1.1 Hyperparameter vs Parameters
 * **Parameters** = model find these patterns in data
 * **Hyperparameters** = settings on a model you can adjust to (potentially) improve its ability to find the patterns
 
 
-#### Three Methods to adjust hyperparameters:
+#### 5.1.2. Three Methods to adjust hyperparameters:
 1. By Hand
 2. Randomly with RandomSearchCV
 3. Exhaustively with GridSearchCV
+
+### 5.2 Fine-tune Hyperparameters by hand
+- Take `lf = RandomForestClassifier()` as an example. We're going to try and adjust:
+* `max_depth`
+* `max_features`
+* `min_samples_leaf`
+* `min_samples_split`
+* `n_estimators`
+
+- Create a function to evaluate `y_true` vs `y_preds`:
+```Python
+def evaluate_preds(y_true, y_preds):
+    """
+    Performs evaluation comparison on y_true labels vs y_preds labels
+    on a classification model
+    """
+    accuracy = accuracy_score(y_true, y_preds)
+    precision = precision_score(y_true, y_preds)
+    recall = recall_score(y_true, y_preds)
+    f1 = f1_score(y_true, y_preds)
+    metric_dict = {"accuracy" : round(accuracy,2),
+                   "precision": round(precision,2),
+                   "recall": round(recall,2),
+                   "f1": round(f1,2)}
+    
+    print(f"Acc: {accuracy * 100:.2f}%")
+    print(f"Precision: {precision:.2f}")
+    print(f"Recall: {recall:.2f}")
+    print(f"F1 score: {f1:.2f}")
+
+    return metric_dict
+```
 
 
 [(Back to top)](#table-of-contents)
