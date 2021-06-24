@@ -3,6 +3,7 @@
 - [0. Introduction](./Pages/P00_Introduction.md)
 - [1. Data Preprocessing](./Pages/P01_Data_Pre_Processing.md)
 - [2. Regression](./Pages/P02_Regression.md)
+- [Project Guideline](./Pages/Project_Guideline.md)
 - [Appendix](#appendix)
 - [Resources](#resources)
 
