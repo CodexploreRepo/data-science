@@ -15,13 +15,13 @@
 `conda create --prefix ./env pandas numpy matplotlib scikit-learn jupyter`
 #### 1.1.2. Create Conda Env from a base env
 - **Step 1**: Go to Base Env folder and export the base conda env to `environment.yml` file
+  - *Note*: open  `environment.yml` file by `vim environment.yml` to open the file &#8594; To exit Vim: `press ESC then ; then q to exit`
 ```Python
 conda env list #to list down current env
 conda activate /Users/quannguyen/Data_Science/Conda/env #Activate the base conda env
 conda env export > environment.yml #Export base conda env to environment.yml file
 conda deactivate #de-activate env once done
 ```
-  - **Note**: open  `environment.yml` file by `vim environment.yml` to open the file &#8594; To exit Vim: `press ESC then ; then q to exit`
 - **Step 2**: Go to current project folder and create the env based on `environment.yml` file
 ```python
 conda env create --prefix ./env -f environment.yml
