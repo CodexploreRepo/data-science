@@ -2,7 +2,7 @@
 
 ## Table of contents
 - [1. Company Questions](#1-company-questions)
-- [2. SQL Questions](#1-sql-questions)
+- [2. SQL Questions](#2-sql-questions)
 
 
 ## 1. Company Questions
