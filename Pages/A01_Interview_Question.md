@@ -1,12 +1,38 @@
 # Data Scientist - Interview Questions
 
 ## Table of contents
-- [1. SQL Questions](#1-sql-questions)
+- [1. Company Questions](#1-company-questions)
+- [2. SQL Questions](#1-sql-questions)
 
 
+## 1. Company Questions
+### 1.1. Facebook: Data Scientist
+- **Product Generalist** (i.e. solving a business case study)
+  - How to design the friends you may know feature -- how to recommend friends; 
+  - How can we tell if two users on Instagram are best friends
+  - How would you build a model to decide what to show a user and how would you evaluate its success
+  - How would you create a model to find bad sellers on marketplace?
+- **Coding Exercise (in SQL)**: joins (LEFT, RIGHT, UNION), group by, date manipulation
+- **Quantitative Analysis**
+  - How to test out the assumptions; how to decide next steps if the metrics shows only positive signals in certain features  
+  - How can you tell if your model is working?
+- **Applied Data (stats questions)**: AB Testing
+
+### 1.2. Shopee: Machine Learning
+- **Round 1 - Online Assessment**: including two easy coding questions 
+  - [Easy] Reverse a linked list, Convert decimal to hexadecimal without using built-in methods (str, int etc.)
+  - [Medium] Verify binary search tree, 
+  - [Hard] Min edit distance
+- **Round 2 - HR phone interview**:  mainly about your background，why you chose Shopee，your expected salary
+- **Round 3,4 - Techinical Interview**: 
+  - Fundamental ML questions: non-deep and deep methods, formula for gradient descent, basic ML models or algorithms, What is Kmeans? What is overfitting?  What are the linear classifiers? Explain how CNN works, random forest, recurrent neural network. Clustering. Nearest neighbors. 
+  - System Design: 
+    - How to search efficiently
+    - Given salaries of people from ten professions and salary of a new people. Design an algorithm to predict the profession of this new people. 
+- **Round 5 - Interview with Hiring Manager**: explain your Machine learning projects
 
 
-## 1. SQL Questions
+## 2. SQL Questions
 #### SQL#1: Facebook
 ```SQL
 Given the following data:
