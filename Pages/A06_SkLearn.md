@@ -7,7 +7,7 @@
   - [2. Choose the right estimator](#choose-the-right-estimator)
   - [3. Make predictions using ML model](#make-predictions-using-ml-model)
   - [4. Evaluate a ML model](#evaluate-a-machine-learning-model)
-  - [5. Enhance ML odel](#enhance-model)
+  - [5. Enhance ML model](#enhance-model)
   - [6. Sklearn Pipeline](#sklearn-pipeline)
   - [7. Save and Load ML model](#save-and-load-model)
 # Scikit Learn Introduction
