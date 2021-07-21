@@ -19,7 +19,7 @@
 
 ## Resources:
 - [AI Road Map](https://i.am.ai/roadmap/#note)
-- [AI Free Course](https://learn.aisingapore.org/professionals/)
+- [AI Free Course](https://learn.aisingapore.org/professionals/): Intel AI Academy
 - [Reading List](./Pages/A00_Reading_List.md)
 - [Deep Learning Monitor: Latest Deep Learning Research Papers](https://deeplearn.org/)
 ### Podcast:
