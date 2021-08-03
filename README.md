@@ -16,7 +16,7 @@
 - [Sklearn Cheat Sheet](./Pages/A06_SkLearn.md)
 - [Conda CLI Cheat Sheet](./Pages/A04_Conda_CLI.md)
 - [Statistics](./Pages/A05_Statistics.md)
-
+- [Kaggle 30 Days of Machine Learning](./Pages/A07_Kaggle_30_ML.md)
 ## Resources:
 - [AI Road Map](https://i.am.ai/roadmap/#note)
 - [AI Free Course](https://learn.aisingapore.org/professionals/): Intel AI Academy
