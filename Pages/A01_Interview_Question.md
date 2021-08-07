@@ -20,13 +20,14 @@
 
 ### 1.2. Machine Learning Engineer
 - **Coding Interview**: 
-  - [Easy] Reverse a linked list, Convert decimal to hexadecimal without using built-in methods (str, int etc.)
-  - [Medium] Verify binary search tree, 
+  - [Data Structure] Difference Stack vs Queue, Dequeue Implementation, Linked List Reversal
+  - [Easy] Reverse a linked list, Convert decimal to hexadecimal without using built-in methods (str, int etc.), pairs of number that sum up to K
+  - [Medium] Verify binary search tree
   - [Hard] Min edit distance
 - **Techinical Interview**: 
   - Fundamental ML questions: 
     - Non-deep and deep methods
-    - Basic ML models or algorithms: Formula for gradient descent, Linear classifiers, K-means, Random forest, Clustering Nearest neighbors. 
+    - Basic ML models or algorithms: Formula for gradient descent, Linear an Non-Linear classifiers, K-means, Random forest, Clustering Nearest neighbors. Decision Tree
     - Basic DL: Explain how CNN works, Recurrent neural network
     - Metric Understanding: ROC
     - What is overfitting?  
@@ -37,7 +38,8 @@
     - Given salaries of people from ten professions and salary of a new people. Design an algorithm to predict the profession of this new people.
   - Case Study:
     - How would you apply A/B testing on food odering service
-    - How surge pricing works for both customers and drivers  
+    - How surge pricing works for both customers and drivers
+    - Implement Huffman code for a given English sentence  
 - **Interview with Hiring Manager**: explain your Machine learning projects
 
 ### 1.3. Grab: Machine Learning Engineer
