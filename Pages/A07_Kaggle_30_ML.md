@@ -36,7 +36,7 @@ Models can suffer from either:
 ### 4.1.1. Methods to avoid Underfitting and Overfitting
 #### Example 1: DecisionTreeRegressor Model
 - `max_leaf_nodes` argument provides a very sensible way to control overfitting vs underfitting. The more leaves we allow the model to make, the more we move from the underfitting area in the above graph to the overfitting area.
-<p align="center"><img src="https://user-images.githubusercontent.com/64508435/129434680-b30efd3e-ab04-4871-85ce-03b53027c0e7.png" height="30px" /></p>
+<p align="center"><img src="https://user-images.githubusercontent.com/64508435/129434680-b30efd3e-ab04-4871-85ce-03b53027c0e7.png" height="320px" /></p>
 
 - We can use a utility function to help compare MAE scores from different values for `max_leaf_nodes`:
 ```Python
