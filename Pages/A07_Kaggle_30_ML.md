@@ -4,10 +4,12 @@
 - [1. Data Pre-Processing](#1-data-pre-processing)
 - [2. EDA](#2-eda)
   - [2.1. Graph](#21-graph) 
-
-
+- [3. Feature Engineering](#3-feature-engineering)
+- [4. Model Training](#4-model-training)
+  - [4.1. Underfitting and Overfitting](#41-underfitting-and-overfitting)
 
 # 1. Data Pre-Processing
+
 [(Back to top)](#table-of-contents)
 
 # 2. EDA
@@ -24,10 +26,17 @@ ax.set_yticklabels(new_labels)
 ```
 [(Back to top)](#table-of-contents)
 
+# 4. Model Training
+## 4.1. Underfitting and Overfitting
+Models can suffer from either:
+- **Overfitting**: capturing spurious patterns that won't recur in the future, leading to less accurate predictions
+  - Where a model matches the training data almost perfectly, but does poorly in validation and other new data.  
+- **Underfitting**: failing to capture relevant patterns, again leading to less accurate predictions.
+  - When a model fails to capture important distinctions and patterns in the data, so it performs poorly even in training data 
+
 # Submission
 ```Python
 predictions = model.predict(X_test)
-
 output = pd.DataFrame({'id': test_data.id, 'Survived': predictions})
 output.to_csv('my_submission.csv', index=False)
 ```
