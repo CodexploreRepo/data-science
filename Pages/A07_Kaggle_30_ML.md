@@ -33,6 +33,26 @@ Models can suffer from either:
   - Where a model matches the training data almost perfectly, but does poorly in validation and other new data.  
 - **Underfitting**: failing to capture relevant patterns, again leading to less accurate predictions.
   - When a model fails to capture important distinctions and patterns in the data, so it performs poorly even in training data 
+### 4.1.1. Methods to avoid Underfitting and Overfitting
+#### Example 1: DecisionTreeRegressor Model
+- `max_leaf_nodes` argument provides a very sensible way to control overfitting vs underfitting. The more leaves we allow the model to make, the more we move from the underfitting area in the above graph to the overfitting area.
+- We can use a utility function to help compare MAE scores from different values for `max_leaf_nodes`:
+```Python
+from sklearn.metrics import mean_absolute_error
+from sklearn.tree import DecisionTreeRegressor
+
+def get_mae(max_leaf_nodes, train_X, val_X, train_y, val_y):
+    model = DecisionTreeRegressor(max_leaf_nodes=max_leaf_nodes, random_state=0)
+    model.fit(train_X, train_y)
+    preds_val = model.predict(val_X)
+    mae = mean_absolute_error(val_y, preds_val)
+    return(mae)
+```
+- Call the *get_mae* function on each value of max_leaf_nodes. Store the output in some way that allows you to select the value of `max_leaf_nodes` that gives the most accurate model on your data.
+```Python
+scores = {leaf_size: get_mae(leaf_size, train_X, val_X, train_y, val_y) for leaf_size in candidate_max_leaf_nodes}
+best_tree_size = min(scores.keys(), key=(lambda k: scores[k]))
+```
 
 # Submission
 ```Python
