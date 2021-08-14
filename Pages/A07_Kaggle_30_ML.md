@@ -7,6 +7,7 @@
 - [3. Feature Engineering](#3-feature-engineering)
 - [4. Model Training](#4-model-training)
   - [4.1. Underfitting and Overfitting](#41-underfitting-and-overfitting)
+- [5. Decision Tree](#5-decision-tree)
 
 # 1. Data Pre-Processing
 
@@ -55,6 +56,15 @@ def get_mae(max_leaf_nodes, train_X, val_X, train_y, val_y):
 scores = {leaf_size: get_mae(leaf_size, train_X, val_X, train_y, val_y) for leaf_size in candidate_max_leaf_nodes}
 best_tree_size = min(scores.keys(), key=(lambda k: scores[k]))
 ```
+[(Back to top)](#table-of-contents)
+
+# 5. Decision Tree
+## 5.1. Random Forests
+- Decision trees leave you with a difficult decision. 
+  - A deep tree with lots of leaves will overfit because each prediction is coming from historical data from only the few data at its leaf. 
+  - But a shallow tree with few leaves will perform poorly because it fails to capture as many distinctions in the raw data.
+- The random forest uses many trees, and it makes a prediction by averaging the predictions of each component tree. 
+- It generally has much better predictive accuracy than a single decision tree and it works well with default parameters.
 
 # Submission
 ```Python
