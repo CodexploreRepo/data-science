@@ -66,7 +66,19 @@ best_tree_size = min(scores.keys(), key=(lambda k: scores[k]))
 <img width="951" alt="Screenshot 2021-08-15 at 16 25 45" src="https://user-images.githubusercontent.com/64508435/129472164-4101cc49-0320-4094-a9c4-8a5f697e30b6.png">
 
 ### 4.2.1. Metrics for Regression
-#### 
+#### Mean Absolute Error (MAE)
+```Python
+from sklearn.metrics import mean_absolute_error
+mean_absolute_error(y_pred, y_test)
+```
+#### Root Mean Squared Error (RMSE)
+```Python
+import numpy as np
+from sklearn.metrics import mean_squared_error
+np.sqrt(mean_squared_error(y_pred, y_test))
+```
+
+
 # 5. Decision Tree
 ## 5.1. Random Forests
 - Decision trees leave you with a difficult decision. 
