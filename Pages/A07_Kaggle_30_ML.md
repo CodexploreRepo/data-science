@@ -9,7 +9,7 @@
   - [4.1. Underfitting and Overfitting](#41-underfitting-and-overfitting)
   - [4.2. Evaluation Metrics](#42-evaluation-metrics)
     - [4.2.1. Metrics for Regression](#421-mectrics-for-regression)
-- [5. Decision Tree](#5-decision-tree)
+- [5. Ensemble methods](#5-ensemble-methods)
   - [5.1. Random Forests](#51-random-forest) 
 
 # 1. Data Pre-Processing
@@ -79,7 +79,13 @@ np.sqrt(mean_squared_error(y_pred, y_test))
 ```
 
 
-# 5. Decision Tree
+# 5. Ensemble methods
+- The goal of `ensemble methods` is to combine the predictions of several base estimators built with a given learning algorithm in order to improve generalizability / robustness over a single estimator.
+- Two families of ensemble methods:
+  - In **averaging methods**, the driving principle is to build several estimators independently and then to average their predictions. On average, the combined estimator is usually better than any of the single base estimator because its variance is reduced.
+    - Examples: Bagging methods, Forests of randomized trees, etc.
+  - In **boosting methods**, base estimators are built sequentially and one tries to reduce the bias of the combined estimator. The motivation is to combine several weak models to produce a powerful ensemble.
+    - Examples: AdaBoost, Gradient Tree Boosting, etc.
 ## 5.1. Random Forests
 - Decision trees leave you with a difficult decision. 
   - A deep tree with lots of leaves will overfit because each prediction is coming from historical data from only the few data at its leaf. 
