@@ -7,6 +7,8 @@
 - [3. Feature Engineering](#3-feature-engineering)
 - [4. Model Training](#4-model-training)
   - [4.1. Underfitting and Overfitting](#41-underfitting-and-overfitting)
+  - [4.2. Evaluation Metrics](#42-evaluation-metrics)
+    - [4.2.1. Metrics for Regression](#421-mectrics-for-regression)
 - [5. Decision Tree](#5-decision-tree)
   - [5.1. Random Forests](#51-random-forest) 
 
@@ -58,6 +60,9 @@ scores = {leaf_size: get_mae(leaf_size, train_X, val_X, train_y, val_y) for leaf
 best_tree_size = min(scores.keys(), key=(lambda k: scores[k]))
 ```
 [(Back to top)](#table-of-contents)
+
+## 4.2. Evaluation Metrics
+### 4.2.1. Metrics for Regression
 
 # 5. Decision Tree
 ## 5.1. Random Forests
