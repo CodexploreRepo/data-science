@@ -2,7 +2,6 @@
 
 # Table of contents
 - [1. Data Pre-Processing](#1-data-pre-processing)
-  
 - [2. EDA](#2-eda)
   - [2.1. Graph](#21-graph) 
 - [3. Feature Engineering](#3-feature-engineering)
@@ -115,6 +114,7 @@ np.sqrt(mean_squared_error(y_pred, y_test))
     - *Examples*: Bagging methods, Forests of randomized trees, etc.
   - In **boosting methods**, base estimators are built sequentially and one tries to reduce the bias of the combined estimator. The motivation is to combine several weak models to produce a powerful ensemble.
     - *Examples*: AdaBoost, Gradient Tree Boosting, etc.
+
 ## 5.1. Random Forests
 - Decision trees leave you with a difficult decision. 
   - A deep tree with lots of leaves will overfit because each prediction is coming from historical data from only the few data at its leaf. 
