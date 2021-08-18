@@ -10,7 +10,7 @@
   - [4.2. Evaluation Metrics](#42-evaluation-metrics)
     - [4.2.1. Metrics for Regression](#421-mectrics-for-regression)
 - [5. Ensemble methods](#5-ensemble-methods)
-  - [5.1. Random Forests](#51-random-forest)
+  - [5.1. Random Forests](#51-random-forests)
   - [5.2. Gradient Boosting](#52-gradient-boosting) 
 
 # 1. Data Pre-Processing
