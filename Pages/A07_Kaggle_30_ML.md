@@ -31,6 +31,8 @@ ax.set_yticklabels(new_labels)
 ```
 [(Back to top)](#table-of-contents)
 
+# 3. Feature Engineering
+
 # 4. Model Training
 ## 4.1. Underfitting and Overfitting
 Models can suffer from either:
@@ -65,6 +67,31 @@ best_tree_size = min(scores.keys(), key=(lambda k: scores[k]))
 ## 4.2. Evaluation Metrics
 - Evaluation Metric used for Competition usually will be specified in Kaggle Competition > Evaluation 
 <img width="951" alt="Screenshot 2021-08-15 at 16 25 45" src="https://user-images.githubusercontent.com/64508435/129472164-4101cc49-0320-4094-a9c4-8a5f697e30b6.png">
+
+- **Step 1**: Read the data
+```Python
+X_full = pd.read_csv('../input/train.csv', index_col='Id')
+X_test_full = pd.read_csv('../input/test.csv', index_col='Id')
+
+# Obtain target and predictors
+y = X_full["target"]
+
+X = X_full[:-1].copy() #X will not include last column, which is "target" column
+X_test = X_test_full.copy()
+```
+- **Step 2**: Break off validation set from training data
+```Python
+# Break off validation set from training data
+X_train, X_valid, y_train, y_valid = train_test_split(X, y, train_size=0.8, test_size=0.2, random_state=0)
+```
+- **Step 3**: 
+```Python
+# Function for comparing different models
+def score_model(model, X_t=X_train, X_v=X_valid, y_t=y_train, y_v=y_valid):
+    model.fit(X_t, y_t)
+    preds = model.predict(X_v)
+    return mean_absolute_error(y_v, preds)
+```
 
 ### 4.2.1. Metrics for Regression
 #### Mean Absolute Error (MAE)
