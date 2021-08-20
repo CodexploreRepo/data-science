@@ -3,6 +3,7 @@
 # Table of contents
 - [1. Data Pre-Processing](#1-data-pre-processing)
   - [1.1. Read and Split Data](#11-read-and-split-data) 
+  - [1.2. Missing Values](#12-missing-values)
 - [2. EDA](#2-eda)
   - [2.1. Graph](#21-graph) 
 - [3. Feature Engineering](#3-feature-engineering)
@@ -40,6 +41,45 @@ def score_model(model, X_t=X_train, X_v=X_valid, y_t=y_train, y_v=y_valid):
     preds = model.predict(X_v)
     return mean_absolute_error(y_v, preds)
 ```
+[(Back to top)](#table-of-contents)
+
+## 1.2. Missing Values
+```Python
+# Get names of columns with missing values
+cols_with_missing = [col for col in X_train.columns
+                     if X_train[col].isnull().any()]
+
+# Number of missing values in each column of training data
+missing_val_count_by_column = (X_train.isnull().sum())
+```
+
+- **Method 1**: Drop Columns with Missing Values 
+- **Method 2**: Imputation
+### 1.2.1. Method 1: Drop Columns with Missing Values
+<img width="889" alt="Screenshot 2021-08-20 at 10 53 33" src="https://user-images.githubusercontent.com/64508435/130171794-186b7922-3464-4057-9004-87111c6ea44f.png">
+
+```Python
+# Drop columns in training and validation data
+reduced_X_train = X_train.drop(cols_with_missing, axis=1)
+reduced_X_valid = X_valid.drop(cols_with_missing, axis=1)
+```
+### 1.2.2. Method 2: Imputation
+- `Imputation` fills in the missing values with some number.
+<img width="889" alt="Screenshot 2021-08-20 at 10 56 11" src="https://user-images.githubusercontent.com/64508435/130172082-479fbb77-03f9-4438-b8bc-97bcbe3e0d1e.png">
+
+```Python
+from sklearn.impute import SimpleImputer
+
+# Imputation
+my_imputer = SimpleImputer()
+imputed_X_train = pd.DataFrame(my_imputer.fit_transform(X_train))
+imputed_X_valid = pd.DataFrame(my_imputer.transform(X_valid))
+
+# Imputation removed column names; put them back
+imputed_X_train.columns = X_train.columns
+imputed_X_valid.columns = X_valid.columns
+```
+
 [(Back to top)](#table-of-contents)
 
 # 2. EDA
