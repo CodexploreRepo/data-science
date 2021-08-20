@@ -119,7 +119,9 @@ imputed_X_valid_plus.columns = X_valid_plus.columns
 ## 1.3. Categorical variable
 - There are 4 types of Categorical variable
   - `Nominal`: non-order variables like "Honda", "Toyota", and "Ford"
-  - `Ordinal`: the order is important
+  - `Ordinal`: the order is important 
+    - `Label Encoder` &#8594; can map to 1,2,3,4, etc &#8594; Use **Tree-based Models: Random Forest, GBM, XGBoost**
+    - `Binary Encoder` &#8594; binary-presentation vectors of 1,2,3,4, etc values &#8594; Use **Logistic and Linear Regression, SVM**
   - `Binary`: only have 2 values (Female, Male)
   - `Cyclic`: Monday, Tuesday, Wednesday, Thursday
 
