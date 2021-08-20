@@ -4,6 +4,7 @@
 - [1. Data Pre-Processing](#1-data-pre-processing)
   - [1.1. Read and Split Data](#11-read-and-split-data) 
   - [1.2. Missing Values](#12-missing-values)
+  - [1.3. Categorical variable](#13-categorical-variable)
 - [2. EDA](#2-eda)
   - [2.1. Graph](#21-graph) 
 - [3. Feature Engineering](#3-feature-engineering)
@@ -112,6 +113,16 @@ imputed_X_valid_plus = pd.DataFrame(my_imputer.transform(X_valid_plus))
 imputed_X_train_plus.columns = X_train_plus.columns
 imputed_X_valid_plus.columns = X_valid_plus.columns
 ```
+
+[(Back to top)](#table-of-contents)
+
+## 1.3. Categorical variable
+- There are 4 types of Categorical variable
+  - `Nominal`: non-order variables like "Honda", "Toyota", and "Ford"
+  - `Ordinal`: the order is important
+  - `Binary`: only have 2 values (Female, Male)
+  - `Cyclic`: Monday, Tuesday, Wednesday, Thursday
+
 
 [(Back to top)](#table-of-contents)
 
