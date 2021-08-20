@@ -84,6 +84,33 @@ imputed_X_valid = pd.DataFrame(my_imputer.transform(X_valid))
 imputed_X_train.columns = X_train.columns
 imputed_X_valid.columns = X_valid.columns
 ```
+### 1.2.2. Method 3: Extension To Imputation
+- Imputation is the standard approach, and it usually works well. 
+- However, imputed values may be systematically above or below their actual values (which weren't collected in the dataset). Or rows with missing values may be unique in some other way. 
+- In that case, your model would make better predictions by considering which values were originally missing.
+
+<img width="889" alt="Screenshot 2021-08-20 at 11 36 52" src="https://user-images.githubusercontent.com/64508435/130175336-a19e86d8-cba1-489a-87cb-c33c9378f8c0.png">
+
+- **Note**: In some cases, this will meaningfully improve results. In other cases, it doesn't help at all.
+```Python
+# Make copy to avoid changing original data (when imputing)
+X_train_plus = X_train.copy()
+X_valid_plus = X_valid.copy()
+
+# Make new columns indicating what will be imputed
+for col in cols_with_missing:
+    X_train_plus[col + '_was_missing'] = X_train_plus[col].isnull()
+    X_valid_plus[col + '_was_missing'] = X_valid_plus[col].isnull()
+
+# Imputation
+my_imputer = SimpleImputer()
+imputed_X_train_plus = pd.DataFrame(my_imputer.fit_transform(X_train_plus))
+imputed_X_valid_plus = pd.DataFrame(my_imputer.transform(X_valid_plus))
+
+# Imputation removed column names; put them back
+imputed_X_train_plus.columns = X_train_plus.columns
+imputed_X_valid_plus.columns = X_valid_plus.columns
+```
 
 [(Back to top)](#table-of-contents)
 
