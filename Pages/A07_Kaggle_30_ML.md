@@ -2,6 +2,7 @@
 
 # Table of contents
 - [1. Data Pre-Processing](#1-data-pre-processing)
+  - [1.1. Read and Split Data](#11-read-and-split-data) 
 - [2. EDA](#2-eda)
   - [2.1. Graph](#21-graph) 
 - [3. Feature Engineering](#3-feature-engineering)
@@ -14,7 +15,7 @@
   - [5.2. Gradient Boosting](#52-gradient-boosting) 
 
 # 1. Data Pre-Processing
-
+## 1.1. Read and Split Data
 - **Step 1**: Read the data
 ```Python
 X_full = pd.read_csv('../input/train.csv', index_col='Id')
