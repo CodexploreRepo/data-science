@@ -52,9 +52,10 @@ cols_with_missing = [col for col in X_train.columns
 # Number of missing values in each column of training data
 missing_val_count_by_column = (X_train.isnull().sum())
 ```
-
 - **Method 1**: Drop Columns with Missing Values 
 - **Method 2**: Imputation
+- **Method 3**: Extension To Imputation
+
 ### 1.2.1. Method 1: Drop Columns with Missing Values
 <img width="889" alt="Screenshot 2021-08-20 at 10 53 33" src="https://user-images.githubusercontent.com/64508435/130171794-186b7922-3464-4057-9004-87111c6ea44f.png">
 
