@@ -65,17 +65,22 @@ reduced_X_valid = X_valid.drop(cols_with_missing, axis=1)
 ```
 ### 1.2.2. Method 2: Imputation
 - `Imputation` fills in the missing values with some number.
+- `strategy = “mean”, "median"` for numerical column
+- `strategy = “most_frequent”` for object (categorical) column
 <img width="889" alt="Screenshot 2021-08-20 at 10 56 11" src="https://user-images.githubusercontent.com/64508435/130172082-479fbb77-03f9-4438-b8bc-97bcbe3e0d1e.png">
 
 ```Python
 from sklearn.impute import SimpleImputer
 
 # Imputation
-my_imputer = SimpleImputer()
-imputed_X_train = pd.DataFrame(my_imputer.fit_transform(X_train))
+my_imputer = SimpleImputer(missing_values=np.nan, strategy="mean") 
+#Only fit on training data
+my_imputer.fit(X_train) 
+
+imputed_X_train = pd.DataFrame(my_imputer.transform(X_train))
 imputed_X_valid = pd.DataFrame(my_imputer.transform(X_valid))
 
-# Imputation removed column names; put them back
+# Fill in the lines below: imputation removed column names; put them back
 imputed_X_train.columns = X_train.columns
 imputed_X_valid.columns = X_valid.columns
 ```
