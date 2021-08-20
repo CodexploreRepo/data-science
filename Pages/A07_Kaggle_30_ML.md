@@ -125,6 +125,19 @@ imputed_X_valid_plus.columns = X_valid_plus.columns
   - `Binary`: only have 2 values (Female, Male)
   - `Cyclic`: Monday, Tuesday, Wednesday, Thursday
 
+There are 3 methods to encode Categorical variables 
+- **Method 1**: Drop Categorical Variables 
+- **Method 2**: Ordinal Encoding
+- **Method 3**: One-Hot Encoding
+
+### 1.3.1. Method 1: Drop Categorical Variables 
+- This approach will only work well if the columns did not contain useful information.
+```Python
+drop_X_train = X_train.select_dtypes(exclude=['object'])
+drop_X_valid = X_valid.select_dtypes(exclude=['object'])
+```
+### 1.3.2. Method 2: Ordinal Encoding
+### 1.3.3. Method 3: One-Hot Encoding
 
 [(Back to top)](#table-of-contents)
 
