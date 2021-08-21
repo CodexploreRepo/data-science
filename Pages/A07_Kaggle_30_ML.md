@@ -135,6 +135,7 @@ There are 3 methods to encode Categorical variables
 - **Method 1**: Drop Categorical Variables 
 - **Method 2**: Ordinal Encoding
 - **Method 3**: One-Hot Encoding
+- **Method 4**: Entity Embedding (Need to learn from Video: https://youtu.be/EATAM3BOD_E)
 
 ### 1.3.1. Method 1: Drop Categorical Variables 
 - This approach will only work well if the columns did not contain useful information.
