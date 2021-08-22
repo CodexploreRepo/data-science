@@ -136,7 +136,7 @@ imputed_X_valid_plus.columns = X_valid_plus.columns
 # Categorical columns in the training data 
 object_cols = [col for col in X_train.columns if X_train[col].dtype == "object"]
 ```
-- Filter Good & Problematic Categorical Columns affecting Encoding Procedure:
+- **Filter Good & Problematic Categorical Columns** which will affect Encoding Procedure:
   - For example: Unique values in Train Data are different from Unique values in Valid Data &#8594; Solution: ensure values in `Valid Data` is a subset of values in `Train Data`
   - The simplest approach, however, is to drop the problematic categorical columns.
 ```Python
@@ -205,6 +205,48 @@ for c in good_label_cols:
     label_X_valid[c] = label_encoder.transform(label_X_valid[c])
 ```
 ### 1.3.4. Method 4: One-Hot Encoding
+#### Investigating Cardinality
+- `Cardinality`: # of unique entries of a categorical variable
+  - For instance, the `Street` column in the training data has two unique values: `Grvl` and `Pave`, the `Street` col has cardinality 2
+- For large datasets with many rows, one-hot encoding can greatly expand the size of the dataset. 
+- Hence, we typically will only one-hot encode columns with relatively `low cardinality`. 
+- `High cardinality` columns can either be dropped from the dataset, or we can use ordinal encoding.
+```Python
+# Columns that will be one-hot encoded
+low_cardinality_cols = [col for col in object_cols if X_train[col].nunique() < 10]
+
+# Columns that will be dropped from the dataset
+high_cardinality_cols = list(set(object_cols)-set(low_cardinality_cols))
+
+print('Categorical columns that will be one-hot encoded:', low_cardinality_cols)
+print('\nCategorical columns that will be dropped from the dataset:', high_cardinality_cols)
+```
+#### One-Hot Encoding
+- One-hot encoding generally does not perform well if the categorical variable has `cardinality >= 15` as One-Hot encoder will expand the original training data with increasing columns
+
+<img width="764" alt="Screenshot 2021-08-22 at 18 33 33" src="https://user-images.githubusercontent.com/64508435/130351973-e54a71c1-c010-4233-a282-37e5528eaccd.png">
+- Set `handle_unknown='ignore'` to avoid errors when the validation data contains classes that aren't represented in the training data, and
+- Set `sparse=False` ensures that the encoded columns are returned as a numpy array (instead of a sparse matrix).
+```Python
+from sklearn.preprocessing import OneHotEncoder
+
+OH_encoder = OneHotEncoder(handle_unknown='ignore', sparse=False)
+OH_encoder.fit(X_train[low_cardinality_cols])
+OH_cols_train = pd.DataFrame(OH_encoder.transform(X_train[low_cardinality_cols])) #Convert back to Pandas DataFrame from Numpy Array
+OH_cols_valid = pd.DataFrame(OH_encoder.transform(X_valid[low_cardinality_cols]))  
+
+# One-hot encoding removed index; put it back
+OH_cols_train.index = X_train.index
+OH_cols_valid.index = X_valid.index
+
+# Remove categorical columns in the original datasets (will replace with one-hot encoding columns)
+num_X_train = X_train.drop(object_cols, axis=1)
+num_X_valid = X_valid.drop(object_cols, axis=1)
+
+# Add one-hot encoded columns to numerical features
+OH_X_train = pd.concat([num_X_train, OH_cols_train], axis=1)
+OH_X_valid = pd.concat([num_X_valid, OH_cols_valid], axis=1)
+```
 
 [(Back to top)](#table-of-contents)
 
