@@ -130,10 +130,35 @@ imputed_X_valid_plus.columns = X_valid_plus.columns
     - `Binary Encoder` &#8594; binary-presentation vectors of 1,2,3,4, etc values &#8594; Use **Logistic and Linear Regression, SVM**
   - `Binary`: only have 2 values (Female, Male)
   - `Cyclic`: Monday, Tuesday, Wednesday, Thursday
+- Determine Categorical Columns:
+```Python
+# Categorical columns in the training data 
+object_cols = [col for col in X_train.columns if X_train[col].dtype == "object"]
+```
+- Filter Good & Problematic Categorical Columns affecting Encoding Procedure:
+  - For example: Unique values in Train Data are different from Unique values in Valid Data &#8594; Solution: ensure values in `Valid Data` is a subset of values in `Train Data`
+  - The simplest approach, however, is to drop the problematic categorical columns.
+```Python
+# Categorical columns in the training data
+object_cols = [col for col in X_train.columns if X_train[col].dtype == "object"]
+
+# Columns that can be safely ordinal encoded
+good_label_cols = [col for col in object_cols if 
+                   set(X_valid[col]).issubset(set(X_train[col]))]
+        
+# Problematic columns that will be dropped from the dataset
+bad_label_cols = list(set(object_cols)-set(good_label_cols))
+        
+print('Categorical columns that will be ordinal encoded:', good_label_cols)
+print('\nCategorical columns that will be dropped from the dataset:', bad_label_cols)
+```
+
 
 There are 3 methods to encode Categorical variables 
 - **Method 1**: Drop Categorical Variables 
 - **Method 2**: Ordinal Encoding
+<img width="764" alt="Screenshot 2021-08-22 at 18 00 58" src="https://user-images.githubusercontent.com/64508435/130351069-8cd904d8-f59d-4c6e-a454-1b636c81c2e2.png">
+
 - **Method 3**: One-Hot Encoding
 - **Method 4**: Entity Embedding (Need to learn from Video: https://youtu.be/EATAM3BOD_E)
 
