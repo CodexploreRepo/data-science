@@ -159,11 +159,12 @@ print('\nCategorical columns that will be dropped from the dataset:', bad_label_
 label_X_train = X_train.drop(bad_label_cols, axis=1)
 label_X_valid = X_valid.drop(bad_label_cols, axis=1)
 ```
-There are 3 methods to encode Categorical variables 
+There are 5 methods to encode Categorical variables 
 - **Method 1**: Drop Categorical Variables 
 - **Method 2**: Ordinal Encoding
-- **Method 3**: One-Hot Encoding
-- **Method 4**: Entity Embedding (Need to learn from Video: https://youtu.be/EATAM3BOD_E)
+- **Method 3**: Label Encoding (Same as Ordinal Encoder but NOT care about the order)
+- **Method 4**: One-Hot Encoding
+- **Method 5**: Entity Embedding (Need to learn from Video: https://youtu.be/EATAM3BOD_E)
 
 ### 1.3.1. Method 1: Drop Categorical Variables 
 - This approach will only work well if the columns did not contain useful information.
@@ -186,7 +187,24 @@ ordinal_encoder.fit(label_X_train[good_label_cols])
 label_X_train[good_label_cols] = ordinal_encoder.transform(label_X_train[good_label_cols])
 label_X_valid[good_label_cols] = ordinal_encoder.transform(label_X_valid[good_label_cols])
 ```
-### 1.3.3. Method 3: One-Hot Encoding
+### 1.3.3. Method 3: Label Encoding
+- Same as Ordinal Encoder but NOT care about the order, but follow by Alphabet of the values
+- `Label Encoder` need to **fit in each column separately**
+```Python
+from sklearn.preprocessing import LabelEncoder
+
+# Drop categorical columns that will not be encoded
+label_X_train = X_train.drop(bad_label_cols, axis=1)
+label_X_valid = X_valid.drop(bad_label_cols, axis=1)
+
+
+for c in good_label_cols:
+    label_encoder = LabelEncoder()
+    label_encoder.fit(label_X_train[c])
+    label_X_train[c] = label_encoder.transform(label_X_train[c])
+    label_X_valid[c] = label_encoder.transform(label_X_valid[c])
+```
+### 1.3.4. Method 4: One-Hot Encoding
 
 [(Back to top)](#table-of-contents)
 
