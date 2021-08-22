@@ -222,11 +222,13 @@ print('Categorical columns that will be one-hot encoded:', low_cardinality_cols)
 print('\nCategorical columns that will be dropped from the dataset:', high_cardinality_cols)
 ```
 #### One-Hot Encoding
-- One-hot encoding generally does not perform well if the categorical variable has `cardinality >= 15` as One-Hot encoder will expand the original training data with increasing columns
+- One-hot encoding generally does NOT perform well if the categorical variable has `cardinality >= 15` as One-Hot encoder will expand the original training data with increasing columns
 
 <img width="764" alt="Screenshot 2021-08-22 at 18 33 33" src="https://user-images.githubusercontent.com/64508435/130351973-e54a71c1-c010-4233-a282-37e5528eaccd.png">
+
 - Set `handle_unknown='ignore'` to avoid errors when the validation data contains classes that aren't represented in the training data, and
 - Set `sparse=False` ensures that the encoded columns are returned as a numpy array (instead of a sparse matrix).
+
 ```Python
 from sklearn.preprocessing import OneHotEncoder
 
