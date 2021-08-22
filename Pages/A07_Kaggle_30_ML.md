@@ -126,6 +126,7 @@ imputed_X_valid_plus.columns = X_valid_plus.columns
 - There are 4 types of Categorical variable
   - `Nominal`: non-order variables like "Honda", "Toyota", and "Ford"
   - `Ordinal`: the order is important 
+    - For tree-based models (like decision trees and random forests), you can expect ordinal encoding to work well with ordinal variables
     - `Label Encoder` &#8594; can map to 1,2,3,4, etc &#8594; Use **Tree-based Models: Random Forest, GBM, XGBoost**
     - `Binary Encoder` &#8594; binary-presentation vectors of 1,2,3,4, etc values &#8594; Use **Logistic and Linear Regression, SVM**
   - `Binary`: only have 2 values (Female, Male)
@@ -152,13 +153,15 @@ bad_label_cols = list(set(object_cols)-set(good_label_cols))
 print('Categorical columns that will be ordinal encoded:', good_label_cols)
 print('\nCategorical columns that will be dropped from the dataset:', bad_label_cols)
 ```
-
-
+  - The simplest approach, however, is to drop the problematic categorical columns.
+```Python
+# Drop categorical columns that will not be encoded
+label_X_train = X_train.drop(bad_label_cols, axis=1)
+label_X_valid = X_valid.drop(bad_label_cols, axis=1)
+```
 There are 3 methods to encode Categorical variables 
 - **Method 1**: Drop Categorical Variables 
 - **Method 2**: Ordinal Encoding
-<img width="764" alt="Screenshot 2021-08-22 at 18 00 58" src="https://user-images.githubusercontent.com/64508435/130351069-8cd904d8-f59d-4c6e-a454-1b636c81c2e2.png">
-
 - **Method 3**: One-Hot Encoding
 - **Method 4**: Entity Embedding (Need to learn from Video: https://youtu.be/EATAM3BOD_E)
 
@@ -169,6 +172,20 @@ drop_X_train = X_train.select_dtypes(exclude=['object'])
 drop_X_valid = X_valid.select_dtypes(exclude=['object'])
 ```
 ### 1.3.2. Method 2: Ordinal Encoding
+<img width="764" alt="Screenshot 2021-08-22 at 18 00 58" src="https://user-images.githubusercontent.com/64508435/130351069-8cd904d8-f59d-4c6e-a454-1b636c81c2e2.png">
+
+- This approach assumes an ordering of the categories: "Never" (0) < "Rarely" (1) < "Most days" (2) < "Every day" (3).
+
+```Python
+from sklearn.preprocessing import OrdinalEncoder
+
+# Apply ordinal encoder 
+ordinal_encoder = OrdinalEncoder() # Your code here
+ordinal_encoder.fit(label_X_train[good_label_cols])
+
+label_X_train[good_label_cols] = ordinal_encoder.transform(label_X_train[good_label_cols])
+label_X_valid[good_label_cols] = ordinal_encoder.transform(label_X_valid[good_label_cols])
+```
 ### 1.3.3. Method 3: One-Hot Encoding
 
 [(Back to top)](#table-of-contents)
