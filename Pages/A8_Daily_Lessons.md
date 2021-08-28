@@ -8,4 +8,7 @@
 - **Math**: [Modular Arithmetic](https://brilliant.org/wiki/modular-arithmetic/)
   - **Congruence** `a ≡ b (mod n)` For a positive integer n, the integers *a and b are congruent mod n* if their remainders when divided by n are the same.
     - For example: 52≡24(mod7): 52 and 24 are congruent (mod 7) because (52 mod 7) = 3 and (24 mod 7) = 3.
+  - **Properties of multiplication**:
   - `(a mod n) mod n = a mod n`: This is obvious because a mod n ∈ [0,𝑛−1] and so the second modmod cannot have an effect.
+  - `(A^2) mod C = (A * A) mod C = ((A mod C) * (A mod C)) mod C`
+- **LeetCode**: [Fast Exponentiation](https://youtu.be/-3Lt-EwR_Hw)
