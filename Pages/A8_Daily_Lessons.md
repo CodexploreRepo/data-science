@@ -12,3 +12,5 @@
   - `(a mod n) mod n = a mod n`: This is obvious because a mod n ∈ [0,𝑛−1] and so the second modmod cannot have an effect.
   - `(A^2) mod C = (A * A) mod C = ((A mod C) * (A mod C)) mod C`
 - **LeetCode**: [Fast Exponentiation](https://youtu.be/-3Lt-EwR_Hw)
+# Day 3:
+- **Python**: Nested List Comprehension `[[item if not item.isspace() else -1 for item in row] for row in board]` to build 2D matrix
