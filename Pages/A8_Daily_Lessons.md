@@ -16,4 +16,5 @@
 - **Python**: Nested List Comprehension `[[item if not item.isspace() else -1 for item in row] for row in board]` to build 2D matrix
 - **Math**: 
   - `Modular Multiplicative Inverse (MMI)`: **MMI(a, b) = x** s.t `a*x ≡ 1 (mod n)`
-  - `Euclidean Algorithm` to find GCD of A & B & `Extended Euclidean Algorithm` to find 
+    - For example: a = 3, m = 11 => x = 4 as (3*4) mod 11 = 1
+  - `Euclidean Algorithm` to find GCD of A & B & `Extended Euclidean Algorithm` to find **MMI(A, B)**
