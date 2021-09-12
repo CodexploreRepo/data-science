@@ -32,3 +32,63 @@
 - Strong communication skills, willingness to learn and develop their ability to apply data science principles through a business lens
 - Ability to prioritize, re-prioritize, and handle multiple competing priorities simultaneously
 
+# Internship 
+## SAP - AI Engineer
+#### PURPOSE AND OBJECTIVES
+
+The Artificial Intelligence CoE team in IES Technology Services is pushing the SAP internal adoption of Machine Learning through all business processes. We are implementing standard product functionality from the SAP AI portfolio as well as custom built AI scenarios for internal business cases. In this field we have a lot existing projects in the horizon and a lot of rooms for creativity and freedom to experiment.
+
+In Singapore, we are looking for AI Engineer Interns to work on the technical stacks, also involve in end-user and business stakeholder communications.
+
+#### EXPECTATIONS AND TASKS
+
+- Collaborate with other AI Scientists, Engineers, and Product Owners etc.
+- Communicate with stakeholders to understand SAP business processes.
+- Support the end-to-end MLOps lifecycle (Python, Jenkins, Docker, Kubernetes, etc)
+- Apply existing SAP AI or open-sourced solutions to solve business problems.
+- Learn the latest advancements in applied NLP and Devops.
+
+#### EDUCATION AND QUALIFICATIONS / SKILLS AND COMPETENCIES
+
+Required skills
+- Programming experience in Python language and packages such as Pandas, scikit-learn etc.
+- Understanding of basic Machine Learning algorithms and concepts
+- Experience with development tools like VScode, Pycharm, Jupyter, Docker, Git, etc.
+- Curiosity to learn about different AI applications.
+- Able to take ownership of one’s work and collaborate with others.
+- Preferred skills
+- Pursuing an undergraduate or graduate degree
+- Driven and dynamic with strong problem-solving skills
+- Good communication skills with end-users and business stakeholders
+- Additional certificates and courses focusing on machine learning are a plus but not a must
+
+## YARA - Data Science (ML Developer)
+There are more than 500 million smallholder farms globally. 2.5 billion people depend on Smallholder Communities for their food and livelihoods. Smallholder regions are characterized by low living standards, high rates of illiteracy and low agricultural productivity. Yara's mission is "Responsibly Feed the World and Protect the Planet". Key to achieving this is enabling thriving Smallholder Communities. At Yara, the Smallholders Digital Team is part of the Crop and Digital Solutions Unit. 
+
+#### About Crop and Digital Solutions
+Yara aims to be the crop nutrition company for the future and is leading the development of sustainable agriculture and digital tools to contribute to solving global agricultural challenges. We have a worldwide presence with sales teams in ~150 countries and around 17,000 employees. Yara Farming Solutions, will lead the transformation towards more sustainable and efficient food production, by innovating our offerings and the way we work. Crop and Digital Solutions is responsible developing and scaling new “on-farm” digital and integrated tools and solutions for an efficient and transparent food system.
+
+
+#### Responsibilities
+Support the development of the data resources of the analytics and insights side of the smallholder solutions.
+Research new ways to interpret and utilise the data resources to provide meaningful, actionable insights.
+Support cross-functional teams with different parts of the development centre to support the data needs of different teams.
+Support the development, testing and implementation of various scripts, algorithms and code when necessary.
+Required Profile
+
+Strong personal/professional interest in the LSM segments (developing countries, low-income markets, etc) and agriculture in general.
+Exposure to Computer Vision and Data Science concepts preferred.
+Prior experience with at least one of Python development, data analysis or machine learning.
+
+Additional information
+
+We strive to reflect the diversity in society and encourage all qualified applicants from all background to apply. We are committed to creating a work environment that fits gender equality and allows combining career progress with the needs of a family or other personal circumstances
+
+
+#### Why us?
+- Evolving tech development division of an established agricultural products and services company.
+- Explore and develop digital, software, hardware products, which provide value to farmers, smallholder communities and the value chain.
+- Be part of our mission to build sustainable solutions that benefit humanity and the environment.
+- Full-time, permanent and freelance contract options available with competitive remuneration + benefits.
+- Support for personal development, training and continuous learning.
+- Commitment to using new technologies and frameworks, meetups, and knowledge sharing.
