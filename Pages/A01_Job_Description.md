@@ -70,20 +70,19 @@ Yara aims to be the crop nutrition company for the future and is leading the dev
 
 
 #### Responsibilities
-Support the development of the data resources of the analytics and insights side of the smallholder solutions.
-Research new ways to interpret and utilise the data resources to provide meaningful, actionable insights.
-Support cross-functional teams with different parts of the development centre to support the data needs of different teams.
-Support the development, testing and implementation of various scripts, algorithms and code when necessary.
-Required Profile
+- Support the development of the data resources of the analytics and insights side of the smallholder solutions.
+- Research new ways to interpret and utilise the data resources to provide meaningful, actionable insights.
+- Support cross-functional teams with different parts of the development centre to support the data needs of different teams.
+- Support the development, testing and implementation of various scripts, algorithms and code when necessary.
+##### Required Profile
 
-Strong personal/professional interest in the LSM segments (developing countries, low-income markets, etc) and agriculture in general.
-Exposure to Computer Vision and Data Science concepts preferred.
-Prior experience with at least one of Python development, data analysis or machine learning.
+- Strong personal/professional interest in the LSM segments (developing countries, low-income markets, etc) and agriculture in general.
+- Exposure to Computer Vision and Data Science concepts preferred.
+- Prior experience with at least one of Python development, data analysis or machine learning.
 
 Additional information
 
 We strive to reflect the diversity in society and encourage all qualified applicants from all background to apply. We are committed to creating a work environment that fits gender equality and allows combining career progress with the needs of a family or other personal circumstances
-
 
 #### Why us?
 - Evolving tech development division of an established agricultural products and services company.
@@ -92,3 +91,35 @@ We strive to reflect the diversity in society and encourage all qualified applic
 - Full-time, permanent and freelance contract options available with competitive remuneration + benefits.
 - Support for personal development, training and continuous learning.
 - Commitment to using new technologies and frameworks, meetups, and knowledge sharing.
+
+## ByteDance - Big Data Engineer
+#### About the Ad Data team
+The Ad Data team is committed to empowering our global team's monetization products through acquiring, building, and managing key ads data assets and providing scalable data warehouse, product, and service solutions.
+#### Responsibilities
+
+- Responsible for building offline and real-time data pipelines for various businesses of advertising;
+- Process data processing requests and execute data model design, implementation and maintenance;
+- Research on business logic and data architecture design to address business value.
+
+#### Qualifications
+
+- Undergraduate or Postgraduate currently pursuing a degree/master in software development, computer science, computer engineering, information systems or a related technical discipline;
+- Strong interest in computer science and internet technology;
+- Know relevant technologies of the Hadoop ecosystem, such as the principles of MapReduce, Spark, Hive, and Flink;
+- Familiar with SQL, be able to use SQL to perform data analysis, or proficient in Java, Python and Shell and other programming languages for data processing;
+- Good at communication, proactive in work, a strong sense of responsibility, and good teamwork ability.
+
+## Grab - Data Analytics & Data Science
+Our Data Analytics & Data Science team focuses on gaining a true understanding of our users. We apply analytics in product development which enables us in building the best app ever! Our business analytics team directs itself by following 3 core philosophies.
+
+We focus on big data, being a bridge between the online and offline side of business, and to use data in order to align our operations with strategic goals. If you love to find new ways of interpreting data then you’re a perfect fit!
+
+Requirements:
+
+- Affinity with resolving complex people and business issues
+- Full-time student majoring in Computer Sciences, Engineering, Statistics, Data Science or related fields seeking a matriculated internship
+- You are enrolled in a Singapore university, or Singaporean/PR studying abroad
+- Previous internship experience in Data Analytics, Computer Science or other related field is an advantage
+- Be able to commit full-time from Jan - June 2022, for a minimum of 20 weeks
+- Agile and able to work in a fast-paced environment
+- Excellent communication, presentation and project management skills
