@@ -5,6 +5,7 @@
   - [1.1. Read and Split Data](#11-read-and-split-data) 
   - [1.2. Missing Values](#12-missing-values)
   - [1.3. Categorical variable](#13-categorical-variable)
+  - [1.4. Pipelines](#14-pipelines)
 - [2. EDA](#2-eda)
   - [2.1. Graph](#21-graph) 
 - [3. Feature Engineering](#3-feature-engineering)
@@ -249,6 +250,9 @@ num_X_valid = X_valid.drop(object_cols, axis=1)
 OH_X_train = pd.concat([num_X_train, OH_cols_train], axis=1)
 OH_X_valid = pd.concat([num_X_valid, OH_cols_valid], axis=1)
 ```
+
+## 1.4. Pipelines
+- **Pipelines** are a simple way to keep your data preprocessing and modeling code organized.
 
 [(Back to top)](#table-of-contents)
 
