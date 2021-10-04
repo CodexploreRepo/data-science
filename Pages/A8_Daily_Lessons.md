@@ -23,3 +23,6 @@
   - `Euclidean Algorithm` to find GCD of A & B & `Extended Euclidean Algorithm` to find **MMI(A, B)**
 # Day 4:
 - **LeetCode**: `Best Time to Buy and Sell Stock` (Keep track on the buying price, compare to the next days), `Climbing Stairs` (At T(n): first step = 1, remaining steps = T(n-1) or first step = 2, remaing steps = T(n-2). This recurrence relationship is similar to Fibonacci number)
+
+# Day 5: 
+- **LeetCode**: `3 Sum`, `Longest Palindromic Substring` and `Container With Most Water`
