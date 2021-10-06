@@ -26,3 +26,5 @@
 
 # Day 5: 
 - **LeetCode**: `3 Sum`, `Longest Palindromic Substring` and `Container With Most Water`
+# Day 6: 
+- **LeetCode**: `Number of Islands`, `Design Circular Queue`
