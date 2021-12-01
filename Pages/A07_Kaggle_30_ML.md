@@ -12,7 +12,7 @@
 - [4. Model Training](#4-model-training)
   - [4.1. Underfitting and Overfitting](#41-underfitting-and-overfitting)
   - [4.2. Evaluation Metrics](#42-evaluation-metrics)
-    - [4.2.1. Metrics for Regression](#421-mectrics-for-regression)
+    - [4.2.1. Metrics for Regression](#421-metrics-for-regression)
 - [5. Ensemble methods](#5-ensemble-methods)
   - [5.1. Random Forests](#51-random-forests)
   - [5.2. Gradient Boosting](#52-gradient-boosting) 
