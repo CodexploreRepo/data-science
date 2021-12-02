@@ -31,12 +31,20 @@ y = X_full["target"]
 X = X_full[:-1].copy() #X will not include last column, which is "target" column
 X_test = X_test_full.copy()
 ```
-- **Step 2**: Break off validation set from training data `X`
+- **Step 2**: Investigate and filter Numeric & Categorical Data
+  - Note 1: Some features although they are numerical, but there data type is object, and vice versa. Hence, **need to spend time to investigate on the real type of the features**, *convert them into correct data type before performing the below commands*.
+  ```Python
+  # Select numeric columns only
+  numeric_cols = [cname for cname in X.columns if X[cname].dtype in ['int64', 'float64']]
+  # Categorical columns in the training data
+  object_cols = [col for col in X.columns if X[col].dtype == "object"]
+  ```
+- **Step 3**: Break off validation set from training data `X`
 ```Python
 # Break off validation set from training data
 X_train, X_valid, y_train, y_valid = train_test_split(X, y, train_size=0.8, test_size=0.2, random_state=0)
 ```
-- **Step 3**: Comparing different models
+- **Step 4**: Comparing different models
 ```Python
 models = [model_1, model_2, model_3, model_4, model_5]
 
