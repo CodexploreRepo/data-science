@@ -330,14 +330,37 @@ OH_X_valid = pd.concat([num_X_valid, OH_cols_valid], axis=1)
 
 
 ## 1.5. Cross-Validation
-- **For small dataset > Cross-validation**, we run our modeling process on different subsets of the data to get multiple measures of model quality.
+- **For small dataset &#8594; Cross-validation**, we run our modeling process on different subsets of the data to get multiple measures of model quality.
   - **Stratified k-fold**: Stratified k-fold cross-validation is same as just k-fold cross-validation, but in Stratified k-fold cross-validation, it does stratified sampling instead of random sampling. 
     - Hence, Stratified k-fold keeps the same ratio of classes in each fold in comparison with the ratio of the original training data.
     - **Classification** problem: can apply Stratified k-fold directly
     - **Regression** problem: need to convert `Y` into `1+log2(N)` bins (Sturge’s Rule) and then Stratified k-fold  will split accordingly.
   ![image](https://user-images.githubusercontent.com/64508435/144378824-53f0db43-38f1-47cf-a0c2-15bf74f9d2ab.png)
 
-- **For large dataset > Hold-out**: when `training data > 100K or 1M`, we will hold-out 5-10% data as a validation set.
+  ```Python
+  from sklearn.model_selection import cross_val_score
+  
+  def get_score(n_estimators):
+      my_pipeline = Pipeline(steps=[
+          ('preprocessor', SimpleImputer()),
+          ('model', RandomForestRegressor(n_estimators=n_estimators, random_state=0))
+      ])
+      
+      # Multiply by -1 since sklearn calculates *negative* MAE
+      scores = -1 * cross_val_score(my_pipeline, X, y,
+                                cv=5, #This is 5-fold cross-validation
+                                scoring='neg_mean_absolute_error')
+      #Since cross_val_score return 5 MAE for each fold, so take mean()
+      return scores.mean() 
+  
+  #Evaluate the model performance corresponding to eight different values for the number of trees (n_estimators) in the random forest: 50, 100, 150, ..., 300, 350, 400.
+  results = {n_estimators: get_score(n_estimators) for n_estimators in range(50, 450, 50)} # Your code here
+  plt.plot(results.keys(), results.values())
+  plt.show()
+  ```
+  <img width="414" alt="Screenshot 2021-12-02 at 16 42 21" src="https://user-images.githubusercontent.com/64508435/144396996-81ae36c5-98c1-4a50-b9df-dee77eaf44cd.png">
+
+- **For large dataset &#8594; Hold-out**: when `training data > 100K or 1M`, we will hold-out 5-10% data as a validation set.
 
 [(Back to top)](#table-of-contents)
 
