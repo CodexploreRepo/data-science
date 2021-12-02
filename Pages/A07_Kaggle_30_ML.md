@@ -354,7 +354,7 @@ OH_X_valid = pd.concat([num_X_valid, OH_cols_valid], axis=1)
       return scores.mean() 
   
   #Evaluate the model performance corresponding to eight different values for the number of trees (n_estimators) in the random forest: 50, 100, 150, ..., 300, 350, 400.
-  results = {n_estimators: get_score(n_estimators) for n_estimators in range(50, 450, 50)} # Your code here
+  results = {n_estimators: get_score(n_estimators) for n_estimators in range(50, 450, 50)} 
   
   plt.plot(results.keys(), results.values())
   plt.show()
