@@ -6,6 +6,7 @@
   - [1.2. Missing Values](#12-missing-values)
   - [1.3. Categorical variable](#13-categorical-variable)
   - [1.4. Pipelines](#14-pipelines)
+  - [1.5. Cross-Validation](#15-cross-validation)
 - [2. EDA](#2-eda)
   - [2.1. Graph](#21-graph) 
 - [3. Feature Engineering](#3-feature-engineering)
@@ -317,6 +318,18 @@ OH_X_valid = pd.concat([num_X_valid, OH_cols_valid], axis=1)
     score = mean_absolute_error(y_valid, preds)
     print('MAE:', score)
     ```
+[(Back to top)](#table-of-contents)
+
+
+## 1.5. Cross-Validation
+- **Cross-validation**, we run our modeling process on different subsets of the data to get multiple measures of model quality.
+- **Scheme 1: Stratified k-fold**: Stratified k-fold cross-validation is same as just k-fold cross-validation, but in Stratified k-fold cross-validation, it does stratified sampling instead of random sampling. 
+  - Hence, Stratified k-fold keeps the same ratio of classes in each fold in comparison with the ratio of the original training data.
+  - **Classification** problem: can apply Stratified k-fold directly
+  - **Regression** problem: need to convert `Y` into `1+log2(N)` bins (Sturge’s Rule) and then Stratified k-fold  will split accordingly.
+![image](https://user-images.githubusercontent.com/64508435/144378824-53f0db43-38f1-47cf-a0c2-15bf74f9d2ab.png)
+
+- **Scheme 2: Hold-out**: when training data > 100K or 1M, we will hold-out 5-10% data as a validation set.
 [(Back to top)](#table-of-contents)
 
 # 2. EDA
