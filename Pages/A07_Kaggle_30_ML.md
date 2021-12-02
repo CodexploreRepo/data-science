@@ -322,14 +322,15 @@ OH_X_valid = pd.concat([num_X_valid, OH_cols_valid], axis=1)
 
 
 ## 1.5. Cross-Validation
-- **Cross-validation**, we run our modeling process on different subsets of the data to get multiple measures of model quality.
-- **Scheme 1: Stratified k-fold**: Stratified k-fold cross-validation is same as just k-fold cross-validation, but in Stratified k-fold cross-validation, it does stratified sampling instead of random sampling. 
-  - Hence, Stratified k-fold keeps the same ratio of classes in each fold in comparison with the ratio of the original training data.
-  - **Classification** problem: can apply Stratified k-fold directly
-  - **Regression** problem: need to convert `Y` into `1+log2(N)` bins (Sturge’s Rule) and then Stratified k-fold  will split accordingly.
-![image](https://user-images.githubusercontent.com/64508435/144378824-53f0db43-38f1-47cf-a0c2-15bf74f9d2ab.png)
+- **For small dataset > Cross-validation**, we run our modeling process on different subsets of the data to get multiple measures of model quality.
+  - **Stratified k-fold**: Stratified k-fold cross-validation is same as just k-fold cross-validation, but in Stratified k-fold cross-validation, it does stratified sampling instead of random sampling. 
+    - Hence, Stratified k-fold keeps the same ratio of classes in each fold in comparison with the ratio of the original training data.
+    - **Classification** problem: can apply Stratified k-fold directly
+    - **Regression** problem: need to convert `Y` into `1+log2(N)` bins (Sturge’s Rule) and then Stratified k-fold  will split accordingly.
+  ![image](https://user-images.githubusercontent.com/64508435/144378824-53f0db43-38f1-47cf-a0c2-15bf74f9d2ab.png)
 
-- **Scheme 2: Hold-out**: when training data > 100K or 1M, we will hold-out 5-10% data as a validation set.
+- **For large dataset > Hold-out**: when `training data > 100K or 1M`, we will hold-out 5-10% data as a validation set.
+
 [(Back to top)](#table-of-contents)
 
 # 2. EDA
