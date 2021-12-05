@@ -228,9 +228,6 @@ low_cardinality_cols = [col for col in object_cols if X_train[col].nunique() < 1
 
 # Columns that will be dropped from the dataset
 high_cardinality_cols = list(set(object_cols)-set(low_cardinality_cols))
-
-print('Categorical columns that will be one-hot encoded:', low_cardinality_cols)
-print('\nCategorical columns that will be dropped from the dataset:', high_cardinality_cols)
 ```
 #### One-Hot Encoding
 - One-hot encoding generally does NOT perform well if the categorical variable has `cardinality >= 15` as One-Hot encoder will expand the original training data with increasing columns
