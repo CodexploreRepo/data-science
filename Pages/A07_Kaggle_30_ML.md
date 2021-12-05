@@ -16,7 +16,7 @@
     - [4.2.1. Metrics for Regression](#421-metrics-for-regression)
 - [5. Ensemble methods](#5-ensemble-methods)
   - [5.1. Random Forests](#51-random-forests)
-  - [5.2. Gradient Boosting](#52-gradient-boosting) 
+  - [5.2. Gradient Boosting - XGBoost](#52-gradient-boosting-xgboost) 
 
 # 1. Data Pre-Processing
 ## 1.1. Read and Split Data
@@ -443,7 +443,7 @@ np.sqrt(mean_squared_error(y_pred, y_test))
 - The random forest uses many trees, and it makes a prediction by averaging the predictions of each component tree. 
 - It generally has much better predictive accuracy than a single decision tree and it works well with default parameters.
 
-## 5.2. Gradient Boosting
+## 5.2. Gradient Boosting - XGBoost
 ```Python
 #Example of Gradient Boosting - Regressor
 from sklearn.ensemble import GradientBoostingRegressor
