@@ -478,7 +478,7 @@ from xgboost import XGBRegressor
 my_model = XGBRegressor(n_estimators=1000, learning_rate=0.05, n_jobs=4, random_state = 42)
 
 my_model.fit(X_train, y_train, 
-             #Setting **early_stopping_rounds=5** is a reasonable choice. In this case, we stop after 5 straight rounds of deteriorating validation scores
+             #Setting early_stopping_rounds=5 is a reasonable choice. In this case, we stop after 5 straight rounds of deteriorating validation scores
              early_stopping_rounds=5, 
              #When using early_stopping_rounds, you also need to set aside some data for calculating the validation scores - this is done by setting the eval_set parameter.
              eval_set=[(X_valid, y_valid)], 
