@@ -175,6 +175,8 @@ There are 5 methods to encode Categorical variables
 - **Method 2**: Ordinal Encoding
 - **Method 3**: Label Encoding (Same as Ordinal Encoder but NOT care about the order)
 - **Method 4**: One-Hot Encoding
+  - If a categorical attribute has a large number of possible categories, then one-hot encoding will result in a large number of input features. This may slow down training and degrade performance.
+  - If this happens, you will want to produce denser representations called `embeddings`, but this requires a good understanding of neural networks (see [Chapter 14](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781491962282/ch14.html#rnn_chapter) for more details).
 - **Method 5**: Entity Embedding (Need to learn from Video: https://youtu.be/EATAM3BOD_E)
 
 ### 1.3.1. Method 1: Drop Categorical Variables 
