@@ -43,7 +43,19 @@
 - **Interview with Hiring Manager**: explain your Machine learning projects
 
 ### 1.3. Grab: Machine Learning Engineer
+- General mobility industry and economics oriented questions
+- How surge pricing work for both customers and drivers?
 
+- Formula for gradient decent
+- Supervised and unsupervised ML methods, detailed question about different classification and clustering algos
+- What is overfitting and how you deal with it
+- How to solve the issue if the features are highly correlated?
+- What is a good way to detect anomalies?
+- What's the ROC Curve? What does an ROC curve plot?
+- What's the difference between bagging and boosting?
+
+- How do you find out average number of bookings for a given day. What factors do you think will play a crucial role?
+- How do you thing grab can implement surge pricing concept different than that to Uber. What factors do you think will play a role here ?
 ## 2. SQL Questions
 #### SQL#1: Facebook
 ```SQL
