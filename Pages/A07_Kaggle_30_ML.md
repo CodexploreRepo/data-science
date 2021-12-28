@@ -17,7 +17,7 @@
 - [5. Ensemble methods](#5-ensemble-methods)
   - [5.1. Random Forests](#51-random-forests)
   - [5.2. Gradient Boosting](#52-gradient-boosting) 
-
+- [6. Fine-Tune Model](#6-fine-tune-model)
 # 1. Data Pre-Processing
 ## 1.1. Read and Split Data
 - **Step 1**: Read the data
@@ -499,5 +499,10 @@ output = pd.DataFrame({'id': test_data.id, 'Survived': predictions})
 output.to_csv('my_submission.csv', index=False)
 ```
 
+
+[(Back to top)](#table-of-contents)
+
+
+# 6. Fine-Tune Model
 
 [(Back to top)](#table-of-contents)
