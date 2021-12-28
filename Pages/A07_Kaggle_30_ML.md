@@ -18,6 +18,8 @@
   - [5.1. Random Forests](#51-random-forests)
   - [5.2. Gradient Boosting](#52-gradient-boosting) 
 - [6. Fine-Tune Model](#6-fine-tune-model)
+- [7. Save Model](#7-save-model)
+
 # 1. Data Pre-Processing
 ## 1.1. Read and Split Data
 - **Step 1**: Read the data
@@ -505,4 +507,18 @@ output.to_csv('my_submission.csv', index=False)
 
 # 6. Fine-Tune Model
 
+[(Back to top)](#table-of-contents)
+
+
+# 7. Save Model
+- You can easily save Scikit-Learn models by using Python’s `pickle` module, or using `sklearn.externals.joblib`, which is more efficient at serializing large NumPy arrays:
+
+```Python
+from sklearn.externals import joblib
+
+joblib.dump(my_model, "my_model.pkl")
+
+# and later...
+my_model_loaded = joblib.load("my_model.pkl")
+```
 [(Back to top)](#table-of-contents)
