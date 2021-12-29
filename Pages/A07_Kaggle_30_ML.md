@@ -507,6 +507,52 @@ output.to_csv('my_submission.csv', index=False)
 
 # 6. Fine-Tune Model
 
+Let’s assume that you now have a shortlist of promising models. You now need to fine-tune them.
+
+### 6.1. Grid Search
+- One way to do that would be to fiddle with the hyperparameters manually, until you find a great combination of hyperparameter
+- Scikit-Learn’s `GridSearchCV` to search which hyperparameters you want it to experiment with, and what values to try out 
+- It will evaluate all the possible combinations of hyperparameter values, using cross-validation
+
+```Python
+from sklearn.model_selection import GridSearchCV
+
+param_grid = [
+    #first evaluate all 3 × 4 = 12 combinations of n_estimators and max_features hyperparameter values specified in the first dict
+    {'n_estimators': [3, 10, 30], 'max_features': [2, 4, 6, 8]},
+    #all 2 × 3 = 6 combinations of hyperparameter values in the second dict
+    #this time with the bootstrap hyperparameter set to False instead of True (which is the default)
+    {'bootstrap': [False], 'n_estimators': [3, 10], 'max_features': [2, 3, 4]},
+  ]
+
+forest_reg = RandomForestRegressor()
+
+#All in all, the grid search will explore 12 + 6 = 18 combinations of RandomForestRegressor hyperparameter values
+#Train each model five times (since we are using five-fold cross validation)
+#All in all, there will be 18 × 5 = 90 rounds of training
+grid_search = GridSearchCV(forest_reg, param_grid, cv=5,
+                           scoring='neg_mean_squared_error',
+                           return_train_score=True)
+
+grid_search.fit(housing_prepared, housing_labels)
+```
+-  Tip: Since 8 and 30 are the maximum values that were evaluated, you should probably try searching again with higher values, since the score may continue to improve.
+```Python
+#get the best combination of parameters
+grid_search.best_params_
+```
+- If `GridSearchCV` is initialized with `refit=True` (which is the default), then once it finds the best estimator using cross-validation, it retrains it on the whole training set. This is usually a good idea since feeding it more data will likely improve its performance.
+
+```Python
+cvres = grid_search.cv_results_
+for mean_score, params in zip(cvres["mean_test_score"], cvres["params"]):
+    print(np.sqrt(-mean_score), params)
+
+#50036.32733962357 {'max_features': 8, 'n_estimators': 30}
+#61747.39782442657 {'bootstrap': False, 'max_features': 2, 'n_estimators': 3}
+
+```
+
 [(Back to top)](#table-of-contents)
 
 
