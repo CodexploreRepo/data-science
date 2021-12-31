@@ -18,6 +18,8 @@
   - [5.1. Random Forests](#51-random-forests)
   - [5.2. Gradient Boosting](#52-gradient-boosting) 
 - [6. Fine-Tune Model](#6-fine-tune-model)
+  - [6.1. Grid Search](#61-grid-search)
+  - [6.2. Randomized Search](#62-randomized-search) 
 - [7. Save Model](#7-save-model)
 
 # 1. Data Pre-Processing
@@ -509,7 +511,7 @@ output.to_csv('my_submission.csv', index=False)
 
 Let’s assume that you now have a shortlist of promising models. You now need to fine-tune them.
 
-### 6.1. Grid Search
+## 6.1. Grid Search
 - One way to do that would be to fiddle with the hyperparameters manually, until you find a great combination of hyperparameter
 - Scikit-Learn’s `GridSearchCV` to search which hyperparameters you want it to experiment with, and what values to try out 
 - It will evaluate all the possible combinations of hyperparameter values, using cross-validation
@@ -550,8 +552,17 @@ for mean_score, params in zip(cvres["mean_test_score"], cvres["params"]):
 
 #50036.32733962357 {'max_features': 8, 'n_estimators': 30}
 #61747.39782442657 {'bootstrap': False, 'max_features': 2, 'n_estimators': 3}
-
 ```
+
+## 6.2. Randomized Search
+- When the hyperparameter search space is large, it is often preferable to use `RandomizedSearchCV` instead. 
+- Instead of trying out all possible combinations like `GridSearchCV`, it evaluates a given number of random combinations by selecting a random value for each hyperparameter at every iteration. 
+- This approach has two main benefits:
+  - If you let the randomized search run for, say, 1,000 iterations, this approach will explore 1,000 different values for each hyperparameter (instead of just a few values per hyperparameter with the grid search approach).
+  - You have more control over the computing budget you want to allocate to hyperparameter search, simply by setting the number of iterations.
+
+
+
 
 [(Back to top)](#table-of-contents)
 
