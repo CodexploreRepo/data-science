@@ -436,6 +436,7 @@ np.sqrt(mean_squared_error(y_pred, y_test))
 
 
 # 5. Ensemble methods
+- The group (or “ensemble”) will often perform better than the best individual model (just like Random Forests perform better than the individual Decision Trees they rely on), especially if the individual models make very different types of errors. (more on [Chapter 7](https://www.oreilly.com/library/view/hands-on-machine-learning/9781491962282/ch07.html#ensembles_chapter))
 - The goal of `ensemble methods` is to combine the predictions of several base estimators built with a given learning algorithm in order to improve generalizability / robustness over a single estimator (**for classification, regression and anomaly detection**)
 - Two families of ensemble methods:
   - In **averaging methods**, the driving principle is to build several estimators independently and then to average their predictions. On average, the combined estimator is usually better than any of the single base estimator because its variance is reduced.
