@@ -1,4 +1,5 @@
 # Kaggle 30 Days of Machine Learning
+Resource: https://github.com/ageron/handson-ml
 
 # Table of contents
 - [1. Data Pre-Processing](#1-data-pre-processing)
