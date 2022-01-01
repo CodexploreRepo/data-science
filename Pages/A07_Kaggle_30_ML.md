@@ -669,6 +669,7 @@ final_rmse
   - Sometimes performance will degrade slightly because of a poor quality signal (e.g., a malfunctioning sensor sending random values, or another team’s output becoming stale)
 - You will generally want to train your models on a regular basis using fresh data. You should automate this process as much as possible. 
   - If your system is an online learning system, you should make sure you save snapshots of its state at regular intervals so you can easily roll back to a previously working state.
+
 [(Back to top)](#table-of-contents)
 
 # 7. Save Model
