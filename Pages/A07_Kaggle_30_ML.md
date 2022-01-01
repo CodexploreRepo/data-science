@@ -21,6 +21,8 @@
   - [6.1. Grid Search](#61-grid-search)
   - [6.2. Randomized Search](#62-randomized-search)
   - [6.3. Analyze the Best Models and Their Errors](#63-analyze-the-best-models-and-their-errors)
+  - [6.4. Evaluate Your System on the Test Set](#64-evaluate-your-system-on-the-test-set)
+  - [6.5. Launch, Monitor, and Maintain Your System](#65-launch-monitor-and-maintain-your-system)
 - [7. Save Model](#7-save-model)
 
 # 1. Data Pre-Processing
@@ -637,9 +639,32 @@ sorted(zip(feature_importances, attributes), reverse=True)
  (7.0408641672674e-05, 'ISLAND')]
 """
 ```
+- With this information, you may want to try dropping some of the less useful features (e.g., apparently only one `ocean_proximity ( 'INLAND')` category is really useful, so you could try dropping the others `('<1H OCEAN','ISLAND','NEAR BAY', 'NEAR OCEAN')`).
+
+## 6.4. Evaluate Your System on the Test Set
+- After tweaking your models for a while, you eventually have a system that performs sufficiently well. 
+- Now is the time to evaluate the final model on the test set.
+- get the predictors and the labels from your test set, run your full_pipeline to transform the data (call transform(), not fit_transform(), you do not want to fit the test set!), and evaluate the final model on the test set:
+
+```Python
+final_model = randomized_search.best_estimator_
+
+X_test = strat_test_set.drop("median_house_value", axis=1)
+y_test = strat_test_set["median_house_value"].copy()
+
+X_test_prepared = full_pipeline.transform(X_test)
+
+final_predictions = final_model.predict(X_test_prepared)
+
+final_mse = mean_squared_error(y_test, final_predictions)
+final_rmse = np.sqrt(final_mse)   # => evaluates to 48006
+final_rmse
+```
+
+## 6.5. Launch, Monitor, and Maintain Your System
+
 
 [(Back to top)](#table-of-contents)
-
 
 # 7. Save Model
 - You can easily save Scikit-Learn models by using Python’s `pickle` module, or using `sklearn.externals.joblib`, which is more efficient at serializing large NumPy arrays:
