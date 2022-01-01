@@ -19,7 +19,8 @@
   - [5.2. Gradient Boosting](#52-gradient-boosting) 
 - [6. Fine-Tune Model](#6-fine-tune-model)
   - [6.1. Grid Search](#61-grid-search)
-  - [6.2. Randomized Search](#62-randomized-search) 
+  - [6.2. Randomized Search](#62-randomized-search)
+  - [6.3. Analyze the Best Models and Their Errors](#63-analyze-the-best-models-and-their-errors)
 - [7. Save Model](#7-save-model)
 
 # 1. Data Pre-Processing
@@ -562,8 +563,80 @@ for mean_score, params in zip(cvres["mean_test_score"], cvres["params"]):
   - If you let the randomized search run for, say, 1,000 iterations, this approach will explore 1,000 different values for each hyperparameter (instead of just a few values per hyperparameter with the grid search approach).
   - You have more control over the computing budget you want to allocate to hyperparameter search, simply by setting the number of iterations.
 
+```Python
+from sklearn.model_selection import RandomizedSearchCV
 
+# Setup random seed
+np.random.seed(42)
 
+param_grid = [
+    #first evaluate all 3 × 4 = 12 combinations of n_estimators and max_features hyperparameter values specified in the first dict
+    {'n_estimators': [3, 10, 30], 'max_features': [2, 4, 6, 8]},
+    #all 2 × 3 = 6 combinations of hyperparameter values in the second dict
+    #this time with the bootstrap hyperparameter set to False instead of True (which is the default)
+    {'bootstrap': [False], 'n_estimators': [3, 10], 'max_features': [2, 3, 4]},
+  ]
+
+# Setup random hyperparameter search for RandomForestClassifier
+randomized_search = RandomizedSearchCV(forest_reg, 
+                           param_distributions=param_grid,
+                           cv=5,
+                           n_iter=10,
+                           scoring='neg_mean_squared_error',
+                           return_train_score=True,
+                                      verbose=True)
+
+# Fit random hyperparameter search model for RandomForestClassifier()
+randomized_search.fit(housing_prepared, housing_labels)
+```
+- To get the best combination of parameters
+```Python
+#get the best combination of parameters
+randomized_search.best_params_
+#{'n_estimators': 30, 'max_features': 8}
+
+#get the score for each combination
+cvres = randomized_search.cv_results_
+for mean_score, params in zip(cvres["mean_test_score"], cvres["params"]):
+    print(np.sqrt(-mean_score), params)
+
+#65029.23239964716 {'n_estimators': 3, 'max_features': 2}
+#55289.066755389285 {'n_estimators': 10, 'max_features': 2}
+```
+
+## 6.3. Analyze the Best Models and Their Errors
+- You will gain good insights on the problem by inspecting the best models. 
+    - For example, the `RandomForestRegressor` can indicate the relative importance of each attribute for making accurate predictions
+```Python
+#To get the feature importances of the best estimator
+feature_importances = randomized_search.best_estimator_.feature_importances_
+
+extra_attribs = ["rooms_per_hhold", "pop_per_hhold", "bedrooms_per_room"]
+cat_encoder = full_pipeline.named_transformers_["cat"]
+cat_one_hot_attribs = list(cat_encoder.categories_[0])
+
+attributes = num_attribs + extra_attribs + cat_one_hot_attribs
+sorted(zip(feature_importances, attributes), reverse=True)
+
+"""
+[(0.34494467079972574, 'median_income'),
+ (0.17270875334179428, 'INLAND'),
+ (0.11156438666412408, 'pop_per_hhold'),
+ (0.0699146551283051, 'bedrooms_per_room'),
+ (0.0680788476897446, 'longitude'),
+ (0.06437338799728325, 'latitude'),
+ (0.05229664262496094, 'rooms_per_hhold'),
+ (0.04300665520810458, 'housing_median_age'),
+ (0.01624609185547273, 'total_rooms'),
+ (0.015168543028308725, 'population'),
+ (0.014458910047585575, 'total_bedrooms'),
+ (0.014129424198288248, 'households'),
+ (0.007866351833047272, '<1H OCEAN'),
+ (0.0030872145999579397, 'NEAR OCEAN'),
+ (0.0020850563416243396, 'NEAR BAY'),
+ (7.0408641672674e-05, 'ISLAND')]
+"""
+```
 
 [(Back to top)](#table-of-contents)
 
