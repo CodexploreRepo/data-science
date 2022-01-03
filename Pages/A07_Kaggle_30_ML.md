@@ -15,9 +15,10 @@ Resource: https://github.com/ageron/handson-ml
   - [4.1. Underfitting and Overfitting](#41-underfitting-and-overfitting)
   - [4.2. Evaluation Metrics](#42-evaluation-metrics)
     - [4.2.1. Metrics for Regression](#421-metrics-for-regression)
-- [5. Ensemble methods](#5-ensemble-methods)
-  - [5.1. Random Forests](#51-random-forests)
-  - [5.2. Gradient Boosting](#52-gradient-boosting) 
+- []()
+  - [5.1 Ensemble methods](#51-ensemble-methods)
+    - [5.1.1 Random Forests](#511-random-forests)
+    - [5.2.2 Gradient Boosting](#512-gradient-boosting) 
 - [6. Fine-Tune Model](#6-fine-tune-model)
   - [6.1. Grid Search](#61-grid-search)
   - [6.2. Randomized Search](#62-randomized-search)
@@ -439,7 +440,7 @@ np.sqrt(mean_squared_error(y_pred, y_test))
 ```
 
 
-# 5. Ensemble methods
+## 5.1 Ensemble methods
 - The group (or “ensemble”) will often perform better than the best individual model (just like Random Forests perform better than the individual Decision Trees they rely on), especially if the individual models make very different types of errors. (more on [Chapter 7](https://www.oreilly.com/library/view/hands-on-machine-learning/9781491962282/ch07.html#ensembles_chapter))
 - The goal of `ensemble methods` is to combine the predictions of several base estimators built with a given learning algorithm in order to improve generalizability / robustness over a single estimator (**for classification, regression and anomaly detection**)
 - Two families of ensemble methods:
@@ -448,7 +449,7 @@ np.sqrt(mean_squared_error(y_pred, y_test))
   - In **boosting methods**, base estimators are built sequentially and one tries to reduce the bias of the combined estimator. The motivation is to combine several weak models to produce a powerful ensemble.
     - *Examples*: AdaBoost, Gradient Tree Boosting, etc.
 
-## 5.1. Random Forests
+### 5.1.1 Random Forests
 - Random forest method, which achieves better performance than a single decision tree simply by averaging the predictions of many decision trees. We refer to the random forest method as an "ensemble method". By definition, ensemble methods combine the predictions of several models (e.g., several trees, in the case of random forests).
 - Decision trees leave you with a difficult decision. 
   - A deep tree with lots of leaves will overfit because each prediction is coming from historical data from only the few data at its leaf. 
@@ -456,7 +457,7 @@ np.sqrt(mean_squared_error(y_pred, y_test))
 - The random forest uses many trees, and it makes a prediction by averaging the predictions of each component tree. 
 - It generally has much better predictive accuracy than a single decision tree and it works well with default parameters.
 
-## 5.2. Gradient Boosting
+### 5.1.2. Gradient Boosting
 - **Gradient boosting** is the method dominates many Kaggle competitions and achieves state-of-the-art results on a variety of datasets.
 - Gradient boosting is a method that goes through cycles to iteratively add models into an ensemble.
 - It begins by initializing the ensemble with a single model, whose predictions can be pretty naive. (Even if its predictions are wildly inaccurate, subsequent additions to the ensemble will address those errors.)
@@ -474,7 +475,7 @@ gbm_val_predictions = gbm_model.predict(val_X)
 gbm_val_rmse = np.sqrt(mean_squared_error(gbm_val_predictions, val_y))
 ```
 
-### 5.2.1. XGBoost 
+### 5.1.2.1. XGBoost 
 - `XGBoost` stands for **extreme gradient boosting**, which is an implementation of gradient boosting with several additional features focused on performance and speed.
 - XGBoost has a few parameters that can dramatically affect accuracy and training speed:
   - `n_estimators`: (typically range from **100-1000**, though this depends a lot on the learning_rate parameter) specifies how many times to go through the modeling cycle described above. It is equal to the number of models that we include in the ensemble.
