@@ -28,3 +28,5 @@
 - **LeetCode**: `3 Sum`, `Longest Palindromic Substring` and `Container With Most Water`
 # Day 6: 
 - **LeetCode**: `Number of Islands`, `Design Circular Queue`
+# Day 7: 
+- **Data Science**: Understand about confusion matrix of classifier, Precision & Recall, F1
