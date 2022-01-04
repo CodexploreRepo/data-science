@@ -15,10 +15,11 @@ Resource: https://github.com/ageron/handson-ml
   - [4.1. Underfitting and Overfitting](#41-underfitting-and-overfitting)
   - [4.2. Evaluation Metrics](#42-evaluation-metrics)
     - [4.2.1. Metrics for Regression](#421-metrics-for-regression)
-- []()
+- [5. Machine Learning Model](#5-machine-learning-model)
   - [5.1 Ensemble methods](#51-ensemble-methods)
     - [5.1.1 Random Forests](#511-random-forests)
-    - [5.2.2 Gradient Boosting](#512-gradient-boosting) 
+    - [5.2.2 Gradient Boosting](#512-gradient-boosting)
+  - [5.2. Stochastic Gradient Descent](#52-stochastic-gradient-descent) 
 - [6. Fine-Tune Model](#6-fine-tune-model)
   - [6.1. Grid Search](#61-grid-search)
   - [6.2. Randomized Search](#62-randomized-search)
@@ -500,7 +501,18 @@ my_model.fit(X_train, y_train,
   - `early_stopping_rounds`: offers a way to automatically find the ideal value for n_estimators. Early stopping causes the model to stop iterating when the validation score stops improving, even if we aren't at the hard stop for n_estimators. It's smart to set a high value for n_estimators and then use early_stopping_rounds to find the optimal time to stop iterating.
     - Setting **early_stopping_rounds=5** is a reasonable choice. In this case, we stop after 5 straight rounds of deteriorating validation scores.
 
-  
+
+## 5.2. Stochastic Gradient Descent 
+- `SGDClassifier` relies on randomness during training (hence the name “stochastic”)
+- This classifier has the advantage of being capable of handling very large datasets efficiently. This is in part because SGD deals with training instances independently ((which also makes SGD well suited for online learning)
+
+```Python
+from sklearn.linear_model import SGDClassifier
+
+sgd_clf = SGDClassifier(random_state=42)
+sgd_clf.fit(X_train, y_train_5)
+```
+
 
 # Submission
 ```Python
