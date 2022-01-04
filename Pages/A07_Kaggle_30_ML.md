@@ -374,32 +374,33 @@ OH_X_valid = pd.concat([num_X_valid, OH_cols_valid], axis=1)
   
   ```Python
   from sklearn.model_selection import StratifiedKFold
-from sklearn.base import clone
+  from sklearn.base import clone
 
-skfolds = StratifiedKFold(n_splits=3, shuffle=True, random_state=42)
+  skfolds = StratifiedKFold(n_splits=3, shuffle=True, random_state=42)
 
-for train_index, test_index in skfolds.split(X_train, y_train_5):
-    #train_index = [array of indices]; test_index = [array of indices]
-    #print(len(train_index), len(test_index)) #40000 20000
- 
-    #Clone does a deep copy of the model in an estimator without actually copying attached data. 
-    #It returns a new estimator with the same parameters that has not been fitted on any data.
-    clone_clf = clone(sgd_clf)
-    
-    X_train_folds = X_train.iloc[list(train_index)]
-    y_train_folds = y_train_5.iloc[list(train_index)]
-    X_test_fold = X_train.iloc[list(test_index)]
-    y_test_fold = y_train_5.iloc[list(test_index)]
+  for train_index, test_index in skfolds.split(X_train, y_train_5):
+      #train_index = [array of indices]; test_index = [array of indices]
+      #print(len(train_index), len(test_index)) #40000 20000
 
-    clone_clf.fit(X_train_folds, y_train_folds)
-    y_pred = clone_clf.predict(X_test_fold)
-    n_correct = sum(y_pred == y_test_fold)
-    print(n_correct / len(y_pred))  # prints 0.9502, 0.96565 and 0.96495
+      #Clone does a deep copy of the model in an estimator without actually copying attached data. 
+      #It returns a new estimator with the same parameters that has not been fitted on any data.
+      clone_clf = clone(sgd_clf)
+
+      X_train_folds = X_train.iloc[list(train_index)]
+      y_train_folds = y_train_5.iloc[list(train_index)]
+      X_test_fold = X_train.iloc[list(test_index)]
+      y_test_fold = y_train_5.iloc[list(test_index)]
+
+      clone_clf.fit(X_train_folds, y_train_folds)
+      y_pred = clone_clf.predict(X_test_fold)
+      n_correct = sum(y_pred == y_test_fold)
+      print(n_correct / len(y_pred))  # prints 0.9502, 0.96565 and 0.96495
   ```
   - At each iteration the code creates a clone of the classifier, trains that clone on the training folds, and makes predictions on the test fold. Then it counts the number of correct predictions and outputs the ratio of correct predictions
   - Let’s use the `cross_val_score()` function to evaluate your `SGDClassifier` model using K-fold cross-validation, with three folds. 
   - One possible reason for the difference between `cross_val_score` and `StratifiedKFold` is that `cross_val_score` uses `StratifiedKFold` with the default `shuffle=False` parameter, whereas in your manual cross-validation using `StratifiedKFold` you have passed `shuffle=True`.
   - Remember that K-fold cross-validation means splitting the training set into K-folds (in this case, three), then making predictions and evaluating them on each fold using a model trained on the remaining folds 
+  
   ```Python
   from sklearn.model_selection import cross_val_score
   #cross_val_score uses StratifiedKFold with the default shuffle=False parameter
