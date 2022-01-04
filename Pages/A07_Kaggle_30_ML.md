@@ -476,7 +476,38 @@ from sklearn.metrics import mean_squared_error
 np.sqrt(mean_squared_error(y_pred, y_test))
 ```
 ### 4.2.2. Metrics for Classification
+- A naive classifier that always classify the image NOT number "5" in the dataset that contains only 10% is "5" images, still can achieve Accuracy of 90%. 
+- This is simply because only about 10% of the images are 5s, so if you always guess that an image is not a 5, you will be right about 90% of the time. 
+- This demonstrates why accuracy is generally not the preferred performance measure for classifiers, especially when you are dealing with skewed datasets (i.e., when some classes are much more frequent than others).
+#### Confusion Matrix
+- A much better way to evaluate the performance of a classifier is to look at the confusion matrix. The general idea is to count the number of times instances of class A are classified as class B. 
+- To compute the confusion matrix, you first need to have a set of predictions so that they can be compared to the actual targets. You could make predictions on the test set, but let’s keep it untouched for now (remember that you want to use the test set only at the very end of your project, once you have a classifier that you are ready to launch). Instead, you can use the `cross_val_predict()` function:
+```Python
+from sklearn.model_selection import cross_val_predict
 
+y_train_pred = cross_val_predict(sgd_clf, X_train, y_train_5, cv=3)
+```
+
+- Just like the `cross_val_score()` function, `cross_val_predict()` performs K-fold cross-validation, but instead of returning the evaluation scores, it returns the predictions made on each test fold. 
+- This means that you get a clean prediction for each instance in the training set (“clean” meaning that the prediction is made by a model that never saw the data during training).
+- Now you are ready to get the confusion matrix using the `confusion_matrix()` function. Just pass it the target classes (`y_train_5`) and the predicted classes (`y_train_pred`):
+
+```Python
+from sklearn.metrics import confusion_matrix
+confusion_matrix(y_train_5, y_train_pred)
+```
+#### Understanding Confusion Matrix
+- Each **row** in a confusion matrix represents an `actual class`, 
+- Each **column** represents a `predicted class`. 
+- A perfect classifier would have only true positives and true negatives, so its confusion matrix would have nonzero values only on its **main diagonal (top left to bottom right)**
+
+<img width="500" alt="Screenshot 2021-08-15 at 16 25 45" src="https://user-images.githubusercontent.com/64508435/148041146-2995ca33-faca-4461-b7b8-29b022b44e96.png">
+
+
+```Python
+y_train_perfect_predictions = y_train_5  # pretend we reached perfection
+confusion_matrix(y_train_5, y_train_perfect_predictions)
+```
 
 ## 5.1 Ensemble methods
 - The group (or “ensemble”) will often perform better than the best individual model (just like Random Forests perform better than the individual Decision Trees they rely on), especially if the individual models make very different types of errors. (more on [Chapter 7](https://www.oreilly.com/library/view/hands-on-machine-learning/9781491962282/ch07.html#ensembles_chapter))
