@@ -15,7 +15,7 @@ Resource: https://github.com/ageron/handson-ml
   - [4.1. Underfitting and Overfitting](#41-underfitting-and-overfitting)
   - [4.2. Evaluation Metrics](#42-evaluation-metrics)
     - [4.2.1. Metrics for Regression](#421-metrics-for-regression)
-    - [4.2.2. Metrics for Classification](#421-metrics-for-classification)
+    - [4.2.2. Metrics for Classification](#422-metrics-for-classification)
 - [5. Machine Learning Model](#5-machine-learning-model)
   - [5.1 Ensemble methods](#51-ensemble-methods)
     - [5.1.1 Random Forests](#511-random-forests)
